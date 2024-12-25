@@ -1,0 +1,77 @@
+---
+import { Icon } from 'free-astro-components'
+---
+
+<footer class="py-8 lg:py-12 border-t border-neutral-300/50 ">
+  <div class="container flex justify-between items-center gap-10">
+    <div class="flex items-center gap-1"> 
+      <a
+        class="text-sm hover:text-primary transition duration-300 ease-in-out"
+        href="/"
+        aria-label="Gitset.dev"
+      >
+        <img src="/favicon-192.png" alt="Gitset Logo" class="w-14 h-14" />
+      </a>
+      <a
+        class="text-xl mt-2 ml-1 hover:text-secondary text-neutral-700  transition duration-300 ease-in-out hide-on-small" 
+        href="/"
+        aria-label="Gitset"
+        
+      >
+        Gitset.dev
+      </a>
+    </div>
+      
+      <div class="flex flex-col gap-4 lg:flex-row lg:gap-8">
+        <div class="flex flex-col gap-4">
+          <ul class="text-neutral-500 flex flex-col">
+            <li style="border-radius: 8px; text-align: center;">
+              <a href="/terms" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#69D3C6'" 
+                onmouseout="this.style.color=''">
+                Terms of Service
+              </a>
+            </li>
+            <li style="border-radius: 8px; text-align: center;">
+              <a href="/privacy" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#69D3C6'" 
+                onmouseout="this.style.color=''">
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4 lg:flex-row lg:gap-8">
+        <div class="flex flex-col gap-4">
+          <ul class="text-neutral-500 flex flex-col">
+            <li style="border-radius: 8px; text-align: center;">
+              <a href="/faq" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#69D3C6'" 
+                onmouseout="this.style.color=''">
+                FAQ
+              </a>
+            </li>
+            <li style="border-radius: 8px; text-align: center;">
+              <a href="/contact" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" 
+                onmouseover="this.style.color='#69D3C6'" 
+                onmouseout="this.style.color=''">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+<style>
+  @media (max-width: 800px) {
+  .hide-on-small {
+    display: none;
+  }
+}
+</style>
+

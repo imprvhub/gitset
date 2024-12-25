@@ -1,0 +1,52 @@
+---
+import Nav from '../components/layout/Nav.astro'
+import NavItem from '../components/layout/NavItem.astro';
+import NavLink from '../components/layout/NavLink.astro';
+import { FaHome, FaCodeBranch, FaBook, FaTags, FaUserAlt, FaGitAlt, FaSignOutAlt, FaSignInAlt, FaColumns, FaCog, FaTasks } from 'react-icons/fa';
+
+const { class: className } = Astro.props;
+const userIsLoggedIn = !!Astro.locals.userId;
+---
+
+<aside
+  data-nav
+  class:list={[
+    'fixed left-0 inset-y-0 -translate-x-full [&[open]]:translate-x-0 lg:translate-x-0 w-full lg:w-72 bg-neutral-100/60 backdrop-blur-md pt-16 z-10 transition-transform duration-300 ease-in-out',
+    className,
+  ]}
+>
+  <div
+    class="w-full h-full lg:border-r border-neutral-300/50 px-5 py-4 overflow-y-auto"
+  >
+    <Nav>
+      <br>
+      <NavLink href="/" label="Home" icon={FaHome} />
+      <NavItem title="Features" open>
+        {userIsLoggedIn ? (
+          <>
+            <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
+            <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaGitAlt} />
+            <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaCodeBranch} />
+            {/* <NavLink href="/tags-releases" label="Tags & Releases Manager" icon={FaTags} /> */}
+            {/* <NavLink href="/project-estimator" label="Repository Assessment Tool" icon={FaTasks} /> */}
+            
+          </>
+        ) : (
+          <NavLink href="/public-ai-readme" label="Public AI-Readme Generator" icon={FaBook} />
+          <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaGitAlt} />
+        )}
+      </NavItem>
+      <NavItem title="Account" open>
+        {userIsLoggedIn ? (
+          <>
+            <NavLink href="/dashboard" label="Dashboard" icon={FaColumns} />
+            <NavLink href="/settings" label="Account Settings" icon={FaCog} />
+            <NavLink href="/logout" label="Logout" icon={FaSignOutAlt} />
+          </>
+        ) : (
+          <NavLink href="/login" label="Login" icon={FaSignInAlt} />
+        )}
+      </NavItem>
+    </Nav>
+  </div>
+</aside>
