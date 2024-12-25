@@ -1,0 +1,342 @@
+---
+import Header from '../components/layout/Header.astro'
+import Layout from '../layouts/Layout.astro'
+import Sidebar from '../layouts/Sidebar.astro'
+import CTA from '../sections/CTA.astro'
+import Footer from '../components/layout/Footer.astro'
+---
+
+<Layout title="GitSet.dev - Contact Us">
+    <Sidebar />
+    <div class="flex flex-col min-h-screen">
+        <div class="hidden lg:block fixed w-64 h-full">
+            <Sidebar />
+        </div>
+        
+        <div class="flex-1 lg:ml-64 flex flex-col">
+            <Header />
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gradient-to-b from-neutral-50 to-white">
+                <div class="container mx-auto px-4 py-12 max-w-4xl">
+                    <CTA
+                        align="center"
+                        title={`<span class="text-3xl md:text-4xl font-bold text-neutral-900">Contact Us</span>`}
+                        description={`
+                            <p class="text-lg text-neutral-700 max-w-2xl mx-auto">
+                                Have questions or feedback? We'd love to hear from you. Get in touch with the GitSet.dev team.
+                            </p>
+                        `}
+                    >
+                        <div class="rounded-[20px] shadow-xl overflow-hidden">
+                            <div class="p-2 sm:p-10">
+                                <div class="max-w-xl mx-auto">
+                                    <form class="contact-form animate-fadeIn bg-transparent">
+                                        <br>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="name">Full Name</label>
+                                                <input
+                                                    type="text"
+                                                    id="name"
+                                                    name="name"
+                                                    placeholder="Enter your full name"
+                                                    class="input-field custom-transparent-bg"
+                                                    required
+                                                />
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="email">Email Address</label>
+                                                <input 
+                                                    type="email" 
+                                                    id="email" 
+                                                    name="email" 
+                                                    placeholder="Enter your email address"
+                                                    class="input-field"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group-wide">
+                                            <label for="subject">Subject</label>
+                                            <select 
+                                                id="subject" 
+                                                name="subject" 
+                                                class="input-field text-center"
+                                                required
+                                            >
+                                                <option class=""value="">Select a topic</option>
+                                                <option value="feature">Feature Request</option>
+                                                <option value="support">Technical Support</option>
+                                                <option value="security">Security Concern</option>
+                                                <option value="partnership">Partnership Inquiry</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="form-group-wide">
+                                            <label for="message">Message</label>
+                                            <textarea 
+                                                id="message" 
+                                                name="message" 
+                                                rows="5" 
+                                                placeholder="Write your message here..."
+                                                class="input-field"
+                                                required
+                                            ></textarea>
+                                        </div>
+                                        
+                                        <div class="button-wrapper">
+                                            <div class="gradient-border">
+                                                <button
+                                                    class="text-neutral-700 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-700 px-6 py-4 rounded-[20px] transition-all duration-300 hover:shadow-[0_0_0_3px_rgb(59,159,168)] dark:hover:shadow-[0_0_0_3px_rgb(59,159,168)] cursor-pointer whitespace-nowrap flex items-center justify-center"
+                                                >
+                                                    Send
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </CTA>
+                </div>
+            </main>
+            <Footer />
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-group-wide {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        
+    }
+
+    @media (max-width: 300px) {
+        .form-group-wide {
+            width: 200px !important;
+        }
+    }
+
+    @media (min-width: 600px) {
+        .form-group-wide {
+            width: 400px !important;
+        }
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 1rem;
+        color: #9CA3AF;
+        font-size: 0.875rem;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .input-field:hover {
+        border-color: #69D3C6;
+    }
+
+    .input-field:focus {
+        outline: none;
+        border: 2px solid #69D3C6;
+        box-shadow: 0 0 0 3px rgba(105, 211, 198, 0.1);
+    }
+
+    .input-field::placeholder {
+        color: #9CA3AF;
+    }
+
+    .custom-transparent-bg {
+        background-color: transparent !important;
+    }
+
+    select.input-field {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1.5em;
+        padding-right: 2.5rem;
+    }
+
+    .button-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .gradient-border {
+        position: relative;
+        border-radius: 20px;
+        padding: 1px;
+        background: linear-gradient(90deg, rgba(41,58,142,1) 0%, rgba(59,159,168,1) 100%);
+        width: fit-content;
+    }
+
+    .submit-button {
+        color: #374151;
+        padding: 0.75rem 2rem;
+        border-radius: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        border: none;
+        font-size: 1rem;
+        width: 100%;
+        
+    }
+
+    .submit-button:hover {
+        background: ;
+        color: #293a8e;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fadeIn {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .input-field:invalid:not(:placeholder-shown) {
+        border-color: #69D3C6
+    }
+
+    .input-field:invalid:not(:placeholder-shown):hover {
+        border-color: #69D3C6;
+    }
+
+    label {
+        color: #9CA3AF;
+        font-weight: 500;
+    }
+
+    main {
+        margin-top: 6rem;
+    }
+</style>
+<script define:vars={{ formUrl: 'https://gitset-form-backend.vercel.app/api/contact' }}>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('.contact-form');
+        if (!form) {
+            console.error('Form not found');
+            return;
+        }
+    
+        const button = form.querySelector('button');
+        if (!button) {
+            console.error('Button not found');
+            return;
+        }
+    
+        button.addEventListener('mouseover', () => {
+            button.style.transform = 'translateY(-1px) scale(1.05)';
+        });
+        
+        button.addEventListener('mouseout', () => {
+            button.style.transform = 'none';
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formElements = {
+                name: form.querySelector('#name'),
+                email: form.querySelector('#email'),
+                subject: form.querySelector('#subject'),
+                message: form.querySelector('#message')
+            };
+
+            for (const [key, element] of Object.entries(formElements)) {
+                if (!element) {
+                    console.error(`${key} element not found`);
+                    alert('Error: Missing form elements');
+                    return;
+                }
+            }
+
+            const formData = {
+                name: formElements.name.value || '',
+                email: formElements.email.value || '',
+                subject: formElements.subject.value || '',
+                message: formElements.message.value || ''
+            };
+    
+            try {
+                button.disabled = true;
+                button.textContent = 'Sending...';
+
+                const response = await fetch(formUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+    
+                const data = await response.json();
+    
+                if (data.success) {
+                    window.location.href = '/success';
+                    form.reset();
+
+                    form.reset();
+                } else {
+                    throw new Error(data.error || 'Error sending message');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert(typeof error === 'object' && error !== null && 'message' in error ? error.message : 'Error sending message');
+            } finally {
+                // Reactivar el botón
+                button.disabled = false;
+                button.textContent = 'Send';
+            }
+        });
+    });
+    </script>
