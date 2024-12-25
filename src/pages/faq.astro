@@ -1,0 +1,437 @@
+---
+import Header from '../components/layout/Header.astro'
+import Layout from '../layouts/Layout.astro'
+import Sidebar from '../layouts/Sidebar.astro'
+import CTA from '../sections/CTA.astro'
+import Footer from '../components/layout/Footer.astro'
+---
+
+<Layout title="Gitset - Smart AI Docs & Versioning for GitHub Repositories">
+    <Sidebar />
+    <div class="flex flex-col min-h-screen">
+      <div class="hidden lg:block fixed w-64 h-full">
+        <Sidebar />
+      </div>
+      
+      <div class="flex-1 lg:ml-64 flex flex-col">
+        <Header />
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 top">
+            <br />
+            <div class="flex justify-center"></div>
+            <CTA
+              align="center"
+              title={`<span id="cta-title"><strong>Frequently Asked Questions</strong></span>`}
+              description={`
+                <span id="cta-description">
+                  Find answers to common questions about GitSet.dev, our features, security, and usage guidelines.
+                </span>
+              `}
+            >
+                <div class="flex justify-center mt-8">
+                    <div class="shadow-lg rounded-lg p-6 max-w-4xl w-full">
+                        <div class="prose prose-lg text-neutral-700 dark:text-neutral-200 !text-left">
+                            <h3>General Information</h3>
+                            <div class="faq-container">
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        What is GitSet.dev?
+                                    </button>
+                                    <div class="faq-answer">
+                                        GitSet.dev serves as a comprehensive platform that streamlines Git-related documentation processes. The platform offers tools for automated README generation, .gitignore file creation, and semantic commit message generation, leveraging advanced AI technology to enhance developer workflows.
+                                    </div>
+                                </div>
+                    
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Which features are currently available?
+                                    </button>
+                                    <div class="faq-answer">
+                                        GitSet.dev currently offers four main features:
+                                        <br><br>
+                                        1. Public AI-Readme Generator: Creates README.md files for any public repository without authentication requirements.
+                                        <br><br>
+                                        2. Personal AI-Readme Generator: Generates README.md files for public or private repositories owned by authenticated users (OAuth required).
+                                        <br><br>
+                                        3. .gitignore Builder: Creates customized .gitignore files for multiple languages and frameworks (no authentication required).
+                                        <br><br>
+                                        4. Commit Messages Generator: Provides semantic commit messages through code analysis (OAuth required).
+                                    </div>
+                                </div>
+                    
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Is GitSet.dev free to use?
+                                    </button>
+                                    <div class="faq-answer">
+                                        Currently, all features on GitSet.dev are available free of charge. While subscription plans may be introduced in the future, any changes to the pricing structure will be communicated well in advance to users. Users will be notified of any updates to terms and conditions related to new subscription services.
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <h3>Features and Usage</h3>
+                            <div class="faq-container">
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Which features require GitHub authentication?
+                                    </button>
+                                    <div class="faq-answer">
+                                        Two features require GitHub OAuth authentication:
+                                        <br><br>
+                                        1. Personal AI-Readme Generator - For accessing private repositories and generating customized documentation
+                                        <br><br>
+                                        2. Commit Messages Generator - For analyzing repository changes and generating semantic commit messages
+                                        <br><br>
+                                        The Public AI-Readme Generator and .gitignore Builder can be used without authentication.
+                                    </div>
+                                </div>
+                    
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        How accurate are the AI-generated outputs?
+                                    </button>
+                                    <div class="faq-answer">
+                                        While GitSet.dev employs advanced AI technology to generate content, users should note that these features are experimental. The platform recommends reviewing and validating all AI-generated content before implementation. Users maintain full control over whether to implement or modify any AI-suggested content.
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <h3>Security and Privacy</h3>
+                            <div class="faq-container">
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        How does GitSet.dev handle user data?
+                                    </button>
+                                    <div class="faq-answer">
+                                        GitSet.dev collects minimal data necessary for authentication and service provision. The platform uses Google Gemini AI for text generation. For detailed information about data handling, please review the privacy policies of our technology partners:
+                                        <br><br>
+                                        - <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" style="color: #3DA798;" target="_blank" rel="noreferrer">GitHub Privacy Statement</a>
+                                        <br>
+                                        - <a href="https://policies.google.com/privacy" style="color: #3DA798;" target="_blank" rel="noreferrer">Google Privacy Policy</a>
+                                        <br>
+                                        - <a href="https://support.google.com/gemini/answer/13594961?hl=en#privacy_notice" style="color: #3DA798;" target="_blank" rel="noreferrer">Gemini Privacy Notice</a>
+                                    </div>
+                                </div>
+                    
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        How do I revoke GitSet.dev's access to my GitHub account?
+                                    </button>
+                                    <div class="faq-answer">
+                                        You can revoke access in two ways:<br>
+                                        1. Through GitSet.dev: Visit our <a style="color: #3DA798;" href="/settings">Settings</a> page, go to "Connected Accounts", and click "Revoke GitHub Access".<br>
+                                        2. Through GitHub: Visit <a href="https://github.com/settings/applications" style="color: #3DA798;" target="_blank" rel="noreferrer">GitHub's applications settings</a>, find GitSet.dev, click the three dots, and select "Revoke".
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Is there any risk of losing access to my account or having my repository deleted?
+                                    </button>
+                                    <div class="faq-answer">
+                                        Your account and repositories are completely secure. GitSet.dev requires repo scope permissions solely to read repository data and provide AI-based suggestions. The platform is strictly read-only, generating recommendations like README files or commit messages for your review, without writing, modifying, or deleting any content. All changes are fully under your control and must be applied manually. <br><br> To clarify: <strong>NO commits will be created, and NO README.md files will be uploaded to your repository.</strong> It's important to note that the 'repo' scope is necessary because other scopes like 'repo:status' don't allow code visualization, which is crucial for our features. Without being able to analyze the actual code, diffs, and other repository content, it would be impossible to generate accurate README files or commit messages - even if we had basic access to private repositories and their branches. There's simply no way to perform proper code analysis without the 'repo' scope. You can learn more about GitHub OAuth scopes in the <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps" style="color: #3DA798;" target="_blank" rel="noreferrer">official GitHub documentation</a>.
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <h3>Technical Details</h3>
+                            <div class="faq-container">
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Does GitSet.dev store generated content?
+                                    </button>
+                                    <div class="faq-answer">
+                                        No, GitSet.dev does not store or retain any generated content (README files, commit messages, or .gitignore files) beyond the immediate session. Once generated, content must be saved or implemented by the user as it will not be accessible after the session ends.
+                                    </div>
+                                </div>
+                    
+                                <!-- Update to existing OAuth permissions answer -->
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        What OAuth permissions does GitSet.dev require?
+                                    </button>
+                                    <div class="faq-answer">
+                                        GitSet.dev uses the 'repo' scope to provide comprehensive repository access for authenticated features. This scope is currently used only for read operations, allowing users to access both public and private repositories, including their branches. For example, this enables users to generate README files for specific branches in their private repositories or analyze commit history across all their repositories. While write permissions are included in this scope, GitSet.dev currently does not perform any write operations to repositories.
+                                    </div>
+                                </div>
+
+                                <!-- New FAQ items -->
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        What are the upcoming features for GitSet.dev?
+                                    </button>
+                                    <div class="faq-answer">
+                                        GitSet.dev is actively developing new features to enhance repository management. One upcoming feature is the Tags and Releases Manager, which will help users manage repository tags and generate AI-powered release notes. This feature will require repository write permissions as it will create and modify tags and releases directly in your repositories. We'll announce new features and any additional required permissions well in advance of their implementation.
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        How does the Personal AI-Readme Generator work with private repositories?
+                                    </button>
+                                    <div class="faq-answer">
+                                        The Personal AI-Readme Generator can access both public and private repositories through GitHub authentication. Once authenticated, you can select any repository you own and choose specific branches for README generation. The tool analyzes the repository content and structure to generate appropriate documentation. This feature is particularly useful for maintaining consistent documentation across multiple branches of private projects.
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        How does the Commit Messages Generator analyze repository changes?
+                                    </button>
+                                    <div class="faq-answer">
+                                        The Commit Messages Generator analyzes the differences between the current code, derived from the remote file analysis, and the newly uploaded files—submitted via drag and drop—ensuring that the new files have identical names to the existing ones. This approach optimizes processing efficiency. The tool then leverages AI to generate semantic commit messages based on the detected code changes, providing clear and contextually accurate summaries of the modifications across repositories or branches under your ownership.
+                                </div>
+
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Can I use GitSet.dev features across different repository branches?
+                                    </button>
+                                    <div class="faq-answer">
+                                        Yes, GitSet.dev supports branch-specific operations for authenticated features. You can generate README files, analyze commits, and use other tools across different branches of both public and private repositories. This flexibility allows you to maintain consistent documentation and commit messages across all branches of your projects.
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Will GitSet.dev require additional permissions in the future?
+                                    </button>
+                                    <div class="faq-answer">
+                                        As GitSet.dev evolves, new features may require additional GitHub permissions. For example, the upcoming Tags and Releases Manager will need write permissions to create tags and releases. We follow a principle of requesting only the minimum necessary permissions for each feature, and we'll always communicate any permission changes clearly before implementing new features.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="flex justify-center button-wrapper">
+                            <div class="gradient-border mb-10">
+                                <a href="/"><button
+                                    class="text-neutral-700 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-700 px-6 py-4 rounded-[20px] transition-all duration-300 hover:shadow-[0_0_0_3px_rgb(59,159,168)] dark:hover:shadow-[0_0_0_3px_rgb(59,159,168)] cursor-pointer whitespace-nowrap flex items-center justify-center"
+                                >
+                                    Back
+                                </button></a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </CTA>
+            
+          </main>
+          
+          <Footer />
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .main-container {
+        min-height: 100vh;
+        display: flex;
+        margin-top: 6rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 1023px) {
+        .container {
+            max-width: 100% !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+    }
+    
+    h3 {
+        margin-bottom: 1.5rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        white-space: nowrap;
+        --tw-text-opacity: 1;
+        color: rgb(var(--ac-color-700), var(--tw-text-opacity, 1));
+    }
+
+    .faq-container {
+        margin-bottom: 2rem;
+    }
+
+    .faq-item {
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .faq-question {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        font-size: 1.125rem;
+        font-weight: 500;
+        --tw-text-opacity: 1;
+        color: rgb(var(--ac-color-700), var(--tw-text-opacity, 1));
+        text-align: left;
+        cursor: pointer;
+        background: none;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+        color: #3DA798;
+    }
+
+    .chevron {
+        margin-right: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-question[aria-expanded="true"] .chevron {
+        transform: rotate(90deg);
+    }
+
+    .faq-answer {
+        display: none;
+        padding: 0 0 1rem 2rem;
+        font-size: 1rem;
+        --tw-text-opacity: 1;
+        color: rgb(var(--ac-color-700), var(--tw-text-opacity, 1));
+        line-height: 1.6;
+    }
+
+    .faq-answer.active {
+        display: block;
+    }
+
+    @media (max-width: 1023px) {
+        .faq-question {
+            font-size: 1rem;
+            --tw-text-opacity: 1;
+            color: rgb(var(--ac-color-700), var(--tw-text-opacity, 1));
+        }
+        
+        .faq-answer {
+            font-size: 0.875rem;
+            --tw-text-opacity: 1;
+            color: rgb(var(--ac-color-700), var(--tw-text-opacity, 1));
+        }
+    }
+
+    .top {
+        margin-top: 6rem;
+    }
+
+    .custom-button {
+        background-color: #3a9fa8;
+        border-color: #fff;
+    }
+
+    .cta-button {
+        background-color: #59b4aa;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const questions = document.querySelectorAll('.faq-question');
+        
+        questions.forEach(question => {
+            // Aseguramos que question es un HTMLElement
+            if (!(question instanceof HTMLElement)) return;
+            
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                if (!answer) return;
+
+                const currentState = question.getAttribute('aria-expanded');
+                const newState = currentState !== 'true' ? 'true' : 'false';
+                
+                question.setAttribute('aria-expanded', newState);
+                answer.classList.toggle('active');
+                
+                questions.forEach(otherQuestion => {
+                    // Aseguramos que otherQuestion es un HTMLElement
+                    if (!(otherQuestion instanceof HTMLElement)) return;
+                    if (otherQuestion === question) return;
+
+                    const otherAnswer = otherQuestion.nextElementSibling;
+                    if (!otherAnswer) return;
+
+                    otherQuestion.setAttribute('aria-expanded', 'false');
+                    otherAnswer.classList.remove('active');
+                });
+            });
+        });
+    });
+</script>
