@@ -1,0 +1,178 @@
+---
+import Header from '../components/layout/Header.astro'
+import Layout from '../layouts/Layout.astro'
+import Sidebar from '../layouts/Sidebar.astro'
+import CTA from '../sections/CTA.astro'
+---
+
+<Layout title="Gitset - Smart AI Docs & Versioning for GitHub Repositories.">
+    <Sidebar />
+    <div class="flex flex-col min-h-screen">
+      <div class="hidden lg:block fixed w-64 h-full">
+        <Sidebar />
+      </div>
+      
+      <div class="flex-1 lg:ml-64 flex flex-col">
+        <Header />
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16  top">
+            <br />
+            <div class="flex justify-center"></div>
+            <CTA
+              
+              align="center"
+              title={`<span id="cta-title"><strong>Terms of Service</strong></span>`}
+              description={`
+                <span id="cta-description">
+                  These Terms of Service explain the conditions under which you can use the GitSet.dev website. Please read these terms carefully before accessing and using the platform's services.
+                </span>
+              `}
+            >
+            
+            <!-- Contenido generado dentro de una card -->
+                <div class="flex justify-center mt-8 ">
+                    <div class="shadow-lg rounded-lg p-6 max-w-4xl w-full overflow-y-auto max-h-96">
+                        <div class="prose prose-lg text-neutral-700 !text-left">
+                            <h3>1. Acceptance of Terms</h3>
+                        
+                            <p style="max-width: none !important;">By accessing or using <strong>GitSet.dev</strong> (the "Service"), including its domain name(s), IP addresses, content, or any interactions (such as clicking on links), you acknowledge and declare that you accept this Terms of Service and <a href="/privacy" style="color: #3DA798;">Privacy Policy</a>. Your access and use of the Service indicate your acknowledgment, acceptance, and unconditional agreement to all the terms and conditions and privacy policies set forth herein without modification and you confirm that you are 18 years of age or older. This agreement takes effect immediately upon your first use of the Service. If you do not agree with any part of these terms, you must refrain from using the Service and close all windows.</p>
+                            
+                            <h3>2. Use of Service</h3>
+                        
+                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> is an online platform designed to help developers automate documentation tasks, including the generation of README files, .gitignore files, semantic commit messages, and more. Access to and use of certain features may require authentication via OAuth, where users may choose to grant access to their GitHub account. However, some features remain accessible without authentication. Users are solely responsible for maintaining the confidentiality of their authentication credentials.</p>
+                            
+                            <h3>3. OAuth Authentication and User Responsibilities</h3>
+                        
+                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> utilizes OAuth authentication to allow Users to access their GitHub repositories and perform specific tasks related to their repositories. By authenticating through OAuth, Users grant <strong>GitSet.dev</strong> access to their GitHub account, but only to the extent required for the operation of the requested features.</p>
+                            
+                            <p style="font-weight: 600; max-width: none !important;">
+                                <span><u>Revocation of Access</u></span>: Users may revoke access granted to <italic>GitSet.dev</italic> at any time from 
+                                <a style="color: #3DA798;" href="/settings" target="_blank" rel="noreferrer">Settings</a> page on GitSet.dev, navigating to the "Connected Accounts" section, and selecting "Revoke GitHub Access". 
+                                Additionally, users can manage OAuth applications directly through 
+                                <a href="https://github.com/settings/applications" style="color: #3DA798;" target="_blank" rel="noreferrer">GitHub's settings</a>. 
+                                TO REVOKE ACCESS, CLICK ON 'GITSET.DEV' IN THE LIST OF AUTHORIZED APPLICATIONS, SELECT THE THREE DOTS, AND CHOOSE 'REVOKE'. CONFIRM YOUR ACTION.
+                            </p>
+                            
+                            <p style="font-weight: 600; max-width: none !important;">Users must be aware that revoking access will immediately disable all OAuth functionality provided by GitSet.dev, and the platform will no longer be able to interact with the User's GitHub repositories.</p>
+                            
+                            <h3>4. Security and Data Handling</h3>
+                        
+                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> takes reasonable measures to protect the security and confidentiality of your data. However, as with all digital platforms, no method of transmission or storage is 100% secure. <strong>GitSet.dev</strong> disclaims any responsibility for data breaches resulting from unforeseen vulnerabilities or unauthorized access.</p>
+                        
+                            <h3>5. Disclaimers on AI Functionality</h3>
+                        
+                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> employs AI technology to assist in generating semantic commit messages and README files. While the AI is designed to enhance productivity, it is important to understand that these AI-driven features are experimental and may not always generate perfect or precise results. <strong>GitSet.dev</strong> makes no guarantees regarding the accuracy or reliability of AI-generated content, and Users should verify the outputs before implementing them.</p>
+                            
+                            <p style="max-width: none !important;">User Responsibility: Users are solely responsible for evaluating the generated content and may choose whether to implement or discard AI-suggested commit messages or README entries. <strong>GitSet.dev</strong> will not be held liable for any consequences arising from the use of AI-generated content, including but not limited to any misunderstanding, miscommunication, or offensive text-related output that may be produced.</p>
+                            
+                            <h3>6. Prohibited Activities</h3>
+                        
+                            <p style="max-width: none !important;">You agree not to use <strong>GitSet.dev</strong> for any illegal, harmful, or malicious purposes. This includes, but is not limited to:</p>
+                        
+                            <ul>
+                                <li>-Engaging in activities that may compromise the security of the platform or the integrity of GitHub repositories.</li>
+                                <li>-Using the platform for unauthorized access, or any activities related to hacking, cracking, or circumventing security measures.</li>
+                                <li>-Uploading or sharing harmful software or content, including malware or phishing attempts.</li>
+                                <li>-Engaging in fraudulent or deceptive practices.</li>
+                                <li>-Scraping the platform or using automated tools to collect data from GitSet.dev.</li>
+                                <li>-Copying, modifying, reproducing, or using the platform's source code or any part of it for commercial purposes or for profit-making activities without prior written consent from GitSet.dev</li>
+                            </ul>
+                        
+                            <p style="max-width: none !important;">Any User found to be in violation of these Terms may have their access to <strong>GitSet.dev</strong> revoked, without notice, at the sole discretion of the platform.</p>
+                        
+                            <h3>7. Limitations of Liability</h3>
+                        
+                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> is provided on an "as-is" and "as-available" basis. We make no warranties or representations, express or implied, regarding the functionality, security, or reliability of the Service. In no event will GitSet.dev, its affiliates, or partners be held liable for any direct, indirect, incidental, consequential, or punitive damages arising from the use of the platform or its services.</p>
+                        
+                            <h3>8. Subscription and Future Changes to Service</h3>
+                        
+                            <p style="max-width: none !important;">Some functionalities that are currently available for free on <strong>GitSet.dev</strong> may, in the future, become part of a paid subscription plan. While we strive to maintain access to essential features, Users should be aware that some services may incur charges in the future. Any such changes will be clearly communicated in advance, and Users will be notified of pricing, terms, and conditions related to new subscription services.</p>
+                        
+                            <p style="max-width: none !important;">Any changes to the accessibility or pricing of features will be accompanied by the appropriate updates to the Terms of Service. Continued use of the platform following these updates constitutes acceptance of the new terms.</p>
+                                                            
+                            <h3>9. Modifications to the Terms of Service</h3>
+                        
+                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> reserves the right to update, modify, or revise these Terms of Service at any time. Any changes will be reflected in the updated document, and Users will be notified accordingly. Continued use of the platform after modifications signifies acceptance of the revised Terms.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="flex justify-center">
+                    <p class="text-center text-neutral-700 relative top-6 lg:text-medium mx-auto p-4">
+                    Effective Date: 17/12/2024
+                    </p>
+                </div>
+                <br>
+                <div class="flex justify-center button-wrapper">
+                    <div class="gradient-border">
+                        <a href="/"><button
+                            class="text-neutral-700 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-700 px-6 py-4 rounded-[20px] transition-all duration-300 hover:shadow-[0_0_0_3px_rgb(59,159,168)] dark:hover:shadow-[0_0_0_3px_rgb(59,159,168)] cursor-pointer whitespace-nowrap flex items-center justify-center"
+                        >
+                            Back
+                        </button></a>
+                        
+                    </div>
+                </div>
+                </div>
+                
+                </div>
+            </CTA>
+            </main>
+          </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .main-container {
+        min-height: 100vh;
+        display: flex;
+        margin-top: 6rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 1023px) {
+        .container {
+            max-width: 100% !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+    }
+    
+    h3 {
+        margin-bottom: 1.5rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    p {
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 1023px) {
+        h3 {
+            font-size: 1.125rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .top {
+        margin-top: 6rem;
+    }
+
+    .custom-button {
+        background-color: #3a9fa8;
+        border-color: #fff;
+    }
+
+    .cta-button {
+        background-color: #59b4aa;
+    }
+</style>
