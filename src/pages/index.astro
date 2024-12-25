@@ -1,0 +1,57 @@
+---
+import Footer from '../components/layout/Footer.astro'
+import Header from '../components/layout/Header.astro'
+import Hero from '../sections/Hero.astro'
+import Layout from '../layouts/Layout.astro'
+import Sidebar from '../layouts/Sidebar.astro'
+---
+
+<Layout title="Gitset - Smart AI Docs & Versioning for GitHub Repositories.">
+  <Sidebar />
+    <div class="flex flex-col min-h-screen">
+      <div class="hidden lg:block fixed w-64 h-full">
+        <Sidebar />
+      </div>
+    <br>
+    <div class="flex-1 lg:ml-64 flex flex-col">
+      <Header />
+      <main class="main-container">
+        <Hero
+          align="center"
+          title="<strong>Smart AI Docs & Versioning for GitHub Repositories.</strong>"
+          description="Zero config, instant setup—harness AI to generate and manage GitHub docs effortlessly."
+        >
+        <a class="flex justify-center" href="/dashboard">
+          <button
+            class="text-neutral-700 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-700 px-6 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_0_3px_rgb(59,159,168)] dark:hover:shadow-[0_0_0_3px_rgb(59,159,168)] cursor-pointer whitespace-nowrap flex items-center justify-center"
+          >
+            Get Started
+          </button>
+        </a>
+        </Hero>
+      </main>
+      <Footer />
+  </div>
+</Layout>
+
+<style>
+  .main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .github-browser-container {
+    min-height: 50vh;
+  }
+
+  .custom-button {
+    background-color: #3a9fa8;
+    border-color: #fff;
+  }
+
+  .cta-button {
+    background-color: #59b4aa;
+  }
+</style>
