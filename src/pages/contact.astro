@@ -333,7 +333,6 @@ import Footer from '../components/layout/Footer.astro'
                 console.error('Error:', error);
                 alert(typeof error === 'object' && error !== null && 'message' in error ? error.message : 'Error sending message');
             } finally {
-                // Reactivar el botón
                 button.disabled = false;
                 button.textContent = 'Send';
             }

@@ -407,7 +407,6 @@ import Footer from '../components/layout/Footer.astro'
         const questions = document.querySelectorAll('.faq-question');
         
         questions.forEach(question => {
-            // Aseguramos que question es un HTMLElement
             if (!(question instanceof HTMLElement)) return;
             
             question.addEventListener('click', () => {

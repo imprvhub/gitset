@@ -1,0 +1,39 @@
+---
+import CTA from '../sections/CTA.astro';
+import Footer from '../components/layout/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import Hero from '../sections/Hero.astro';
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../layouts/Sidebar.astro';
+---
+
+<Layout title="Gitset - Smart AI Docs & Versioning for GitHub Repositories.">
+  <Sidebar />
+  <div class="flex flex-col min-h-screen">
+    <div class="hidden lg:block fixed w-64 h-full">
+      <Sidebar />
+    </div>
+    
+    <div class="flex-1 lg:ml-64 flex flex-col">
+      <Header />
+      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-0 top">
+          <br />
+          <div class="flex justify-center mt-16"></div>
+          <CTA
+            
+            align="center"
+            title={`<span id="cta-title"><strong>.gitignore</strong>-Builder</span>`}
+            description={`
+              <span id="cta-description">
+                Choose multiple languages, frameworks, and tools to generate a comprehensive .gitignore file tailored to your codebase. Adjust settings and combine selections as needed.
+              </span>
+            `}
+          >
+          </CTA>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  </div>
+</Layout>
