@@ -2,6 +2,9 @@
   "name": "gitset",
   "type": "module",
   "version": "1.3.0",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",

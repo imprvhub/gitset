@@ -1,7 +1,7 @@
 ---
 import Footer from '../components/layout/Footer.astro'
+import CTA from '../sections/CTA.astro';
 import Header from '../components/layout/Header.astro'
-import Hero from '../sections/Hero.astro'
 import Layout from '../layouts/Layout.astro'
 import Sidebar from '../layouts/Sidebar.astro'
 import { eq, desc } from "drizzle-orm";
@@ -49,24 +49,21 @@ interface SectionProps {
     
     <div class="flex-1 lg:ml-64 flex flex-col">
       <Header />
-      <br>
-      
-      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 dark:bg-gray-900">
-        <br />
-        <br />
-        <br>
-        <br>
-        <div class="flex justify-center">
-          <h1 class="text-neutral-700 relative top-12 text-3xl mb-8 text-gradient text-center">Craft a README.md</h1>
-        </div>
-        
-        <div class="flex justify-center">
-          <p class="text-center text-neutral-500 relative top-12 lg:text-lg mx-auto">
-            Create professional README files with AI assistance.<br />
-            Browse any public repository, or sign in to manage and enhance your own public and private repositories.
-          </p>
-        </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-0 top relative left-3">
+    <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
+      <div class="container relative top-[70px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:mt-0">
+        <div class="flex justify-center"></div>
+        <CTA
+          
+          align="center"
+          title={`<span id="cta-title">Craft a <strong>README.md</strong></span>`}
+          description={`
+            <span id="cta-description">
+              Create professional README files with AI assistance.<br />
+              Browse any public repository, or sign in to manage and enhance your own public and private repositories.
+            </span>
+          `}
+        >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-0 relative left-3">
           <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <a href="/public-ai-readme">
               <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4">
@@ -124,8 +121,10 @@ interface SectionProps {
                   GitHub authentication required
                 </div>
               </div>
-            </a>
+             </a>
+            </div>
           </div>
+          </CTA>
         </div>
       </main>
       <Footer />

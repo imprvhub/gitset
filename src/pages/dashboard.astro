@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CTA from '../sections/CTA.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import Sidebar from '../layouts/Sidebar.astro';
 import { eq, desc } from "drizzle-orm";
 import { db } from "../db";
 import { loginLogs, sessions } from "../db/schema";
-
 
 interface RawGitHubCommit {
   sha: string;
@@ -217,25 +217,31 @@ if (selectedRepo) {
 ---
 
 <Layout title="Gitset - Smart AI Docs & Versioning for GitHub Repositories.">
-  <Sidebar />
-  <Header />
   <div class="flex flex-col min-h-screen">
-    <div class="flex-1 lg:ml-64 flex flex-col pr-0">
+    <div class="hidden lg:block fixed w-64 h-full">
+      <Sidebar />
+    </div>
+    
+    <div class="flex-1 lg:ml-64 flex flex-col">
+      <Header />
       <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-0">
-          <div class="card-container">
-            <div class="card-gradient">
-              <div class="card-content"></div>
-            </div>
-          </div>
+        <div class="container relative top-[70px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:mt-0">
+          <CTA
+            align="center"
+            title={`<span id="cta-title">Welcome to your <strong>Dashboard</strong></span>`}
+            description={`
+              <span id="cta-description">
+              </span>
+            `}
+          >
+          
+          </CTA>
+          <br />
+          <Footer />
         </div>
       </main>
-      <Footer />
     </div>
   </div>
-</div>
-</div>
-
 </Layout>
 <style>
   .dashboard-container {
