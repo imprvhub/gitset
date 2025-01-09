@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
+import Content from '../layouts/Content.astro';
 import CTA from '../sections/CTA.astro';
 import Sidebar from '../layouts/Sidebar.astro';
 import { eq, desc, and, gte } from "drizzle-orm";
@@ -109,18 +110,18 @@ function capitalizeFirstWord(text: string) {
                   <label class="text-neutral-700 block text-sm font-medium text-center mb-1">
                     Email
                   </label>
-                  <span
-                    class="block text-neutral-700 rounded-[10px]  w-full border  rounded-[10px]-md shadow-sm py-1.5 px-3 sm:text-sm dark:border-gray-600 text-center"
+                  <span 
+                    class="block text-neutral-700 rounded-[10px] w-full border shadow-sm py-1.5 px-3 sm:text-sm dark:border-gray-600 text-center break-all whitespace-normal overflow-wrap-anywhere"
                   >
                     {userInfo?.user?.email}
-                  </span>
+                </span>
                 </div>
                 <div class="w-full">
                   <label class="text-neutral-700 block text-sm font-medium  text-center mb-1">
                     Your Name
                   </label>
                   <span
-                    class="text-neutral-700 rounded-[10px] block w-full border rounded-[10px]-md shadow-sm py-1.5 px-3 sm:text-sm  dark:border-gray-600 text-center"
+                    class="block text-neutral-700 rounded-[10px] w-full border shadow-sm py-1.5 px-3 sm:text-sm dark:border-gray-600 text-center break-all whitespace-normal overflow-wrap-anywhere"
                   >
                     {userInfo?.user?.fullName}
                   </span>
@@ -193,7 +194,15 @@ function capitalizeFirstWord(text: string) {
                 </div>
               </div>
             </div>
-
+            <div class="flex flex-col sm:flex-row gap-2.5 mt-4 relative top-4 justify-center">
+              <a href="/">
+                <button
+                    
+                  class="dark:text-neutral-700 text-sm text-neutral-200 dark:bg-neutral-200 bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center order-2 sm:order-1"
+                >
+                  Back
+                </button>
+              </a>
           </div>
         </div>
       </div>
@@ -297,6 +306,7 @@ function capitalizeFirstWord(text: string) {
     background-color: #d32f2f;
   }
 
+  /* Estilo para el modo oscuro */
   @media (prefers-color-scheme: dark) {
     .email-input {
       background-color: #333;
