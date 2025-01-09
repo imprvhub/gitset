@@ -1,3 +1,5 @@
+/* src/styles/global.css */
+
 
 html {
     font-family: 'Roboto', sans-serif;
@@ -17,7 +19,7 @@ h1, h2 {
 
 
 .button-dir {
-    background-color: transparent;
+    background-color: transparent;;
 }
 
 form {

@@ -13,12 +13,15 @@ Encompasses various features, including:
 #### For Authenticated Users:
 - **Personal AI-Readme Generator:** Craft a README.md file with concise documentation from any public or private repository you own.
 - **Commit Messages Generator:** Generate semantic commit messages through automated code analysis. (Auth required).
-- **Tags & Releases Manager:** Manage your project's versioning with a streamlined interface. Create, edit, and track Tags & Releases with AI-driven suggestiones for release notes. It has the ability to generate release notes for your project and improve them after you review them.
+- **Tags & Releases Manager:** Manage your project's versioning with a streamlined interface. Create, edit, delete and track Tags & Releases with AI-driven suggestions for release notes. It has the ability to generate release notes for your project and improve them after you review them.
+- **Code Decommenter:** Clean your code by removing specified types of comments. Select which comments to remove (single-line, multi-line, documentation, or pragma comments) and receive processed code ready for manual implementation.
 - **Repository Assessment Tool:** Get comprenhensive valuations and effort breakdowns for your established repositories. You'll receive repository complexity insights, code analysis, development time calculations, resource allocation metrics, and precise cost estimations based on various experience levels and market factors.
 
 ### Technical Architecture
 
 Based on a modular, service-oriented architecture, it employs distinct service layers to manage client requests, authentication, AI-driven processing, content aggregation, and improvement handling. The design follows best practices for scalability, performance, and security, ensuring a clear separation of concerns between public and protected services.
+
+See this graph online [here](https://www.mermaidchart.com/app/projects/39cc778e-2704-4a81-b724-1d32f4f7c6b0/diagrams/c94b9161-a7b7-472c-86b1-d269e7874fd9/version/v0.1/whiteboard).
 
 ```mermaid
 graph TD
@@ -45,10 +48,17 @@ graph TD
         commitGen[Commit Message Generator React Component]
         releaseMgr[Tags & Release Manager React Component]
         repoAnalytics[Repository Assessment React Component]
+        decommenterService[Code Decommenter React Component]
     end
     
     sessionMgr -->|Authenticated Session| protectedServices
     
+    %% CLI Layer for Tags & Releases
+    subgraph cliLayer[CLI Processing Layer]
+        direction TB
+        gitsetCLI[GitSet CLI Node.js Runtime]
+    end
+
     %% AI Processing for Protected Services (Backend)
     subgraph aiProcessing[AI Processing Backend Layer]
         direction TB
@@ -56,12 +66,15 @@ graph TD
         geminiAI2[Python and Gemini AI Service Backend]
         geminiAI3[Python and Gemini AI Service Backend]
         geminiAI4[Python and Gemini AI Service Backend]
+        geminiAI5[Python and Gemini AI Service Backend]
     end
     
     readmeGen --> geminiAI1
     commitGen --> geminiAI2
-    releaseMgr --> geminiAI3
+    releaseMgr --> gitsetCLI
+    gitsetCLI -->|Command Processing| geminiAI3
     repoAnalytics --> geminiAI4
+    decommenterService --> geminiAI5
     
     %% Public Services Flow
     authGateway -->|Public Access| publicServices[Public Services Layer]
@@ -96,7 +109,6 @@ graph TD
 
 ---
 
-
 #### Frontend Layer
 - **Primary Entry Point**: The frontend service, built on Astro SSR with React.js integration, acts as the main entry point for client requests. It handles user interaction, manages content rendering, and coordinates with both public and protected service layers for data delivery.
 - **Responsibilities**: 
@@ -114,8 +126,16 @@ graph TD
   - Integrates GitHub OAuth for user authentication, managing session tokens and ensuring secure user identification.
   - The session manager is responsible for managing the lifecycle of user sessions.
 
+#### CLI Processing Layer
+- **GitSet CLI**: 
+  - Node.js-based command-line interface that acts as an intermediary processing layer
+  - Handles command interpretation and execution for the Tags & Release Manager
+  - Provides local environment integration for version control operations
+  - Facilitates secure communication between the frontend interface and AI backend services
+  - Processes Git commands and metadata before sending to the AI service for analysis
+
 #### Protected Services Layer
-This layer comprises four core services, which require authentication:
+This layer comprises five core services, which require authentication:
 1. **AI-Readme Generator Service**: 
    - Utilizes Gemini AI to generate detailed, context-aware README files.
    
@@ -123,14 +143,21 @@ This layer comprises four core services, which require authentication:
    - Leverages contextual analysis via Gemini AI to automate commit message creation.
 
 3. **Tags & Release Manager Service**: 
-   - Manages version control, automatic release note generation, and tagging. This service is currently in development and will be officially released shortly.
+   - Manages version control, automatic release note generation, and tagging.
 
 4. **Repository Assessment Service**: 
-   - Provides repository health assessments, analyzing various metrics and insights, powered by Gemini AI. Like the Tags & Release Manager Service, this is in its development phase and will be released in the near future.
+   - Provides repository health assessments, analyzing various metrics and insights, powered by Gemini AI.
+
+5. **Code Decommenter Service**: 
+   - Processes and removes specified types of comments from source code.
+   - Supports multiple comment types: single-line, multi-line, documentation, and pragma comments.
+   - Provides clean, formatted output for manual implementation.
+   - Ensures code functionality remains intact while removing unnecessary documentation.
 
 #### AI Processing Backend Layer
-- This layer implements parallelized AI processing through multiple instances of the Gemini AI backend, with each instance dedicated to specific tasks (e.g., README generation, commit message generation, release management, repository assessment).
+- This layer implements parallelized AI processing through multiple instances of the Gemini AI backend, with each instance dedicated to specific tasks (e.g., README generation, commit message generation, release management, repository assessment, code comment removal).
 - The backend processes requests efficiently and in parallel, ensuring scalability and performance.
+- Each service maintains its own AI processing pipeline to prevent interference and optimize response times.
 
 #### Public Services Layer
 The public services layer is accessible without authentication, providing the following functionalities:
@@ -164,7 +191,7 @@ The system is designed to efficiently handle user requests while maintaining sec
 3. Upon successful authentication, the user session is established, and the user is granted access to the protected services layer.
 
 #### Service Flow (Protected and Public)
-- **Protected Services**: Once authenticated, users can access the protected services. These services interact with their dedicated Gemini AI backend for specific tasks (e.g., managing tags & releases or generating commit messages). The backend processes the requests and returns aggregated results to the frontend.
+- **Protected Services**: Once authenticated, users can access the protected services. These services interact with their dedicated Gemini AI backend for specific tasks (e.g., managing tags & releases, generating commit messages, removing code comments). The backend processes the requests and returns aggregated results to the frontend.
   
 - **Public Services**: These services, which do not require authentication, process user requests and send the output through the aggregation layer. The content is then delivered to the frontend.
 
@@ -205,7 +232,6 @@ The system is designed to efficiently handle user requests while maintaining sec
    npm install
    ```
 
-
 ### Usage
 
 1. Run `npm run dev` to start the development server.
@@ -219,7 +245,6 @@ The system is designed to efficiently handle user requests while maintaining sec
 - **lucide-react:** A set of customizable SVG icons for React.
 - **react-icons/fa:** A set of Font Awesome icons for React.
 - **diff:** A library for generating unified diffs.
-
 
 ### Contributing
 
