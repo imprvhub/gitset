@@ -1,4 +1,5 @@
 ---
+import CTA from '../sections/CTA.astro'
 import Footer from '../components/layout/Footer.astro'
 import Header from '../components/layout/Header.astro'
 import Hero from '../sections/Hero.astro'
@@ -23,12 +24,13 @@ import Sidebar from '../layouts/Sidebar.astro'
         >
         <a class="flex justify-center" href="/dashboard">
           <button
-            class="text-neutral-700 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-700 px-6 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_0_3px_rgb(59,159,168)] dark:hover:shadow-[0_0_0_3px_rgb(59,159,168)] cursor-pointer whitespace-nowrap flex items-center justify-center"
+            class="dark:text-neutral-700 text-neutral-200 dark:bg-neutral-200 bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center"
           >
             Get Started
           </button>
         </a>
         </Hero>
+        
       </main>
       <Footer />
   </div>
@@ -55,3 +57,17 @@ import Sidebar from '../layouts/Sidebar.astro'
     background-color: #59b4aa;
   }
 </style>
+
+<script>
+  function updateCTA() {
+    const ctaTitle = document.getElementById('cta-title');
+    const ctaDescription = document.getElementById('cta-description');
+    
+    if (ctaTitle && ctaDescription) {
+      ctaTitle.innerHTML = "Generated <strong>Readme</strong>";
+      ctaDescription.textContent = "The generated README.md is a general reference and may not be fully accurate. If it doesn't meet your expectations, feel free to try again.";
+    }
+  }
+
+  window.addEventListener('readmeGenerated', updateCTA);
+</script>
