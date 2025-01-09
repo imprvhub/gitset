@@ -1,4 +1,7 @@
 ---
+
+import Code from '../components/ui/Code.astro'
+import { FaChevronLeft } from 'react-icons/fa';
 import CTA from '../sections/CTA.astro'
 import Footer from '../components/layout/Footer.astro'
 import Header from '../components/layout/Header.astro'
@@ -59,7 +62,7 @@ const githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy ==
             title={`<span id="cta-title"><strong>Personal AI</strong>-Readme Generator</span>`}
             description={`
               <span id="cta-description">
-                Craft a README.md file with concise documentation from <strong>any</strong> public or private repository you own.
+                Craft a README.md file with concise documentation from <span style="font-weight:500">any public or private chosen repository you own</span>.
               </span>
             `}
           >

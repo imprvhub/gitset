@@ -1,7 +1,9 @@
 ---
+import { Button, Input } from 'free-astro-components'
 import Footer from '../components/layout/Footer.astro'
 import CTA from '../sections/CTA.astro';
 import Header from '../components/layout/Header.astro'
+import Hero from '../sections/Hero.astro'
 import Layout from '../layouts/Layout.astro'
 import Sidebar from '../layouts/Sidebar.astro'
 import { eq, desc } from "drizzle-orm";
@@ -86,7 +88,7 @@ interface SectionProps {
                   Public AI-Readme Generator
                 </h3>
                 <p class="text-neutral-700  text-center text-medium mb-2">
-                  Generate README for <strong>any public repository from any GitHub user</strong>
+                  Generate README for <span style="font-weight: 500;">any public repository from any GitHub user</span>
                 </p>
                 <div class="text-neutral-400  text-center text-sm">
                   No authentication required
@@ -115,7 +117,7 @@ interface SectionProps {
                   Personal AI-Readme Generator
                 </h3>
                 <p class="text-neutral-700 text-center text-medium mb-2">
-                  Generate README <strong>from any public or private repository you own.</strong>
+                  Generate README for <span style="font-weight: 500;">any public or private repository you own</span>.
                 </p>
                 <div class="text-[#59b4aa] text-center text-sm">
                   GitHub authentication required
@@ -124,6 +126,15 @@ interface SectionProps {
              </a>
             </div>
           </div>
+          <div class="flex flex-col sm:flex-row gap-2.5 mt-4 relative top-4 justify-center">
+            <a href="/">
+              <button
+                  
+                class="dark:text-neutral-700 text-sm text-neutral-200 dark:bg-neutral-200 bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center order-2 sm:order-1"
+              >
+                Back
+              </button>
+            </a>
           </CTA>
         </div>
       </main>
