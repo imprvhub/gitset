@@ -38,7 +38,7 @@ import CTA from '../sections/CTA.astro'
                             
                             <h3>2. Use of Service</h3>
                         
-                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> is an online platform designed to help developers automate documentation tasks, including the generation of README files, .gitignore files, semantic commit messages, and more. Access to and use of certain features may require authentication via OAuth, where users may choose to grant access to their GitHub account. However, some features remain accessible without authentication. Users are solely responsible for maintaining the confidentiality of their authentication credentials.</p>
+                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> is an online platform designed to help developers automate documentation tasks, including the generation of README files, .gitignore files, semantic commit messages, tags and releases, repository assessments or remove code comments and more. Access to and use of certain features may require authentication via OAuth, where users may choose to grant access to their GitHub account. However, some features remain accessible without authentication. Users are solely responsible for maintaining the confidentiality of their authentication credentials.</p>
                             
                             <h3>3. OAuth Authentication and User Responsibilities</h3>
                         
@@ -59,11 +59,39 @@ import CTA from '../sections/CTA.astro'
                             <p style="max-width: none !important;"><strong>GitSet.dev</strong> takes reasonable measures to protect the security and confidentiality of your data. However, as with all digital platforms, no method of transmission or storage is 100% secure. <strong>GitSet.dev</strong> disclaims any responsibility for data breaches resulting from unforeseen vulnerabilities or unauthorized access.</p>
                         
                             <h3>5. Disclaimers on AI Functionality</h3>
-                        
-                            <p style="max-width: none !important;"><strong>GitSet.dev</strong> employs AI technology to assist in generating semantic commit messages and README files. While the AI is designed to enhance productivity, it is important to understand that these AI-driven features are experimental and may not always generate perfect or precise results. <strong>GitSet.dev</strong> makes no guarantees regarding the accuracy or reliability of AI-generated content, and Users should verify the outputs before implementing them.</p>
-                            
-                            <p style="max-width: none !important;">User Responsibility: Users are solely responsible for evaluating the generated content and may choose whether to implement or discard AI-suggested commit messages or README entries. <strong>GitSet.dev</strong> will not be held liable for any consequences arising from the use of AI-generated content, including but not limited to any misunderstanding, miscommunication, or offensive text-related output that may be produced.</p>
-                            
+
+                            <p style="max-width: none !important;">
+                                <strong>GitSet.dev</strong> leverages AI-driven text generation for several features, including semantic commit message generation via our CLI tool, automated AI-driven release note creation, code comment removal, repository assessments, and more. While these AI-powered tools aim to enhance productivity, it is important to note that they are experimental and may not always produce flawless or accurate results. <strong>GitSet.dev</strong> does not guarantee the accuracy or reliability of AI-generated content, and users are advised to verify outputs before implementation.
+                            </p>
+
+                            <p style="max-width: none !important;">
+                                <strong>CLI Tool Usage:</strong> The GitSet CLI tool provides suggested commit messages through terminal commands. These suggestions are generated automatically and must be manually reviewed, copied, and applied by the user. While the tool does not perform commits or modify repositories directly, users should ensure the suggested commit messages are appropriate, accurate, and free from unintended or offensive language before use. GitSet.dev assumes no responsibility for the content or interpretation of AI-generated suggestions.
+                            </p>
+
+                            <p style="max-width: none !important;">
+                                <strong>Tags and Releases Manager:</strong> This feature includes operations such as creating, editing, and deleting tags and releases. While most actions are non-destructive, users should exercise caution when performing deletions, as these operations cannot be undone. GitSet.dev is not liable for unintended consequences resulting from the deletion of tags or releases.
+                            </p>
+
+                            <p style="max-width: none !important;">
+                                <strong>Code Decommenter Tool:</strong> This feature provides automated removal of code comments based on user-selected preferences. Users should be aware that:<br>
+                                - The tool processes code as provided and removes comments based on pattern recognition<br>
+                                - While designed to preserve code functionality, users must verify the processed output<br>
+                                - The tool does not execute or modify repository code directly<br>
+                                - Users are responsible for reviewing and testing the processed code before implementation<br>
+                                - GitSet.dev is not liable for any issues arising from the use of processed code<br>
+                                - Processed code is provided "as-is" without any guarantees of completeness or accuracy<br>
+                            </p>
+
+                            <p style="max-width: none !important;">
+                                <strong>Repository Assessment Tool:</strong> All valuations, cost estimates, and resource calculations provided by this tool are for reference purposes only and do not constitute official appraisals or legal documentation.
+                            </p>
+
+                            <p style="max-width: none !important;">
+                                <u>User Responsibility:</u> Users bear full responsibility for evaluating AI-generated content and determining whether to implement or disregard suggested commit messages and README entries. For tag and release management, users are solely accountable for the creation, editing, or deletion of repository versions.
+                            </p>
+
+                            <p style="max-width: none !important;"> As you utilize the CLI Tool and the Tags and Releases Manager, you agree to the following: Ensure that the CLI Tool is installed and used in strict accordance with the provided documentation. Carefully review all suggested commit messages to verify their accuracy and appropriateness, recognizing that the tool does not execute commits or modify repositories directly. Avoid relying solely on AI-generated suggestions for critical repository changes. When working with the Tags and Releases Manager, exercise caution, particularly during deletion operations, maintain proper documentation for release management, thoroughly review AI-generated release notes prior to publication, and assume full responsibility for any modifications made to tags and releases. </p>
+
                             <h3>6. Prohibited Activities</h3>
                         
                             <p style="max-width: none !important;">You agree not to use <strong>GitSet.dev</strong> for any illegal, harmful, or malicious purposes. This includes, but is not limited to:</p>
@@ -105,12 +133,12 @@ import CTA from '../sections/CTA.astro'
                 <div class="flex justify-center button-wrapper">
                     <div class="gradient-border">
                         <a href="/"><button
-                            class="text-neutral-700 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-700 px-6 py-4 rounded-[20px] transition-all duration-300 hover:shadow-[0_0_0_3px_rgb(59,159,168)] dark:hover:shadow-[0_0_0_3px_rgb(59,159,168)] cursor-pointer whitespace-nowrap flex items-center justify-center"
+                            class="dark:text-neutral-700 text-sm text-neutral-200 dark:bg-neutral-200 bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center"
                         >
                             Back
                         </button></a>
                         
-                    </div>
+                </div>
                 </div>
                 </div>
                 

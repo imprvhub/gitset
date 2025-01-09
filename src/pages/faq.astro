@@ -43,7 +43,7 @@ import Footer from '../components/layout/Footer.astro'
                                         What is GitSet.dev?
                                     </button>
                                     <div class="faq-answer">
-                                        GitSet.dev serves as a comprehensive platform that streamlines Git-related documentation processes. The platform offers tools for automated README generation, .gitignore file creation, and semantic commit message generation, leveraging advanced AI technology to enhance developer workflows.
+                                        GitSet.dev serves as a comprehensive platform that streamlines Git-related documentation processes. The platform offers tools for automated README generation, .gitignore file creation, semantic commit message generation, tags & releases management, repository assessment, leveraging advanced AI technology to enhance developer workflows.
                                     </div>
                                 </div>
                     
@@ -57,15 +57,28 @@ import Footer from '../components/layout/Footer.astro'
                                         Which features are currently available?
                                     </button>
                                     <div class="faq-answer">
-                                        GitSet.dev currently offers four main features:
+                                        GitSet.dev currently offers the following features:
                                         <br><br>
-                                        1. Public AI-Readme Generator: Creates README.md files for any public repository without authentication requirements.
+                                        <strong>Public AI-Readme Generator:</strong>  
+                                        Creates README.md files for any public repository by automatically generating concise documentation. This feature does not require authentication.
                                         <br><br>
-                                        2. Personal AI-Readme Generator: Generates README.md files for public or private repositories owned by authenticated users (OAuth required).
+                                        <strong>Personal AI-Readme Generator:</strong>  
+                                        Generates customized README.md files for public or private repositories owned by authenticated users (OAuth required). Provides tailored documentation based on the repository's content.
                                         <br><br>
-                                        3. .gitignore Builder: Creates customized .gitignore files for multiple languages and frameworks (no authentication required).
+                                        <strong>.gitignore Builder:</strong>  
+                                        Customizes .gitignore files for multiple languages, frameworks, and tools relevant to your project. No authentication is needed.
                                         <br><br>
-                                        4. Commit Messages Generator: Provides semantic commit messages through code analysis (OAuth required).
+                                        <strong>Commit Messages Generator:</strong>  
+                                        This tool is a CLI that provides semantic commit messages based on code changes in staged files through automated analysis (OAuth required). This feature ensures accurate commit suggestions, which can be reviewed and applied manually.
+                                        <br><br>
+                                        <strong>Tags & Releases Manager:</strong>  
+                                        Enables management of tags and releases in your repositories. Users can create, edit, and delete tags or releases, and generate release notes using AI. Manual confirmation is required for all actions, and operations are fully reversible through Git.
+                                        <br><br>
+                                        <strong>Code Decommenter:</strong>  
+                                        Removes unnecessary comments from your code based on your preferences. You can select which types of comments to remove (single-line comments, multi-line comments, documentation comments, or pragma comments), and the tool will provide you with clean, formatted code ready for review. This tool processes code without making direct modifications to repositories - you'll need to manually implement any changes.
+                                        <br><br>
+                                        <strong>Repository Assessment Tool:</strong>  
+                                        Analyzes repository structure, complexity, time/resource estimates, and cost intelligence, providing detailed reports for better project planning. This feature only reads the repository and does not modify it.
                                     </div>
                                 </div>
                     
@@ -96,13 +109,19 @@ import Footer from '../components/layout/Footer.astro'
                                         Which features require GitHub authentication?
                                     </button>
                                     <div class="faq-answer">
-                                        Two features require GitHub OAuth authentication:
+                                        The following features require GitHub OAuth authentication:
                                         <br><br>
-                                        1. Personal AI-Readme Generator - For accessing private repositories and generating customized documentation
+                                        1. <strong>Personal AI-Readme Generator</strong> - For accessing private repositories and generating customized documentation.
                                         <br><br>
-                                        2. Commit Messages Generator - For analyzing repository changes and generating semantic commit messages
+                                        2. <strong>Commit Messages Generator</strong> - For analyzing repository changes to provide AI context for generating semantic commit messages.
                                         <br><br>
-                                        The Public AI-Readme Generator and .gitignore Builder can be used without authentication.
+                                        3. <strong>Tags & Releases Manager</strong> - For creating, editing, and managing tags and releases within your repositories.
+                                        <br><br>
+                                        4. <strong>Repository Assessment Tool</strong> - For reading repository code to generate detailed reports on code complexity, development time, resource allocation, and cost estimates.
+                                        <br><br>
+                                        5. <strong>Code Decommenter</strong> - For processing and cleaning code by removing specified types of comments (single-line, multi-line, documentation, or pragma comments).
+                                        <br><br>
+                                        The <strong>Public AI-Readme Generator</strong> and <strong>.gitignore Builder</strong> can be used without authentication.
                                     </div>
                                 </div>
                     
@@ -168,9 +187,42 @@ import Footer from '../components/layout/Footer.astro'
                                         Is there any risk of losing access to my account or having my repository deleted?
                                     </button>
                                     <div class="faq-answer">
-                                        Your account and repositories are completely secure. GitSet.dev requires repo scope permissions solely to read repository data and provide AI-based suggestions. The platform is strictly read-only, generating recommendations like README files or commit messages for your review, without writing, modifying, or deleting any content. All changes are fully under your control and must be applied manually. <br><br> To clarify: <strong>NO commits will be created, and NO README.md files will be uploaded to your repository.</strong> It's important to note that the 'repo' scope is necessary because other scopes like 'repo:status' don't allow code visualization, which is crucial for our features. Without being able to analyze the actual code, diffs, and other repository content, it would be impossible to generate accurate README files or commit messages - even if we had basic access to private repositories and their branches. There's simply no way to perform proper code analysis without the 'repo' scope. You can learn more about GitHub OAuth scopes in the <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps" style="color: #3DA798;" target="_blank" rel="noreferrer">official GitHub documentation</a>.
+                                        GitSet.dev ensures your account and repositories are secure. Below is a detailed overview of the features available on the platform, their permissions, and their impact on your repositories:<br>
+                                        
+                                        <br>🔒 <strong>Read-only Features:</strong>
+                                        
+                                        <br>-<strong>Commit Message Generator:</strong>
+                                        <br>GitSet CLI automatically generates semantic commit messages based on your code changes, streamlining the commit process. You can integrate it into your project by installing the GitSet CLI, allowing you to generate commit messages without manually writing them. This feature does not modify your repository or code. It only generates suggestions for you to review and apply as needed.<br>
+                                        
+                                        <br>-<strong>Repository Assessment Tool:</strong>
+                                        <br>This tool analyzes your repository's structure and provides insights into code complexity, development time, resource allocation, and cost estimates. It only reads your code, offering detailed reports and evaluations but does not make any changes to the repository itself.<br>
+                                        
+                                        <br>-<strong>Public AI-README Generator:</strong>  
+                                        <br>Creates README.md files from public repositories by automatically generating concise documentation. This tool reads the contents of public repositories and generates suggestions based on the project details, but no changes are made to the repository itself.<br>
+                                        
+                                        <br>-<strong>Personal AI-README Generator:</strong>
+                                        <br>Similar to the public version, this tool generates README.md files but for your private repositories. It provides tailored documentation suggestions based on your repository’s content and is available only for repositories you own. No changes are made to the repository itself.<br>
+                                        
+                                        <br>-<strong>Git Ignore Builder:</strong>  
+                                        <br>Generate comprehensive .gitignore files by selecting languages, frameworks, and tools relevant to your codebase. This feature helps you create a customized .gitignore file, ensuring proper exclusions for your project, without making any direct changes to your repository.<br>
+                                        
+                                        <br>✏️ <strong>Write-capable Features:</strong>
+                                        
+                                        <br>-<strong>Tags & Releases Manager:</strong>
+                                        <br>This tool enables you to manage your project's versioning by creating, editing, and deleting tags and releases. When creating a release, you can opt to generate release notes using AI. If the generated notes are unsatisfactory, you can refine them by providing additional inputs, ensuring that the final notes meet your expectations. Each operation requires your explicit confirmation, and all actions are logged and can be undone using Git.<br>
+                                        
+                                        <br><br>📋 <strong>Important Notes:</strong>
+                                        <br>- The GitSet CLI only suggests commit messages, and does not automatically commit changes to your repository.  
+                                        <br>- The README generators create suggestions for you to review and implement manually.  
+                                        <br>- No code modifications or commits are made automatically; all operations remain under your control.  
+                                        <br>- The 'repo' OAuth scope is necessary to enable code analysis features and generate accurate suggestions. Without this scope, accurate suggestions cannot be provided, as limited scopes do not allow code inspection.  
+                                        <br>- All operations in the Tags & Releases Manager require your confirmation and are fully reversible through Git.
+                                        
+                                        <br><br>For more information on GitHub OAuth scopes, visit the <a href="https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps" style="color: #3DA798;" target="_blank" rel="noreferrer">official GitHub documentation</a>. To manage or revoke permissions, you can always visit the <a href="/settings" style="color: #3DA798;">Settings</a> page on GitSet.dev.
                                     </div>
+                                    
                                 </div>
+                            
                             </div>
                         
                             <h3>Technical Details</h3>
@@ -185,11 +237,10 @@ import Footer from '../components/layout/Footer.astro'
                                         Does GitSet.dev store generated content?
                                     </button>
                                     <div class="faq-answer">
-                                        No, GitSet.dev does not store or retain any generated content (README files, commit messages, or .gitignore files) beyond the immediate session. Once generated, content must be saved or implemented by the user as it will not be accessible after the session ends.
+                                        No, GitSet.dev does not store or retain any generated content (README files, commit messages, .gitignore files, tags, releases notes, or repository assessments) beyond the immediate session. Once generated, content must be saved or implemented by the user as it will not be accessible after the session ends.
                                     </div>
                                 </div>
-                    
-                                <!-- Update to existing OAuth permissions answer -->
+
                                 <div class="faq-item">
                                     <button class="faq-question">
                                         <span class="chevron">
@@ -204,48 +255,7 @@ import Footer from '../components/layout/Footer.astro'
                                     </div>
                                 </div>
 
-                                <!-- New FAQ items -->
-                                <div class="faq-item">
-                                    <button class="faq-question">
-                                        <span class="chevron">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                            </svg>
-                                        </span>
-                                        What are the upcoming features for GitSet.dev?
-                                    </button>
-                                    <div class="faq-answer">
-                                        GitSet.dev is actively developing new features to enhance repository management. One upcoming feature is the Tags and Releases Manager, which will help users manage repository tags and generate AI-powered release notes. This feature will require repository write permissions as it will create and modify tags and releases directly in your repositories. We'll announce new features and any additional required permissions well in advance of their implementation.
-                                    </div>
-                                </div>
-
-                                <div class="faq-item">
-                                    <button class="faq-question">
-                                        <span class="chevron">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                            </svg>
-                                        </span>
-                                        How does the Personal AI-Readme Generator work with private repositories?
-                                    </button>
-                                    <div class="faq-answer">
-                                        The Personal AI-Readme Generator can access both public and private repositories through GitHub authentication. Once authenticated, you can select any repository you own and choose specific branches for README generation. The tool analyzes the repository content and structure to generate appropriate documentation. This feature is particularly useful for maintaining consistent documentation across multiple branches of private projects.
-                                    </div>
-                                </div>
-
-                                <div class="faq-item">
-                                    <button class="faq-question">
-                                        <span class="chevron">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                            </svg>
-                                        </span>
-                                        How does the Commit Messages Generator analyze repository changes?
-                                    </button>
-                                    <div class="faq-answer">
-                                        The Commit Messages Generator analyzes the differences between the current code, derived from the remote file analysis, and the newly uploaded files—submitted via drag and drop—ensuring that the new files have identical names to the existing ones. This approach optimizes processing efficiency. The tool then leverages AI to generate semantic commit messages based on the detected code changes, providing clear and contextually accurate summaries of the modifications across repositories or branches under your ownership.
-                                </div>
-
+                                                        
                                 <div class="faq-item">
                                     <button class="faq-question">
                                         <span class="chevron">
@@ -260,26 +270,14 @@ import Footer from '../components/layout/Footer.astro'
                                     </div>
                                 </div>
 
-                                <div class="faq-item">
-                                    <button class="faq-question">
-                                        <span class="chevron">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                            </svg>
-                                        </span>
-                                        Will GitSet.dev require additional permissions in the future?
-                                    </button>
-                                    <div class="faq-answer">
-                                        As GitSet.dev evolves, new features may require additional GitHub permissions. For example, the upcoming Tags and Releases Manager will need write permissions to create tags and releases. We follow a principle of requesting only the minimum necessary permissions for each feature, and we'll always communicate any permission changes clearly before implementing new features.
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                         <br>
                         <div class="flex justify-center button-wrapper">
                             <div class="gradient-border mb-10">
                                 <a href="/"><button
-                                    class="text-neutral-700 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-700 px-6 py-4 rounded-[20px] transition-all duration-300 hover:shadow-[0_0_0_3px_rgb(59,159,168)] dark:hover:shadow-[0_0_0_3px_rgb(59,159,168)] cursor-pointer whitespace-nowrap flex items-center justify-center"
+                                    class="dark:text-neutral-700 text-sm text-neutral-200 dark:bg-neutral-200 bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center"
                                 >
                                     Back
                                 </button></a>
@@ -420,7 +418,6 @@ import Footer from '../components/layout/Footer.astro'
                 answer.classList.toggle('active');
                 
                 questions.forEach(otherQuestion => {
-                    // Aseguramos que otherQuestion es un HTMLElement
                     if (!(otherQuestion instanceof HTMLElement)) return;
                     if (otherQuestion === question) return;
 
