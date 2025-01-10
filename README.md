@@ -1,4 +1,13 @@
 <div align="center">
+    <img src="https://gitset.dev/favicon-114-precomposed.png" alt="Gitset" />
+    <br>
+    <a href="https://github.com/imprvhub/gitset">
+        <img src="https://img.shields.io/github/v/release/imprvhub/gitset?color=%237BFEF5" alt="version" />
+    </a>
+
+</div>
+
+<div align="center">
     <h3>
         <a href="https://github.com/gitset-dev/gitset-cli" target="_blank">
             GitSet.dev - Smart AI Docs & Versioning for GitHub Repositories.
@@ -8,14 +17,7 @@
 
 <hr>
 
-<div align="center">
-    <img src="https://gitset.dev/favicon-114-precomposed.png" alt="Gitset" />
-    <br>
-    <a href="https://github.com/imprvhub/gitset">
-        <img src="https://img.shields.io/github/v/release/imprvhub/gitset?color=%237BFEF5" alt="version" />
-    </a>
 
-</div>
 
 <br>
     
