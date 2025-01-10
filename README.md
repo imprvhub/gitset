@@ -1,27 +1,62 @@
-## GitSet.dev - Smart AI Docs & Versioning for GitHub Repositories.
+<div align="center">
+    <h3>
+        <a href="https://github.com/gitset-dev/gitset-cli" target="_blank">
+            GitSet.dev - Smart AI Docs & Versioning for GitHub Repositories.
+        </a>
+    </h3>
+</div>
 
-**GitSet.dev** is a powerful suite of tools built to streamline your Git-related workflows and documentation processes. It blends AI-powered suggestions with user-requested improvements, continuously refining results to deliver customized, optimized outcomes.
+<hr>
+
+<div align="center">
+    <img src="https://gitset.dev/favicon-114-precomposed.png" alt="Gitset" />
+    <br>
+    <a href="https://github.com/imprvhub/gitset">
+        <img src="https://img.shields.io/github/v/release/imprvhub/gitset?color=%237BFEF5" alt="version" />
+    </a>
+
+</div>
+
+<br>
+    
+  <strong>GitSet.dev</strong> is a comprehensive suite of <strong>AI-driven</strong> tools designed to enhance GitHub workflows and documentation processes. Built on 
+  <strong>Astro.js/React.js</strong> and seamlessly integrating <strong>8 Python-based backends (FastAPI and Flask)</strong> with Google’s Gemini Pro AI layers, it blends AI-powered 
+  suggestions with user-requested improvements, continuously refining results to deliver customized, optimized outcomes. It offers both public utilities and authenticated services to 
+  streamline repository management, documentation, version control tasks and more.
+  
+  <br>
+
+</div>
+
+ 
+<div align="center">
+
+  <img src="https://ivanluna.dev/images/assets/gitset-preview-rounded.png" alt="GitSet.dev Preview" />
+
+
+</div>
+
+
 
 ### Core Features
 
 Encompasses various features, including:
 
-#### For Public Users:
-- **Public AI-Readme Generator:** Craft a README.md file featuring concise documentation from any chosen public repository.
-- **.gitignore Builder:** Choose multiple languages, frameworks, and tools to generate a comprehensive .gitignore file tailored to your codebase. Adjust settings and combine selections as needed.
+#### Public Tools (No Authentication Required):
+- **Public AI-Readme Generator:** Generates a README.md for any public repository from any Github user using AI. (Flask)
+- **.gitignore Builder:** Crafts customized .gitignore files by selecting multiple languages and frameworks and tools.
 
-#### For Authenticated Users:
-- **Personal AI-Readme Generator:** Craft a README.md file with concise documentation from any public or private repository you own.
-- **Commit Messages Generator:** Generate semantic commit messages through automated code analysis. (Auth required).
-- **Tags & Releases Manager:** Manage your project's versioning with a streamlined interface. Create, edit, delete and track Tags & Releases with AI-driven suggestions for release notes. It has the ability to generate release notes for your project and improve them after you review them.
-- **Code Decommenter:** Clean your code by removing specified types of comments. Select which comments to remove (single-line, multi-line, documentation, or pragma comments) and receive processed code ready for manual implementation.
-- **Repository Assessment Tool:** Get comprenhensive valuations and effort breakdowns for your established repositories. You'll receive repository complexity insights, code analysis, development time calculations, resource allocation metrics, and precise cost estimations based on various experience levels and market factors.
+#### Authenticated Services::
+- **Personal AI-Readme Generator:** Generates a README.md for any public or private repository of the authenticated user.
+- **Commit Messages Generator:** Suggests semantic or custom commit messages for local staged Git files.- _Gitset CLI required_.
+- **Tags & Releases Manager:** Streamline version control management with AI-driven release note suggestions and user-requested improvements.
+- **Code Decommenter:** Removes specific types of comments from code while preserving functionality, supporting most major programming languages.
+- **Repository Assessment Tool:** Provides detailed evaluations and effort breakdowns for established repositories. 
 
 ### Technical Architecture
 
 Based on a modular, service-oriented architecture, it employs distinct service layers to manage client requests, authentication, AI-driven processing, content aggregation, and improvement handling. The design follows best practices for scalability, performance, and security, ensuring a clear separation of concerns between public and protected services.
 
-See this graph online [here](https://www.mermaidchart.com/app/projects/39cc778e-2704-4a81-b724-1d32f4f7c6b0/diagrams/c94b9161-a7b7-472c-86b1-d269e7874fd9/version/v0.1/whiteboard).
 
 ```mermaid
 graph TD
@@ -106,6 +141,15 @@ graph TD
     frontend -->|User Improvement Request| improvementHandler
     improvementHandler -->|Refined Content Request| contentAggregator
 ```
+
+
+<div align="center">
+
+
+### View this graph in an interactive editor with zoom capabilities [here](https://www.mermaidchart.com/app/projects/39cc778e-2704-4a81-b724-1d32f4f7c6b0/diagrams/c94b9161-a7b7-472c-86b1-d269e7874fd9/version/v0.1/whiteboard).
+
+
+</div>
 
 ---
 
