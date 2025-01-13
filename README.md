@@ -13,7 +13,7 @@
 <div align="center">
     <h3>
         <a href="https://gitset.dev" target="_blank">
-            GitSet.dev - Smart AI Docs & Versioning for GitHub Repositories.
+            GitSet.dev - Advanced AI-Driven GitHub Tools Suite.
         </a>
     </h3>
 </div>
@@ -23,12 +23,9 @@
 
 <br>
     
-  <strong>GitSet.dev</strong> is a comprehensive suite of <strong>AI-driven</strong> tools designed to enhance GitHub workflows and documentation processes. Built on 
-  <strong>Astro.js/React.js</strong> and seamlessly integrating <strong>8 Python-based backends (FastAPI and Flask)</strong> with Google’s Gemini Pro AI layers, it blends AI-powered 
-  suggestions with user-requested improvements, continuously refining results to deliver customized, optimized outcomes. It offers both public utilities and authenticated services to 
-  streamline repository management, documentation, version control tasks and more.
-  
-  <br>
+ <strong>GitSet.dev</strong> is a comprehensive suite of <strong>AI-driven</strong> tools that enhances your GitHub development experience. It provides solutions for streamlined repository management, precise versioning, and clear documentation. Built with   <strong>Astro.js/React.js</strong>, and integrating <strong>8 Python-based backends (FastAPI and Flask)</strong>, it combines AI-powered suggestions with user-requested improvements, continuously refining results to deliver optimized outcomes. It offers both public utilities and authenticated services to streamline repository management, documentation, version control tasks and more.
+
+<br>
 
 </div>
 
