@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro';
 import Content from '../layouts/Content.astro';
 import CTA from '../sections/CTA.astro';
 import Sidebar from '../layouts/Sidebar.astro';
+
 import { eq, desc, and, gte } from "drizzle-orm";
 import { db } from "../db";
 import { loginLogs, sessions } from "../db/schema";
@@ -78,7 +79,7 @@ function capitalizeFirstWord(text: string) {
 }
 
 ---
-<Layout title="Gitset - Smart AI Docs & Versioning for GitHub Repositories.">
+<Layout title="Gitset - Advanced AI-Driven GitHub Tools Suite.">
   <Sidebar />
   <div class="flex flex-col min-h-screen">
     <div class="hidden lg:block fixed w-64 h-full">
@@ -194,7 +195,7 @@ function capitalizeFirstWord(text: string) {
                 </div>
               </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-2.5 mt-4 relative top-4 justify-center">
+            <div class="flex mx-auto my-0 gap-2.5 mt-4 relative top-4 justify-center">
               <a href="/">
                 <button
                     

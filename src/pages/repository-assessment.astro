@@ -1,10 +1,7 @@
 ---
-import Code from '../components/ui/Code.astro'
-import { FaChevronLeft } from 'react-icons/fa';
 import CTA from '../sections/CTA.astro'
 import Footer from '../components/layout/Footer.astro'
 import Header from '../components/layout/Header.astro'
-import Hero from '../sections/Hero.astro'
 import Layout from '../layouts/Layout.astro'
 import Sidebar from '../layouts/Sidebar.astro'
 import { eq, desc } from "drizzle-orm";
@@ -41,7 +38,7 @@ const userInfo = await db.query.sessions.findFirst({
 const githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy === 'github')?.accessToken;
 ---
 
-<Layout title="Gitset - Smart AI Docs & Versioning for GitHub Repositories.">
+<Layout title="Gitset - Advanced AI-Driven GitHub Tools Suite.">
   <Sidebar />
   <div class="flex flex-col min-h-screen">
     <div class="hidden lg:block fixed w-64 h-full">
