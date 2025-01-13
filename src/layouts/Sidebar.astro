@@ -3,7 +3,7 @@ import Nav from '../components/layout/Nav.astro'
 import NavItem from '../components/layout/NavItem.astro';
 import NavLink from '../components/layout/NavLink.astro';
 import { Delete } from 'lucide-react'
-import { FaHome, FaTerminal, FaBook, FaTags, FaUserAlt, FaFileCode, FaSignOutAlt, FaSignInAlt, FaColumns, FaCog, FaTasks, FaFileAlt } from 'react-icons/fa';
+import { FaHome, FaTerminal, FaBook, FaTags, FaTools, FaFileCode, FaSignOutAlt, FaSignInAlt, FaColumns, FaCog, FaTasks, FaFileAlt } from 'react-icons/fa';
 
 const { class: className } = Astro.props;
 const userIsLoggedIn = !!Astro.locals.userId;
@@ -22,6 +22,7 @@ const userIsLoggedIn = !!Astro.locals.userId;
     <Nav>
       <br>
       <NavLink href="/" label="Home" icon={FaHome} />
+      <NavLink href="/github-status" label="Github Status" icon={FaTools} />
       <NavItem title="Features" open>
         {userIsLoggedIn ? (
           <>
