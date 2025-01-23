@@ -30,7 +30,7 @@ import Footer from '../components/layout/Footer.astro'
             >
                 <div class="flex justify-center mt-8">
                     <div class="shadow-lg rounded-lg p-6 max-w-4xl w-full">
-                        <div class="prose prose-lg text-neutral-700 dark:text-neutral-200 !text-left">
+                        <div class="prose prose-lg !text-left">
                             <h3>General Information</h3>
                             <div class="faq-container">
                                 <div class="faq-item">
@@ -92,10 +92,27 @@ import Footer from '../components/layout/Footer.astro'
                                         Is GitSet.dev free to use?
                                     </button>
                                     <div class="faq-answer">
-                                        Currently, all features on GitSet.dev are available free of charge. While subscription plans may be introduced in the future, any changes to the pricing structure will be communicated well in advance to users. Users will be notified of any updates to terms and conditions related to new subscription services.
+                                        Currently, all features of <strong>Gitset.dev</strong> are available at no cost. However, users on the 'basic' plan have certain limitations on some features as detailed below:<br><br>
+                                        - AI README Generators: Maximum 10 requests/month<br>   
+                                        - Git Ignore Builder: Unlimited and free for all plans<br>   
+                                        - Tags & Releases Manager: Unlimited tag and release management, but automated release notes are limited to 10 requests/month<br>
+                                        - Commit Messages Generator (CLI): Maximum 10 requests/month<br>    
+                                        - Code Decommenter: Maximum 10 requests/month<br>   
+                                        - Repository Assessment Tool: Maximum 5 requests/month<br><br>
+                                        When an authenticated user subscribes to the 'pro' plan through <a href="https://gitset.dev/pricing" style="color: #3DA798;" target="_blank" rel="noreferrer">Gitset.dev - Pricing</a>, they will receive an email with all subscription details, including their license key. All subscription-related matters can be managed through <a href="https://gitset.dev/dashboard" style="color: #3DA798;" target="_blank" rel="noreferrer">Gitset.dev - Dashboard</a> or their Lemon Squeezy portal.<br><br>
+                                        The <strong>Gitset Pro Plan</strong> benefits include:<br>
+                                        - All features of the Basic Plan with <strong>unlimited</strong> usage.<br><br> 
+                                        
+                                        <strong>With the following resources:</strong><br>
+                                        - Priority Support<br>   
+                                        - CLI Troubleshooter<br>  
+                                        - Early Access to New Features<br><br>   
+
+                                        IMPORTANT: For the subscription to be fully activated, after the payment has been processed through Lemon Squeezy, the user must access their <a href="https://gitset.dev/dashboard" style="color: #3DA798;" target="_blank" rel="noreferrer">Dashboard</a>. This will automatically activate their <strong>Pro</strong> subscription.<br><br>
+                                        If you have any questions or concerns regarding subscriptions on <strong>Gitset.dev</strong>, please <a href="https://gitset.dev/contact" style="color: #3DA798;" target="_blank" rel="noreferrer">Contact Support</a> for appropriate assistance.
                                     </div>
                                 </div>
-                            </div>
+                                </div>
                     
                             <h3>Features and Usage</h3>
                             <div class="faq-container">
@@ -111,7 +128,7 @@ import Footer from '../components/layout/Footer.astro'
                                     <div class="faq-answer">
                                         The following features require GitHub OAuth authentication:
                                         <br><br>
-                                        1. <strong>Personal AI-Readme Generator</strong> - For accessing private repositories and generating customized documentation.
+                                        1. <strong>Public & Personal AI-Readme Generators</strong> - For accessing private repositories and generating customized documentation.
                                         <br><br>
                                         2. <strong>Commit Messages Generator</strong> - For analyzing repository changes to provide AI context for generating semantic commit messages.
                                         <br><br>
@@ -121,7 +138,7 @@ import Footer from '../components/layout/Footer.astro'
                                         <br><br>
                                         5. <strong>Code Decommenter</strong> - For processing and cleaning code by removing specified types of comments (single-line, multi-line, documentation, or pragma comments).
                                         <br><br>
-                                        The <strong>Public AI-Readme Generator</strong> and <strong>.gitignore Builder</strong> can be used without authentication.
+                                        The feature <strong>.gitignore Builder</strong> can be used without authentication.
                                     </div>
                                 </div>
                     
@@ -189,12 +206,12 @@ import Footer from '../components/layout/Footer.astro'
                                     <div class="faq-answer">
                                         GitSet.dev ensures your account and repositories are secure. Below is a detailed overview of the features available on the platform, their permissions, and their impact on your repositories:<br>
 
-                                        <br>🌐 <strong>Non-interactive features:</strong>
+                                        <br><strong>Non-interactive features:</strong>
 
                                         <br>-<strong>Git Ignore Builder:</strong>  
                                         <br>Generate comprehensive .gitignore files by selecting the languages, frameworks, and tools relevant to your codebase. This feature provides customizable templates, helping you create a tailored .gitignore file that ensures proper exclusions for your project—all without modifying or reading your repository.<br>
                                         
-                                        <br>🔒 <strong>Read-only Features:</strong>
+                                        <br><strong>Read-only Features:</strong>
 
                                         <br>-<strong>Public AI-README Generator:</strong>  
                                         <br>Creates README.md files from public repositories by automatically generating concise documentation. This tool reads the contents of public repositories and generates suggestions based on the project details, but no changes are made to the repository itself.<br>
@@ -208,12 +225,12 @@ import Footer from '../components/layout/Footer.astro'
                                         <br>-<strong>Repository Assessment Tool:</strong>
                                         <br>This tool analyzes your repository's structure and provides insights into code complexity, development time, resource allocation, and cost estimates. It only reads your code, offering detailed reports and evaluations but does not make any changes to the repository itself.<br>
                                         
-                                        <br>✏️ <strong>Write-capable Features:</strong>
+                                        <br><strong>Write-capable Features:</strong>
                                         
                                         <br>-<strong>Tags & Releases Manager:</strong>
                                         <br>This tool enables you to manage your project's versioning by creating, editing, and deleting tags and releases. When creating a release, you can opt to generate release notes using AI. If the generated notes are unsatisfactory, you can refine them by providing additional inputs, ensuring that the final notes meet your expectations. Each operation requires your explicit confirmation, and all actions are logged and can be undone using Git.<br>
                                         
-                                        <br><br>📋 <strong>Important Notes:</strong>
+                                        <br><strong>Important Notes:</strong>
                                         <br>- No code modifications or commits are made automatically; all operations remain under your control.  
                                         <br>- The 'repo' OAuth scope is necessary to enable code analysis features and generate accurate suggestions. Without this scope, accurate suggestions cannot be provided, as limited scopes do not allow code inspection of private repositories.  
                                         
@@ -256,6 +273,57 @@ import Footer from '../components/layout/Footer.astro'
                                 </div>
 
                                 
+                            </div>
+                            <h3>Payments and Subscriptions</h3>
+                            <div class="faq-container">
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Does GitSet offer a trial period?
+                                    </button>
+                                    <div class="faq-answer">
+                                        Yes, <strong>GitSet.dev</strong> offers a 14-day trial period exclusively with the 'GitSet Pro (Monthly)' subscription plan. If users don't cancel before the trial period ends, the subscription will automatically convert to a paid plan at $2.99 USD per month with automatic renewal.
+                                        <br><br>
+                                        Users have the flexibility to cancel their subscription at any time during or after the trial period through the <a href="https://app.lemonsqueezy.com/my-orders" style="color: #3DA798;" target="_blank" rel="noreferrer">Lemon Squeezy Customer Portal</a>.
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Does GitSet offer subscription discounts?
+                                    </button>
+                                    <div class="faq-answer">
+                                        Yes, the 'GitSet Pro (Annually)' subscription includes a 15% annual discount, bringing the total annual cost to $29.99 USD.
+                                        <br><br>
+                                        Please note that subscription prices may be subject to change as new features and functionalities are added to the platform. For detailed information about our pricing structure and potential changes, please refer to our <a href="https://gitset.dev/terms" style="color: #3DA798;" target="_blank" rel="noreferrer">Terms of Service</a>.
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        <span class="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M7.293 4.293a1 1 0 011.414 0L14 9.586l-5.293 5.293a1 1 0 01-1.414-1.414L11.586 9 7.293 4.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        Can I cancel my subscription or request a refund at any time?
+                                    </button>
+                                    <div class="faq-answer">
+                                        <strong>GitSet.dev</strong> offers subscription plans designed to provide Users with access to a variety of features tailored to their specific needs. These subscription plans are exclusively managed by <strong>Lemon Squeezy, LLC</strong>, a trusted third-party provider responsible for subscription processing, payment handling, billing cycles, and related services.
+                                        <br><br>
+                                        Users can manage their orders, subscriptions, and request refunds through the <a href="https://app.lemonsqueezy.com/my-orders" style="color: #3DA798;" target="_blank" rel="noreferrer">Lemon Squeezy Customer Portal</a>. All payment-related matters, including subscription management and refund requests, can be handled directly through the specific subscription within the Lemon Squeezy platform.
+                                        <br><br>
+                                        For more information about our partnership with Lemon Squeezy and how we handle payments and subscriptions, please visit our <a href="https://gitset.dev/terms" style="color: #3DA798;" target="_blank" rel="noreferrer">Terms of Service</a> or <a href="https://gitset.dev/contact" style="color: #3DA798;" target="_blank" rel="noreferrer">Contact Support</a>.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <br>
@@ -319,7 +387,7 @@ import Footer from '../components/layout/Footer.astro'
         width: 100%;
         display: flex;
         align-items: center;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         font-size: 1.125rem;
         font-weight: 500;
         --tw-text-opacity: 1;
@@ -349,7 +417,7 @@ import Footer from '../components/layout/Footer.astro'
         padding: 0 0 1rem 2rem;
         font-size: 1rem;
         --tw-text-opacity: 1;
-        color: rgb(var(--ac-color-700), var(--tw-text-opacity, 1));
+        color: rgb(var(--ac-color-500), var(--tw-text-opacity, 1));
         line-height: 1.6;
     }
 
@@ -403,7 +471,6 @@ import Footer from '../components/layout/Footer.astro'
                 answer.classList.toggle('active');
                 
                 questions.forEach(otherQuestion => {
-                    // Aseguramos que otherQuestion es un HTMLElement
                     if (!(otherQuestion instanceof HTMLElement)) return;
                     if (otherQuestion === question) return;
 

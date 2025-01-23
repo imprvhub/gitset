@@ -49,7 +49,6 @@ interface SectionProps {
     
     <div class="flex-1 lg:ml-64 flex flex-col">
       <Header />
-    <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
       <div class="container relative top-[70px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:mt-0">
         <div class="flex justify-center"></div>
         <CTA
@@ -66,7 +65,7 @@ interface SectionProps {
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-0 relative left-3">
           <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <a href="/public-ai-readme">
-              <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4">
+              <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   fill="none" 
@@ -88,14 +87,14 @@ interface SectionProps {
                 <p class="text-neutral-700  text-center text-medium mb-2">
                   Generate README for <span style="font-weight: 500;">any public repository from any GitHub user</span>
                 </p>
-                <div class="text-neutral-400  text-center text-sm">
-                  No authentication required
+                <div class="text-[#59b4aa] text-center text-sm">
+                  GitHub authentication required
                 </div>
               </div>
             </a>
             
             <a href="/personal-ai-readme">
-              <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4">
+              <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   fill="none" 
@@ -121,7 +120,7 @@ interface SectionProps {
                   GitHub authentication required
                 </div>
               </div>
-             </a>
+            </a>
             </div>
           </div>
           <div class="flex my-0 mx-auto gap-2.5 mt-4 relative top-4 justify-center">
@@ -135,10 +134,11 @@ interface SectionProps {
             </a>
           </CTA>
         </div>
-      </main>
+        <br><br>
       <Footer />
     </div>
   </div>
+ 
 </Layout>
 
 <style>

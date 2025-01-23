@@ -21,12 +21,16 @@ export const users = sqliteTable("users", {
   isBlocked: integer("is_blocked", { mode: "boolean" }).default(false),
   isDeleted: integer("is_deleted", { mode: "boolean" }).default(false),
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+  plan: text("plan", { enum: ["basic", "pro"] }).default("basic").notNull(),
+  planExpiresAt: integer("plan_expires_at"),
+  lemonSqueezyCustomerId: text("lemon_squeezy_customer_id"),
 });
 
 export const usersRelations = relations(users, ({ many, one }) => ({
   oauthTokens: many(oauthTokens),
   sessions: many(sessions),
   loginLogs: many(loginLogs),
+  subscriptions: many(subscriptions),
 }));
 
 export const oauthTokens = sqliteTable(
@@ -96,5 +100,29 @@ export const loginLogsRelations = relations(loginLogs, ({ one }) => ({
   session: one(sessions, {
     fields: [loginLogs.sessionId],
     references: [sessions.id],
+  }),
+}));
+
+export const subscriptions = sqliteTable("subscriptions", {
+  id: text("id").$default(() => createId()).primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  lemonSqueezySubscriptionId: text("lemon_squeezy_subscription_id").notNull(),
+  status: text("status", { 
+    enum: ["active", "past_due", "unpaid", "cancelled", "expired", "on_trial"] 
+  }).notNull(),
+  planType: text("plan_type", { enum: ["monthly", "annually"] }).notNull(),
+  currentPeriodStart: integer("current_period_start").notNull(),
+  currentPeriodEnd: integer("current_period_end").notNull(),
+  createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
+  updatedAt: text("updated_at").default(sql`CURRENT_TIMESTAMP`),
+});
+
+
+export const subscriptionsRelations = relations(subscriptions, ({ one }) => ({
+  user: one(users, {
+    fields: [subscriptions.userId],
+    references: [users.id],
   }),
 }));

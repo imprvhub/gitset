@@ -34,7 +34,9 @@ const userInfo = await db.query.sessions.findFirst({
   },
 });
 
-
+const userId = Astro.locals.userId;
+const userEmail = userInfo?.user?.email;
+const userPlan = userInfo?.user?.plan;
 const githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy === 'github')?.accessToken;
 
 ---
@@ -48,7 +50,6 @@ const githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy ==
     
     <div class="flex-1 lg:ml-64 flex flex-col">
       <Header />
-      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-0 top">
           <br />
           <div class="flex justify-center"></div>
@@ -64,7 +65,6 @@ const githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy ==
           >
           </CTA>
         </div>
-      </main>
       <Footer />
     </div>
   </div>

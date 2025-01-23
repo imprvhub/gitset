@@ -36,6 +36,8 @@ const userInfo = await db.query.sessions.findFirst({
 });
 
 const githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy === 'github')?.accessToken;
+const userEmail = userInfo?.user?.email;
+const userPlan = userInfo?.user?.plan;
 
 ---
 

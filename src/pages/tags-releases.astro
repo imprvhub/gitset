@@ -3,11 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/layout/Header.astro';
 import CTA from '../sections/CTA.astro'
 import Footer from '../components/layout/Footer.astro'
-import Content from '../layouts/Content.astro';
 import Sidebar from '../layouts/Sidebar.astro';
 import { eq, desc } from "drizzle-orm";
 import { db } from "../db";
 import { loginLogs, sessions } from "../db/schema";
+
+const userId = Astro.locals.userId;
 
 interface RawGitHubCommit {
   sha: string;
@@ -45,6 +46,18 @@ interface EnhancedCommit extends RawGitHubCommit {
   releases: GitHubRelease[];
 }
 
+interface Props {
+  githubUserData: any;
+  userInfo: any;
+  githubUserRepos: any[];
+  selectedRepo: string | null;
+  commits: any[];
+  githubToken: string;
+  userId: string | null | { userId: any };
+  userEmail: string | undefined | { userEmail: any };
+}
+
+
 
 const userIsLoggedIn = !!Astro.locals.userId;
 const sessionToken = Astro.cookies.get("app_auth_token")?.value;
@@ -71,6 +84,7 @@ const userInfo = await db.query.sessions.findFirst({
     },
   },
 });
+
 
 const githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy === 'github')?.accessToken;
 
@@ -160,24 +174,9 @@ async function getRepoTags(token: string, repo: string) {
   }
 }
 
-async function getRepoReleases(token: string, repo: string) {
-  const releasesUrl = `https://api.github.com/repos/${githubUserData.login}/${repo}/releases`;
-  try {
-    const response = await fetch(releasesUrl, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Accept": "application/vnd.github.v3+json"
-      }
-    });
-    if (!response.ok) {
-      throw new Error("Failed to fetch releases");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Error fetching releases:", error);
-    return [];
-  }
-}
+
+const userEmail = userInfo?.user?.email;
+const userPlan = userInfo?.user?.plan;
 
 async function getRepoCommits(token: string, repo: string): Promise<EnhancedCommit[]> {
   const baseUrl = `https://api.github.com/repos/${githubUserData.login}/${repo}`;
@@ -283,7 +282,6 @@ if (selectedRepo) {
     
     <div class="flex-1 lg:ml-64 flex flex-col">
       <Header />
-      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16 lg:mt-0 top">
           <div class="flex justify-center mt-16"></div>
           <CTA
@@ -307,7 +305,6 @@ if (selectedRepo) {
               </a>
           </CTA>
         </div>
-      </main>
       <Footer />
     </div>
   </div>

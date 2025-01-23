@@ -3,6 +3,7 @@ import Header from '../components/layout/Header.astro'
 import Layout from '../layouts/Layout.astro'
 import Sidebar from '../layouts/Sidebar.astro'
 import CTA from '../sections/CTA.astro'
+import Footer from '../components/layout/Footer.astro'
 ---
 
 <Layout title="Gitset - Advanced AI-Driven GitHub Tools Suite.">
@@ -15,7 +16,7 @@ import CTA from '../sections/CTA.astro'
       <div class="flex-1 lg:ml-64 flex flex-col">
         <Header />
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
-          <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16  top">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-8 top">
             <br />
             <div class="flex justify-center"></div>
             <CTA
@@ -111,11 +112,90 @@ import CTA from '../sections/CTA.astro'
                         
                             <p style="max-width: none !important;"><strong>GitSet.dev</strong> is provided on an "as-is" and "as-available" basis. We make no warranties or representations, express or implied, regarding the functionality, security, or reliability of the Service. In no event will GitSet.dev, its affiliates, or partners be held liable for any direct, indirect, incidental, consequential, or punitive damages arising from the use of the platform or its services.</p>
                         
-                            <h3>8. Subscription and Future Changes to Service</h3>
-                        
-                            <p style="max-width: none !important;">Some functionalities that are currently available for free on <strong>GitSet.dev</strong> may, in the future, become part of a paid subscription plan. While we strive to maintain access to essential features, Users should be aware that some services may incur charges in the future. Any such changes will be clearly communicated in advance, and Users will be notified of pricing, terms, and conditions related to new subscription services.</p>
-                        
-                            <p style="max-width: none !important;">Any changes to the accessibility or pricing of features will be accompanied by the appropriate updates to the Terms of Service. Continued use of the platform following these updates constitutes acceptance of the new terms.</p>
+                            <h3>8. Subscriptions and Payments</h3>
+
+                            <p style="max-width: none !important;">
+                                <strong>GitSet.dev</strong> offers subscription plans designed to provide Users with access to a variety of features tailored to their specific needs. These subscription plans are exclusively managed by <strong>Lemon Squeezy, LLC</strong>, a trusted third-party provider responsible for subscription processing, payment handling, billing cycles, and related services.
+                            </p>
+
+                            <p style="max-width: none !important;">
+                                Users are directed to Lemon Squeezy’s official terms and policies for comprehensive details on their services:
+                                <ul>
+                                    <li><a style="color: #3DA798;" href="https://www.lemonsqueezy.com/terms" target="_blank" rel="noreferrer">Lemon Squeezy - Terms</a></li>
+                                    <li><a style="color: #3DA798;" href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noreferrer">Lemon Squeezy - Privacy Policy</a></li>
+                                    <li><a style="color: #3DA798;" href="https://www.lemonsqueezy.com/dpa" target="_blank" rel="noreferrer">Lemon Squeezy - Data Processing Agreement (DPA)</a></li>
+                                </ul>
+                            </p>
+                            <p style="max-width: none !important;">
+                                <h4>Disclaimer:</h4>
+                                    <p style="max-width: none !important;"><strong>GitSet.dev </strong>is not responsible for Users who fail to read, understand, or agree to Lemon Squeezy’s terms, conditions, or DPA.</p>
+                                    <p style="max-width: none !important;">By subscribing to any plan, Users acknowledge that all transactions, subscriptions, and billing processes are governed solely by Lemon Squeezy.</p>
+                                    <p style="max-width: none !important;"><strong>GitSet.dev </strong>does not provide direct support for payment disputes or subscription management outside the features available within the <a style="color: #3DA798;" href="https://www.gitset.dev/dashboard" target="_blank" rel="noreferrer">GitSet.dev - Dashboard</a>. Users can access and manage their subscription details through the provided dashboard link.</p>
+
+                            </p>
+
+                            <h4>Subscription Plans</h4>
+
+                            <p style="max-width: none !important;">
+                                <strong>Basic Plan</strong>: Free. Includes the following features:
+                            </p>
+                            
+                            <p style="max-width: none !important;">
+                                - Public-AI Readme Generator<br>  
+                                - Personal-AI Readme Generator<br> 
+                                - Git Ignore Builder<br>   
+                                - Tags & Releases Manager<br>  
+                                - Code Decommenter<br>   
+                                - Repository Assessment Tool<br><br>  
+
+
+                                <strong>Resources:</strong><br>
+                                - Standard Support<br>
+                            </p>
+                            
+                            <p style="max-width: none !important;">
+                                <strong>Usage Limits:</strong><br> 
+                                - AI README Generators: Maximum 10 requests/month<br>   
+                                - Git Ignore Builder: Unlimited and free for all plans.<br>   
+                                - Tags & Releases Manager: Unlimited tag and release management, but automated release notes are limited to 10 requests/month<br>
+                                - Commit Messages Generator (CLI): Maximum 10 requests/month <br>    
+                                - Code Decommenter: Maximum 10 requests/month<br>   
+                                - Repository Assessment Tool: Maximum 5 requests/month
+                               
+                            </p>
+                            
+                            <p style="max-width: none !important;">
+                                The Basic Plan is activated automatically upon first sign-in with GitHub.
+                            </p>
+                            
+                            <p style="max-width: none !important;">
+                                <strong>Pro Plan</strong>: Includes:<br>  
+                                - All features of the Basic Plan with <strong>unlimited</strong> usage.<br>   
+                            
+                                <strong>Resources:</strong><br> 
+                                - Priority Support<br>   
+                                - CLI Troubleshooter<br>  
+                                - Early Access to New Features<br>   
+                            </p>
+                            
+                            <p style="max-width: none !important;">
+                                Annual subscribers receive a <strong>15% discount</strong>. Pricing and discounts are subject to change with prior notice through updates to these Terms of Service.
+                            </p>
+                            
+
+                            <h4>General Disclaimers</h4>
+
+                            <p style="max-width: none !important;">                   
+                                - <strong>GitSet.dev</strong> reserves the right to modify plan features, limits, or pricing at any time, with changes communicated in advance.<br> 
+                                - New features may be added, updated, or removed, with prior notice to Users.<br> 
+                                - Continued use of <strong>GitSet.dev</strong> after updates constitutes acceptance of the updated terms.<br> 
+                                - Lemon Squeezy is solely responsible for subscription management, and GitSet.dev is not liable for disputes arising from Lemon Squeezy’s services.<br> 
+                            </p>
+                            
+                            <p style="max-width: none !important;">
+                                For additional assistance, visit the <a style="color: #3DA798;" href="https://www.gitset.dev/dashboard" target="_blank" rel="noreferrer">GitSet.dev - Dashboard</a> to view and manage subscription details.
+                            </p>
+
                                                             
                             <h3>9. Modifications to the Terms of Service</h3>
                         
@@ -125,8 +205,8 @@ import CTA from '../sections/CTA.astro'
                     
                 </div>
                 <div class="flex justify-center">
-                    <p class="text-center text-neutral-700 relative top-6 lg:text-medium mx-auto p-4">
-                    Effective Date: 17/12/2024
+                    <p class="text-center text-sm text-neutral-700 relative top-6 lg:text-medium mx-auto p-4">
+                        Effective Date: 17/12/2024 &mdash; Last Updated: 20/01/2025                    
                     </p>
                 </div>
                 <br>
@@ -136,16 +216,15 @@ import CTA from '../sections/CTA.astro'
                             class="dark:text-neutral-700 text-sm text-neutral-200 dark:bg-neutral-200 bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center"
                         >
                             Back
-                        </button></a>
+                        </button>
+                    </a>
                         
-                </div>
-                </div>
-                </div>
-                
                 </div>
             </CTA>
             </main>
+            <Footer />
           </div>
+          
         </div>
     </div>
 </Layout>

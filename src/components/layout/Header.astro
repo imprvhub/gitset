@@ -1,5 +1,5 @@
 ---
-import { ThemeSwitch } from 'free-astro-components'
+import ThemeSwitch from '../../pages/components/theme-switch.astro'
 import Hamburguer from './Hamburguer.astro'
 const userIsLoggedIn = !!Astro.locals.userId;
 ---
@@ -29,6 +29,26 @@ const userIsLoggedIn = !!Astro.locals.userId;
           <>
             <li>
               <a
+                class="text-sm flex items-center gap-1 group transition duration-300 ease-in-out"
+                href="/pricing"
+              >
+                <svg 
+                  class="fill-current group-hover:fill-[#69D3C6] transition duration-300 ease-in-out"
+                  height="16px"
+                  width="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                </svg>
+
+                <span class="group-hover:text-[#69D3C6] transition duration-300 ease-in-out">
+                  Pricing
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
                 class="text-sm flex items-center gap-2 group transition duration-300 ease-in-out"
                 href="/dashboard"
               >
@@ -37,14 +57,10 @@ const userIsLoggedIn = !!Astro.locals.userId;
                   height="16px"
                   width="16px"
                   version="1.1"
-                  id="Layer_1"
                   xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
                   viewBox="0 0 330 330"
                   xml:space="preserve"
                 >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                   <g id="SVGRepo_iconCarrier">
                     <path
                       id="XMLID_464_"
@@ -54,28 +70,6 @@ const userIsLoggedIn = !!Astro.locals.userId;
                 </svg>
                 <span class="group-hover:text-[#69D3C6] transition duration-300 ease-in-out">
                   Dashboard
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="text-sm flex items-center gap-2 group transition duration-300 ease-in-out"
-                href="/logout"
-                aria-label="Logout"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  class="fill-current group-hover:fill-[#69D3C6] transition duration-300 ease-in-out"
-                  height="16"
-                  width="16"
-                >
-                  <!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-                  <path d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"/>
-                </svg>
-                <span class="group-hover:text-[#69D3C6] transition duration-300 ease-in-out">
-                  Logout
                 </span>
               </a>
             </li>
@@ -111,21 +105,27 @@ const userIsLoggedIn = !!Astro.locals.userId;
 </header>
 
 <script>
-  import { DOMLoaded } from '../../ts/utils'
+  function handleHamburguerMenu() {
+    const body = document.querySelector('body') as HTMLElement;
+    const hamburguer = document.querySelector('[data-hamburguer]') as HTMLButtonElement;
+    const nav = document.querySelector('[data-nav]') as HTMLElement;
 
-  DOMLoaded(() => {
-    const body = document.querySelector('body') as HTMLElement
-    const hamburguer = document.querySelector(
-      '[data-hamburguer]'
-    ) as HTMLButtonElement
-    const nav = document.querySelector('[data-nav]') as HTMLElement
+    if (!hamburguer || !nav || !body) return;
 
     hamburguer.addEventListener('click', () => {
-      hamburguer.toggleAttribute('open')
-      nav.toggleAttribute('open')
-      body.classList.toggle('overflow-hidden')
-    })
-  })
+      hamburguer.toggleAttribute('open');
+      nav.toggleAttribute('open');
+      body.classList.toggle('overflow-hidden');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleHamburguerMenu);
+  } else {
+    handleHamburguerMenu();
+  }
+
+  document.addEventListener('astro:page-load', handleHamburguerMenu);
 </script>
 
 <style>

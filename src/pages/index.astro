@@ -1,10 +1,30 @@
 ---
-import CTA from '../sections/CTA.astro'
 import Footer from '../components/layout/Footer.astro'
 import Header from '../components/layout/Header.astro'
 import Hero from '../sections/Hero.astro'
 import Layout from '../layouts/Layout.astro'
 import Sidebar from '../layouts/Sidebar.astro'
+import { eq } from "drizzle-orm";
+import { db } from "../db";
+import { sessions } from "../db/schema";
+
+const userId = Astro.locals.userId;
+const sessionToken = Astro.cookies.get("app_auth_token")?.value ?? '';
+
+let userInfo = null;
+if (sessionToken) {
+  userInfo = await db.query.sessions.findFirst({
+    where: eq(sessions.id, sessionToken),
+    with: {
+      user: {
+        columns: {
+          email: true
+        }
+      }
+    }
+  });
+}
+const userEmail = userInfo?.user?.email;
 ---
 
 <Layout title="Gitset - Advanced AI-Driven GitHub Tools Suite.">

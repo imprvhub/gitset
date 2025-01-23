@@ -23,7 +23,7 @@ const userIsLoggedIn = !!Astro.locals.userId;
       <br>
       <NavLink href="/" label="Home" icon={FaHome} />
       <NavLink href="/github-status" label="Github Status" icon={FaTools} />
-      <NavItem title="Features" open>
+      <NavItem title="Workspace" open>
         {userIsLoggedIn ? (
           <>
             
@@ -36,8 +36,12 @@ const userIsLoggedIn = !!Astro.locals.userId;
           
           </>
         ) : (
-          <NavLink href="/public-ai-readme" label="Public AI-Readme Generator" icon={FaBook} />
-          <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaFileCode} />
+            <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
+            <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaFileCode} />
+            <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
+            <NavLink href="/tags-releases" label="Tags & Releases Manager" icon={FaTags} />
+            <NavLink href="/code-decommenter" label="Code Decommenter" icon={Delete} />
+            <NavLink href="/repository-assessment" label="Repository Assessment Tool" icon={FaTasks} />
         )}
       </NavItem>
       <NavItem title="Account" open>

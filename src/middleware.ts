@@ -1,6 +1,7 @@
 import { defineMiddleware } from "astro/middleware";
 import getUser from "./lib/getUser";
 
+
 export const onRequest = defineMiddleware(async (context, next) => {
   const token = context.cookies.get("app_auth_token")?.value;
   const userInfo = await getUser(token);
@@ -10,24 +11,31 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const pathname = context.url.pathname;
   if (typeof pathname !== 'string') {
     console.error('Invalid pathname:', pathname);
-    return context.redirect('/error');
+    return new Response('Invalid pathname', { status: 404 });
+  }
+
+  if (pathname === '/404') {
+    return next();
   }
 
   if (
-    pathname.includes("dashboard") || 
+    pathname.includes("dashboard") ||
+    pathname.includes("pricing") ||  
     pathname.includes("settings") || 
     pathname.includes("tags-releases") || 
-    pathname.includes("personal-ai-readme")
+    pathname.includes("personal-ai-readme") ||
+    pathname.includes("cli-assistant") ||
+    pathname.includes("public-ai-readme") ||
+    pathname.includes("repository-assessment") ||
+    pathname.includes("code-decommenter") ||
+    pathname.includes("commit-messages")
   ) {
     if (!userInfo || !userInfo.user) {
       return context.redirect("/login");
-    } else {
-      return next();
     }
   }
-  
 
-  if (pathname.includes("login")) {
+  if (pathname.includes("login") || pathname.includes("signup")) {
     if (userInfo?.user) {
       return context.redirect("/dashboard");
     }
@@ -38,5 +46,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return context.redirect("/");
   }
 
-  return next();
+  const response = await next();
+
+  if (response.status === 404 && pathname !== '/404') {
+    return context.redirect('/404');
+  }
+
+  return response;
 });

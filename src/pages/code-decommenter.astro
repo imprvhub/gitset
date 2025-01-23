@@ -1,5 +1,4 @@
 ---
-import Code from '../components/ui/Code.astro';
 import CTA from '../sections/CTA.astro';
 import Footer from '../components/layout/Footer.astro'
 import Header from '../components/layout/Header.astro'
@@ -36,6 +35,9 @@ const userInfo = await db.query.sessions.findFirst({
 });
 
 const githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy === 'github')?.accessToken;
+const userId = Astro.locals.userId;
+const userEmail = userInfo?.user?.email;
+const userPlan = userInfo?.user?.plan;
 ---
 
 <Layout title="Gitset - Advanced AI-Driven GitHub Tools Suite.">

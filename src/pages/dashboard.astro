@@ -7,7 +7,7 @@ import Footer from '../components/layout/Footer.astro';
 import Sidebar from '../layouts/Sidebar.astro';
 import { eq, desc } from "drizzle-orm";
 import { db } from "../db";
-import { loginLogs, sessions } from "../db/schema";
+import { loginLogs, sessions, users } from "../db/schema";
 
 
 interface RawGitHubCommit {
@@ -34,6 +34,19 @@ interface GitHubTag {
   };
 }
 
+interface LemonSqueezyInvoice {
+  id: string;
+  attributes: {
+    billing_reason: string;
+    created_at: string;
+    renews_at: string;
+    total: string;
+    urls: {
+      invoice_url: string;
+    };
+  };
+}
+
 interface GitHubRelease {
   id: number;
   tag_name: string;
@@ -44,6 +57,21 @@ interface GitHubRelease {
 interface EnhancedCommit extends RawGitHubCommit {
   tags: GitHubTag[];
   releases: GitHubRelease[];
+}
+
+interface LemonSqueezyAttributes {
+  status: string;
+  status_formatted: string;
+  product_name: string;
+  card_brand: string;
+  card_last_four: string;
+  trial_ends_at: string | null;
+  renews_at: string;
+  created_at: string; 
+  urls: {
+    update_payment_method: string;
+    customer_portal: string;
+  };
 }
 
 
@@ -215,9 +243,11 @@ if (selectedRepo) {
   commits = await getRepoCommits(githubToken, selectedRepo);
 }
 
+const userId = Astro.locals.userId;
+const userEmail = userInfo?.user?.email;
+
 // --------------------------------------------------------------
 ---
-
 <Layout title="Gitset - Advanced AI-Driven GitHub Tools Suite.">
   <div class="flex flex-col min-h-screen">
     <div class="hidden lg:block fixed w-64 h-full">
@@ -226,18 +256,22 @@ if (selectedRepo) {
     
     <div class="flex-1 lg:ml-64 flex flex-col">
       <Header />
-      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
-        <div class="container relative top-[70px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:mt-0">
+      <main class="flex-1 overflow-x-hidden mt-12 overflow-y-auto bg-gray-50">
+        <div class="container relative top-[70px] mx-auto px-4 sm:px-6 lg:px-8 pt-2 lg:mt-0">
+         
           <CTA
             align="center"
             title={`<span id="cta-title">Welcome to your <strong>Dashboard</strong></span>`}
             description={`
               <span id="cta-description">
+                Access a detailed overview of your subscription status and easily manage your account details.
               </span>
             `}
           >
+            
           </CTA>
           <br />
+          
           <Footer />
         </div>
       </main>
@@ -319,6 +353,22 @@ if (selectedRepo) {
 
   .mb-2 {
     margin-bottom: 0.5rem;
+  }
+
+  .bg-green-50 {
+    background-color: #f0fdf4;
+  }
+  
+  .text-green-800 {
+    color: #166534;
+  }
+  
+  .border-green-200 {
+    border-color: #bbf7d0;
+  }
+  
+  .text-green-400 {
+    color: #4ade80;
   }
 
 </style>
