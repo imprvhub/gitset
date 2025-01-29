@@ -27,15 +27,22 @@
 ### Core Features
 
 #### Public Tools (No Authentication Required):
-- **.gitignore Builder:** Creates customized `.gitignore` files for multiple languages and frameworks.
+- **.gitignore Builder:** Automatically generates customized .gitignore files tailored to specific languages and frameworks. Users can easily select the desired tech stack, and the tool combines relevant rules to create an optimized .gitignore file. This eliminates the need for manual template searches, ensuring clean and efficient repository management with minimal effort. Ideal for developers working across multiple technologies, this tool simplifies the process of maintaining tidy codebases.
 
 #### Authenticated Services:
-- **Public AI-Readme Generator:** Generates README.md files for public GitHub repositories.
-- **Personal AI-Readme Generator:** Generates README.md files for both public and private repositories of authenticated users.
-- **Commit Messages Generator:** Suggests semantic or custom commit messages for staged Git files (_requires GitSet CLI_).
-- **Tags & Releases Manager:** Simplifies version control with AI-driven release note suggestions and tagging.
-- **Code Decommenter:** Removes specified comments while preserving functionality across multiple programming languages.
-- **Repository Assessment Tool:** Provides detailed evaluations and metrics for repositories.
+- **Public AI-Readme Generator:** Automatically generates professional README.md files for any public GitHub repository. By analyzing repository content, it creates comprehensive documentation, including features, installation guides, usage instructions, and contribution guidelines. Users can request modifications to the initial generated README, receiving different versions based on specific requirements. Additionally, the tool allows users to compare versions, ensuring that the final README perfectly aligns with the project’s needs and presentation standards.
+
+- **Personal AI-Readme Generator:** Similar to the Public AI-Readme Generator, but for both public and private repositories that authenticated users own. It generates detailed README.md files, covering all essential sections of project documentation. Users can refine the initial output by requesting adjustments, receiving multiple iterations based on their preferences. The tool also supports comparing different versions of the README, making it easy to select the most appropriate one for the project. This flexibility ensures that both private and public repositories have high-quality, customizable documentation.
+
+- **Commit Messages Generator:** Enhances Git operations through a command-line interface (CLI) that utilizes AI to automatically generate contextually accurate commit messages. Powered by Google’s Gemini Pro AI technology, the tool analyzes staged changes and provides commit suggestions based on semantic versioning or custom user-defined styles. It adapts to existing commit patterns to ensure consistent formatting in team environments. Optimized for efficiency, the tool delivers rapid message generation while minimizing resource usage, and supports cross-platform integration for consistent performance across various systems.
+
+- **Tags & Releases Manager:** Simplifies release management by providing tools to create, edit, and manage GitHub tags and releases through a streamlined interface. It integrates AI-powered suggestions for release notes that accurately reflect code changes, allowing fine-tuning to meet specific requirements. The tool ensures a more efficient and consistent release process, reducing manual effort and providing developers with a reliable solution for managing versioning and releases within the development cycle.
+
+- **Code Decommenter:** Processes source code to remove unnecessary comments, improving readability and optimizing the code for production. It supports multiple programming languages and allows selective removal of inline, block, documentation, and pragma comments based on user-defined parameters. The tool efficiently parses code, ensuring that functionality remains intact while reducing clutter. Ideal for maintaining clean codebases and streamlining automated processing in development workflows.
+
+- **Dependencies Handler** Streamlines dependency management across multiple programming languages. It analyzes codebases to identify external dependencies, organizes imports following best practices, and generates configuration files for dependency management. Supported languages include Python, Java, C/C++, and Rust. The tool produces files such as `requirements.txt`, `pom.xml`, `Cargo.toml`, and `CMakeLists.txt`, ensuring efficient and standardized project setups. Ideal for multi-language repositories and maintaining clean, well-structured code.
+
+- **Repository Assessment Tool:** Provides a comprehensive solution for analyzing and evaluating GitHub repositories, offering detailed insights into project metrics, cost estimation, and development efforts. It leverages advanced algorithms to assess repository structure, commit history, and contributor activity, delivering actionable data for project planning and resource allocation. The tool is particularly useful for developers, project managers, and organizations seeking to optimize software development processes.
 
 ### Technical Architecture
 
@@ -43,101 +50,89 @@ Based on a modular, service-oriented architecture, it employs distinct service l
 
 ```mermaid
 graph TD
-    %%{ init: { 'flowchart': { 'nodeSpacing': 50, 'rankSpacing': 100 } } }%%
-
-    %% Entry Points
-    client[Client Request] --> frontend[Frontend Service - Astro SSR]
-    frontend --> authGateway{Authentication Gateway}
-    
-    %% Authentication Flow
-    subgraph authService[Authentication Service]
-        direction TB
-        drizzleDB[(Drizzle ORM)]
-        githubOAuth[GitHub OAuth Provider]
-        sessionMgr[Session Manager]
-    end
-    
-    authGateway -->|Requires Auth| drizzleDB
-    drizzleDB --> githubOAuth
-    githubOAuth --> sessionMgr
-    
-    %% Protected Services
-    subgraph protectedServices[Protected Services Layer]
-        direction LR
-        publicReadme[Public Readme Generator React Component]
-        readmeGen[Personal Readme Generator React Component]
-        commitGen[Commit Message Generator React Component]
-        releaseMgr[Tags & Release Manager React Component]
-        repoAnalytics[Repository Assessment React Component]
-        decommenterService[Code Decommenter React Component]
-    end
-    
-    sessionMgr -->|Authenticated Session| protectedServices
-    
-    %% CLI Layer
-    subgraph cliLayer[CLI Processing Layer]
-        direction TB
-        gitsetCLI[GitSet CLI Node.js Runtime]
-    end
-    
-    %% AI Processing
-    subgraph aiProcessing[AI Processing Backend Layer]
-        direction TB
-        geminiAI1[Python and Gemini AI Service Backend]
-        geminiAI2[Python and Gemini AI Service Backend]
-        geminiAI3[Python and Gemini AI Service Backend]
-        geminiAI4[Python and Gemini AI Service Backend]
-        geminiAI5[Python and Gemini AI Service Backend]
-        geminiAI6[Python and Gemini AI Service Backend]
-    end
-    
-    %% Payment Processing
-    lemonSqueezy[Payment Gateway Microservice - Lemon Squeezy Integration]
-    basicPlan[Basic Tier API Rate Limiter - T1]
-    proPlan[Professional Tier API Rate Limiter - T2]
-    
-    aiProcessing --> lemonSqueezy
-    lemonSqueezy --> basicPlan & proPlan
-    basicPlan & proPlan --> contentAggregator
-    
-    readmeGen --> geminiAI1
-    commitGen --> gitsetCLI
-    gitsetCLI -->|Command Processing| geminiAI2
-    releaseMgr --> geminiAI3
-    repoAnalytics --> geminiAI4
-    decommenterService --> geminiAI5
-    publicReadme --> geminiAI6
-    
-    %% Public Services Flow
-    authGateway -->|Public Access| publicServices[Public Services Layer]
-    
-    subgraph publicLayer[Public Layer]
-        direction TB
-        githubAPI[GitHub API Service]
-        gitignoreService[.gitignore Builder React Component]
-        pythonService[Python Service Backend]
-    end
-    
-    publicServices --> publicLayer
-    gitignoreService -->|Template Processing| pythonService
-    
-    %% Content Layer
-    subgraph contentLayer[Content Aggregation Backend Layer]
-        direction TB
-        contentAggregator[Content Aggregator Service Backend]
-        improvementHandler[Improvement Handler Service Backend]
-    end
-    
-    aiProcessing --> contentAggregator
-    pythonService --> contentAggregator
-    contentAggregator --> frontend
-    frontend -->|User Improvement Request| improvementHandler
-    improvementHandler -->|Refined Content Request| contentAggregator
+%%{ init: { 'flowchart': { 'nodeSpacing': 50, 'rankSpacing': 100 } } }%%
+%% Entry Points
+client[Client Request] --> frontend[Frontend Service - Astro SSR]
+frontend --> authGateway{Authentication Gateway}
+%% Authentication Flow
+subgraph authService[Authentication Service]
+direction TB
+drizzleDB[(Drizzle ORM)]
+githubOAuth[GitHub OAuth Provider]
+sessionMgr[Session Manager]
+end
+authGateway -->|Requires Auth| drizzleDB
+drizzleDB --> githubOAuth
+githubOAuth --> sessionMgr
+%% Protected Services
+subgraph protectedServices[Protected Services Layer]
+direction LR
+publicReadme[Public Readme Generator React Component]
+readmeGen[Personal Readme Generator React Component]
+commitGen[Commit Message Generator React Component]
+releaseMgr[Tags & Release Manager React Component]
+repoAnalytics[Repository Assessment React Component]
+decommenterService[Code Decommenter React Component]
+dependenciesHandler[Dependencies Handler React Component]
+end
+sessionMgr -->|Authenticated Session| protectedServices
+%% CLI Layer
+subgraph cliLayer[CLI Processing Layer]
+direction TB
+gitsetCLI[GitSet CLI Node.js Runtime]
+end
+%% AI Processing
+subgraph aiProcessing[AI Processing Backend Layer]
+direction TB
+geminiAI1[Python and Gemini AI Service Backend]
+geminiAI2[Python and Gemini AI Service Backend]
+geminiAI3[Python and Gemini AI Service Backend]
+geminiAI4[Python and Gemini AI Service Backend]
+geminiAI5[Python and Gemini AI Service Backend]
+geminiAI6[Python and Gemini AI Service Backend]
+geminiAI7[Python and Gemini AI Service Backend]
+end
+%% Payment Processing
+lemonSqueezy[Payment Gateway Microservice - Lemon Squeezy Integration]
+basicPlan[Basic Tier API Rate Limiter - T1]
+proPlan[Professional Tier API Rate Limiter - T2]
+aiProcessing --> lemonSqueezy
+lemonSqueezy --> basicPlan & proPlan
+basicPlan & proPlan --> contentAggregator
+readmeGen --> geminiAI1
+commitGen --> gitsetCLI
+gitsetCLI -->|Command Processing| geminiAI2
+releaseMgr --> geminiAI3
+repoAnalytics --> geminiAI4
+decommenterService --> geminiAI5
+publicReadme --> geminiAI6
+dependenciesHandler --> geminiAI7
+%% Public Services Flow
+authGateway -->|Public Access| publicServices[Public Services Layer]
+subgraph publicLayer[Public Layer]
+direction TB
+githubAPI[GitHub API Service]
+gitignoreService[.gitignore Builder React Component]
+pythonService[Python Service Backend]
+end
+publicServices --> publicLayer
+gitignoreService -->|Template Processing| pythonService
+%% Content Layer
+subgraph contentLayer[Content Aggregation Backend Layer]
+direction TB
+contentAggregator[Content Aggregator Service Backend]
+improvementHandler[Improvement Handler Service Backend]
+end
+aiProcessing --> contentAggregator
+pythonService --> contentAggregator
+contentAggregator --> frontend
+frontend -->|User Improvement Request| improvementHandler
+improvementHandler -->|Refined Content Request| contentAggregator
 ```
 
 <div align="center">
 
-#### View this graph in an interactive editor [here](https://www.mermaidchart.com/app/projects/39cc778e-2704-4a81-b724-1d32f4f7c6b0/diagrams/38be8b13-45a9-4a4b-9b8b-ccf8bcc362d5/version/v0.1/edit).
+#### View this graph in an interactive editor [here](https://www.mermaidchart.com/raw/8005bb23-8f1a-4c4c-b31e-945062eb6364?theme=light&version=v0.1&format=svg).
 </div>
 
 ---
