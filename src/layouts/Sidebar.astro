@@ -2,7 +2,7 @@
 import Nav from '../components/layout/Nav.astro'
 import NavItem from '../components/layout/NavItem.astro';
 import NavLink from '../components/layout/NavLink.astro';
-import { Delete } from 'lucide-react'
+import { PackageCheck, Delete } from 'lucide-react'
 import { FaHome, FaTerminal, FaBook, FaTags, FaTools, FaFileCode, FaSignOutAlt, FaSignInAlt, FaColumns, FaCog, FaTasks, FaFileAlt } from 'react-icons/fa';
 
 const { class: className } = Astro.props;
@@ -32,15 +32,17 @@ const userIsLoggedIn = !!Astro.locals.userId;
             <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/tags-releases" label="Tags & Releases Manager" icon={FaTags} />
             <NavLink href="/code-decommenter" label="Code Decommenter" icon={Delete} />
+            <NavLink href="/dependencies-handler" label="Dependencies Handler" icon={PackageCheck} />
             <NavLink href="/repository-assessment" label="Repository Assessment Tool" icon={FaTasks} />
           
           </>
         ) : (
-            <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
+        <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
             <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaFileCode} />
             <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/tags-releases" label="Tags & Releases Manager" icon={FaTags} />
             <NavLink href="/code-decommenter" label="Code Decommenter" icon={Delete} />
+            <NavLink href="/dependencies-handler" label="Dependencies Handler" icon={PackageCheck} />
             <NavLink href="/repository-assessment" label="Repository Assessment Tool" icon={FaTasks} />
         )}
       </NavItem>

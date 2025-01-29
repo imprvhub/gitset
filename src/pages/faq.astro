@@ -43,7 +43,7 @@ import Footer from '../components/layout/Footer.astro'
                                         What is GitSet.dev?
                                     </button>
                                     <div class="faq-answer">
-                                        GitSet.dev serves as a comprehensive platform that streamlines Git-related documentation processes. The platform offers tools for automated README generation, .gitignore file creation, semantic commit message generation, tags & releases management, repository assessment, code decommenter, leveraging advanced AI technology to enhance developer workflows.
+                                        GitSet.dev serves as a comprehensive platform that streamlines Git-related documentation processes. The platform offers tools for automated README generation, .gitignore file creation, semantic commit message generation, tags & releases management, repository assessment, code decommenter, dependencies handler, leveraging advanced AI technology to enhance developer workflows.
                                     </div>
                                 </div>
                     
@@ -56,30 +56,33 @@ import Footer from '../components/layout/Footer.astro'
                                         </span>
                                         Which features are currently available?
                                     </button>
-                                    <div class="faq-answer">
-                                        GitSet.dev currently offers the following features:
-                                        <br><br>
-                                        <strong>Public AI-Readme Generator:</strong>  
-                                        Creates README.md files for any public repository by automatically generating concise documentation. This feature does not require authentication.
-                                        <br><br>
-                                        <strong>Personal AI-Readme Generator:</strong>  
-                                        Generates customized README.md files for public or private repositories owned by authenticated users (OAuth required). Provides tailored documentation based on the repository's content.
-                                        <br><br>
-                                        <strong>.gitignore Builder:</strong>  
-                                        Customizes .gitignore files for multiple languages, frameworks, and tools relevant to your project. No authentication is needed.
-                                        <br><br>
-                                        <strong>Commit Messages Generator:</strong>  
-                                        This tool is a CLI that provides semantic commit messages based on code changes in staged files through automated analysis (OAuth required). This feature ensures accurate commit suggestions, which can be reviewed and applied manually.
-                                        <br><br>
-                                        <strong>Tags & Releases Manager:</strong>  
-                                        Enables management of tags and releases in your repositories. Users can create, edit, and delete tags or releases, and generate release notes using AI. Manual confirmation is required for all actions, and operations are fully reversible through Git.
-                                        <br><br>
-                                        <strong>Code Decommenter:</strong>  
-                                        Removes unnecessary comments from your code based on your preferences. You can select which types of comments to remove (single-line comments, multi-line comments, documentation comments, or pragma comments), and the tool will provide you with clean, formatted code ready for review. This tool processes code without making direct modifications to repositories - you'll need to manually implement any changes.
-                                        <br><br>
-                                        <strong>Repository Assessment Tool:</strong>  
-                                        Analyzes repository structure, complexity, time/resource estimates, and cost intelligence, providing detailed reports for better project planning. This feature only reads the repository and does not modify it.
-                                    </div>
+                                        <div class="faq-answer">
+                                            GitSet.dev currently offers the following features:
+                                            <br><br>
+                                            <strong>Public AI-Readme Generator:</strong>  
+                                            Automatically generates professional README.md files for any public repository by analyzing the project’s content. This feature, requiring OAuth authentication, creates comprehensive documentation, including project features, installation instructions, usage guidelines, and contribution rules. Users can request modifications to the initial output, receiving different versions based on specific needs. The tool also allows users to compare various versions, ensuring the README aligns with the repository's presentation and functional requirements.
+                                            <br><br>
+                                            <strong>Personal AI-Readme Generator:</strong>  
+                                            Generates customized README.md files for both public and private repositories owned by authenticated users (OAuth required). It produces detailed documentation by analyzing the repository's content and context, including key project details, installation steps, and usage instructions. Users can refine the generated output by requesting iterative adjustments, comparing different versions, and ensuring the final README reflects the repository’s unique requirements. This tool ensures that both public and private repositories receive personalized, professional documentation tailored to the user's needs.
+                                            <br><br>
+                                            <strong>.gitignore Builder:</strong>  
+                                            Helps users generate `.gitignore` files tailored to the specific languages, frameworks, and tools used in their project. By selecting relevant technologies, the tool combines the appropriate rules into a comprehensive and optimized `.gitignore` file, eliminating the need for manually searching templates. No authentication is required, and this tool streamlines the process of maintaining clean repositories, ensuring that unnecessary files are excluded from version control, making it ideal for multi-technology projects.
+                                            <br><br>
+                                            <strong>Commit Messages Generator:</strong>  
+                                            A command-line interface (CLI) tool that uses AI to generate accurate, context-sensitive commit messages based on staged changes in the repository. By leveraging semantic versioning and custom user-defined styles, the tool ensures commit messages follow consistent patterns. The AI-powered system adapts to existing commit histories, providing relevant messages that can be manually applied, ensuring both clarity and consistency across the project's commit logs. OAuth authentication is required for this feature to ensure secure and personalized service.
+                                            <br><br>
+                                            <strong>Tags & Releases Manager:</strong>  
+                                            Simplifies the creation, editing, and management of tags and releases within GitHub repositories. Users can generate and modify tags and releases with the help of AI-generated release notes, which accurately reflect changes made in the code. This tool ensures a streamlined, consistent process for versioning and release management, reducing manual effort. All actions are fully reversible through Git, providing users with full control. Manual confirmation is required for every operation, ensuring security and accuracy.
+                                            <br><br>
+                                            <strong>Code Decommenter:</strong>  
+                                            This tool automatically removes unnecessary comments from code, making it cleaner and more readable. It allows users to specify the types of comments to remove—whether single-line, multi-line, documentation, or pragma comments. The tool parses the code efficiently, ensuring that all functionality remains intact while removing clutter. This feature is particularly useful for preparing codebases for production, optimizing them for automated processing, and maintaining clean, manageable repositories. The tool does not directly modify repositories, leaving the implementation of changes to the user.
+                                            <br><br>
+                                            <strong>Dependencies Handler:</strong>  
+                                            Simplifies dependency management by analyzing codebases to identify external dependencies and organizing imports according to best practices. The tool generates configuration files required for dependency management, such as `requirements.txt`, `pom.xml`, `Cargo.toml`, and `CMakeLists.txt`, ensuring that dependencies are properly structured. It supports multiple programming languages, including Python, Java, C/C++, and Rust. By creating standardized, well-organized configuration files, it ensures that projects across different languages maintain proper dependencies, minimizing conflicts and streamlining the development process.
+                                            <br><br>
+                                            <strong>Repository Assessment Tool:</strong>  
+                                            Provides detailed analysis of a repository's structure, complexity, and resource requirements. This tool generates reports offering valuable insights into project planning, including cost estimation, time/resource allocation, and code quality assessments. It helps developers and project managers gain a deeper understanding of the repository's potential, identify areas for optimization, and make informed decisions regarding resource planning. Importantly, this tool does not modify the repository, ensuring that the analysis is safe and non-invasive.
+                                        </div>
                                 </div>
                     
                                 <div class="faq-item">
@@ -97,7 +100,8 @@ import Footer from '../components/layout/Footer.astro'
                                         - Git Ignore Builder: Unlimited and free for all plans<br>   
                                         - Tags & Releases Manager: Unlimited tag and release management, but automated release notes are limited to 10 requests/month<br>
                                         - Commit Messages Generator (CLI): Maximum 10 requests/month<br>    
-                                        - Code Decommenter: Maximum 10 requests/month<br>   
+                                        - Code Decommenter: Maximum 10 requests/month<br>
+                                        - Dependencies Handler: Maximum 10 requests/month<br>    
                                         - Repository Assessment Tool: Maximum 5 requests/month<br><br>
                                         When an authenticated user subscribes to the 'pro' plan through <a href="https://gitset.dev/pricing" style="color: #3DA798;" target="_blank" rel="noreferrer">Gitset.dev - Pricing</a>, they will receive an email with all subscription details, including their license key. All subscription-related matters can be managed through <a href="https://gitset.dev/dashboard" style="color: #3DA798;" target="_blank" rel="noreferrer">Gitset.dev - Dashboard</a> or their Lemon Squeezy portal.<br><br>
                                         The <strong>Gitset Pro Plan</strong> benefits include:<br>
@@ -128,15 +132,17 @@ import Footer from '../components/layout/Footer.astro'
                                     <div class="faq-answer">
                                         The following features require GitHub OAuth authentication:
                                         <br><br>
-                                        1. <strong>Public & Personal AI-Readme Generators</strong> - For accessing private repositories and generating customized documentation.
+                                        1. <strong>Public & Personal AI-Readme Generators</strong>  - These tools analyze repository content to generate detailed and tailored README.md files. Authentication is required to access private repositories and create custom documentation for both public and private projects.
                                         <br><br>
-                                        2. <strong>Commit Messages Generator</strong> - For analyzing repository changes to provide AI context for generating semantic commit messages.
+                                        2. <strong>Commit Messages Generator</strong>  - This CLI tool analyzes changes in your repository and generates semantic commit messages based on best practices. OAuth authentication is required to access repository changes and provide relevant commit suggestions.
                                         <br><br>
-                                        3. <strong>Tags & Releases Manager</strong> - For creating, editing, and managing tags and releases within your repositories.
+                                        3. <strong>Tags & Releases Manager</strong>  - This tool allows users to manage tags and releases, create new versions, and generate release notes. Authentication is necessary to modify and manage releases within your repositories.
                                         <br><br>
-                                        4. <strong>Repository Assessment Tool</strong> - For reading repository code to generate detailed reports on code complexity, development time, resource allocation, and cost estimates.
+                                        4. <strong>Repository Assessment Tool</strong>  - This tool evaluates the structure and complexity of a repository, providing detailed reports on project metrics such as development time, resource usage, and cost estimates. Authentication is needed to access repository data and generate accurate insights.
                                         <br><br>
-                                        5. <strong>Code Decommenter</strong> - For processing and cleaning code by removing specified types of comments (single-line, multi-line, documentation, or pragma comments).
+                                        5. <strong>Code Decommenter</strong> - This tool removes unnecessary comments from your code to improve readability. Authentication is required to process and clean code by removing specified types of comments (single-line, multi-line, documentation, or pragma comments).
+                                        <br><br>
+                                        6. <strong>Dependencies Handler</strong>  - This feature analyzes your codebase to identify dependencies and generate necessary configuration files, such as `requirements.txt`, `pom.xml`, and more. Authentication is necessary to access and manage dependencies from your repositories across various programming languages.
                                         <br><br>
                                         The feature <strong>.gitignore Builder</strong> can be used without authentication.
                                     </div>
