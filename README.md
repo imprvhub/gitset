@@ -44,6 +44,9 @@
 
 - **Repository Assessment Tool:** Provides a comprehensive solution for analyzing and evaluating GitHub repositories, offering detailed insights into project metrics, cost estimation, and development efforts. It leverages advanced algorithms to assess repository structure, commit history, and contributor activity, delivering actionable data for project planning and resource allocation. The tool is particularly useful for developers, project managers, and organizations seeking to optimize software development processes.
 
+#### Desktop Application
+Gitset.dev is available as a desktop application for Windows, macOS, and Linux, providing the same powerful features as the web version in a convenient standalone format. The desktop application is built using Electron and follows the same versioning scheme as the web application. Updates to the desktop app are released concurrently with the web version to maintain feature parity across all platforms. Visit our [download page](https://gitset.dev/download) to get the desktop application for your operating system.
+
 ### Technical Architecture
 
 Based on a modular, service-oriented architecture, it employs distinct service layers to manage client requests, authentication, AI-driven processing, content aggregation, and improvement handling. The design follows best practices for scalability, performance, and security, ensuring a clear separation of concerns between public and protected services.

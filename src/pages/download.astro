@@ -1,0 +1,721 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Sidebar from '../layouts/Sidebar.astro';
+import CTA from '../sections/CTA.astro';
+
+const downloads = {
+  linuxDeb: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/gitset-desktop_1.6.0_amd64-G4ehTu1mn4wY7MvczYoVECDHwqB7S9.deb',
+  linuxAppImage: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/Gitset-1.6.0-KZSLVgEAeHK8Ul0BVH2x22MwYL08oB.AppImage',
+  macOS: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/Gitset-1.6.0-JZ07qncwnQXae2Pjq7iBTXqxgzJ5iy.dmg',
+  windows: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/Gitset%20Setup%201.6.0-QpeEjb5VQzpIHXjJkEgomsTUhUrpP4.exe'
+};
+---
+<Layout title="Gitset - Download Desktop Application">
+  <Sidebar />
+    <div class="flex flex-col min-h-screen mt-16">
+    <div class="hidden lg:block fixed w-64 h-full">
+      <Sidebar />
+    </div>
+    <div class="flex-1 lg:ml-64 flex flex-col" style="min-height: 100vh; padding-bottom: 150px;">
+      <Header />
+      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <CTA
+            align="center"
+            title={`<span id="cta-title"><strong>Gitset</strong> Desktop</span>`}
+            description={`
+              <span id="cta-description">
+                Download <span class="font-semibold">Gitset Desktop App</span> for your OS and simplify Git management with AI-powered tools.
+              </span>
+            `}
+          >
+            <div class="max-w-4xl w-full rounded-[10px] mx-auto my-8">
+              <div class="w-full bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px mb-8">
+                <div class="w-full h-full bg-neutral-100/80 text-neutral-500 rounded-lg p-6">
+                  <div class="flex flex-col items-center text-center">
+                    <div id="os-icon" class="mb-4 text-neutral-700"></div>
+                    <h3 id="detected-os" class="text-xl font-semibold text-neutral-700 mb-2"></h3>
+
+                    <div id="os-specification" class="w-full max-w-sm px-8 mx-auto mb-4"></div>
+                    <a
+                      id="download-btn"
+                      href="#"
+                      class="w-full max-w-sm inline-flex items-center justify-center px-8 py-3 text-white bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      <span class="text-base font-medium">Download</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 w-full my-0 mx-auto">
+                <div id="other-options" class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
+                </div>
+              </div>
+
+
+              <div class="mt-12 w-full mx-auto border border-[rgba(59,159,168)] rounded-[10px] p-6">
+              <h4 class="text-lg font-semibold text-neutral-700 mb-4 text-center">Why use Gitset Desktop?</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                  
+                  <div class="w-full bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px h-full">
+                    <div class="w-full h-full bg-neutral-100/80 text-neutral-500 rounded-lg p-2">
+                      <div class="w-full rounded-lg p-3 shadow-sm">
+                        <div class="text-neutral-700 mb-1 flex justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 17 10 11 4 5"></polyline>
+                            <line x1="12" y1="19" x2="20" y2="19"></line>
+                          </svg>
+                        </div>
+                        <span class="block text-neutral-700 font-semibold mb-1 text-center text-sm">AI-Driven Tools</span>
+                        <p class="text-xs text-neutral-700 text-center mx-auto my-0">
+                          AI-powered tools for README, .gitignore, commits, versioning, decommenting, dependencies, assessments, and more.  
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                
+                  
+                  <div class="w-full bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px h-full">
+                    <div class="w-full h-full bg-neutral-100/80 text-neutral-500 rounded-lg p-2">
+                      <div class="w-full rounded-lg p-3 shadow-sm">
+                        <div class="text-neutral-700 mb-1 flex justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                          </svg>
+                        </div>
+                        <span class="block text-neutral-700 font-semibold mb-1 text-center text-sm">Seamless Integration</span>
+                        <p class="text-xs text-neutral-700 text-center mx-auto my-0">
+                          Integrates directly with GitHub and Git repositories for a smooth development workflow.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                
+                  
+                  <div class="w-full bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px h-full">
+                    <div class="w-full h-full bg-neutral-100/80 text-neutral-500 rounded-lg p-2">
+                      <div class="w-full rounded-lg p-3 shadow-sm">
+                        <div class="text-neutral-700 mb-1 flex justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                          </svg>
+                        </div>
+                        <span class="block text-neutral-700 font-semibold mb-1 text-center text-sm">Cross-Platform</span>
+                        <p class="text-xs text-neutral-700 text-center mx-auto my-0">
+                          Available for Windows, macOS, and Linux systems with the same powerful features across all platforms.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="flex justify-center mt-12">
+                <a href="/" class="inline-block">
+                  <button class="text-sm text-white bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center">
+                    Back
+                  </button>
+                </a>
+              </div>
+            </div>
+          </CTA>
+      </main>
+      <Footer />
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    detectOS();
+    setupLinuxDropdowns();
+    
+    setTimeout(applyDownloadButtonStyles, 100);
+    
+    window.addEventListener('resize', function() {
+      adjustCardHeights();
+    });
+  });
+
+  function adjustCardHeights() {
+    const cards = document.querySelectorAll('#other-options > div');
+    cards.forEach(card => {
+      card.setAttribute('style', 'height: auto');
+    });
+    
+    if (window.innerWidth >= 768) {
+      let maxHeight = 0;
+      cards.forEach(card => {
+        const height = card.getBoundingClientRect().height;
+        if (height > maxHeight) {
+          maxHeight = height;
+        }
+      });
+      
+      cards.forEach(card => {
+        card.setAttribute('style', `height: ${maxHeight}px`);
+      });
+    }
+  }
+
+  function applyDownloadButtonStyles() {
+    document.querySelectorAll('a, button').forEach(element => {
+      if (element && element.textContent && element.textContent.trim() === 'Download') {
+        element.className = "w-full max-w-sm inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300";
+      }
+      
+      if (element.tagName === 'A' && element.getAttribute('href')) {
+        const href = element.getAttribute('href');
+        if (href && (
+          href.includes('Setup') || 
+          href.includes('.dmg') ||
+          href.includes('.deb') ||
+          href.includes('.AppImage')
+        )) {
+          element.className = "w-full max-w-sm inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300";
+        }
+      }
+    });
+  }
+
+  function detectOS() {
+    const platform = navigator.platform ? navigator.platform.toLowerCase() : '';
+    const userAgent = navigator.userAgent ? navigator.userAgent.toLowerCase() : '';
+    const downloads = {
+      linuxDeb: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/gitset-desktop_1.0.0_amd64-gKTrn88ADbxQiWPCu5I7VpiLidIw1J.deb',
+      linuxAppImage: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/GitSet-1.0.0-SnTgrchh0zgZ5Gcuo0Jf0lkzN9yBXH.AppImage',
+      macOS: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/GitSet-1.0.0-0odeZIR9547vfBpi0xP9ICVZ2TOzkD.dmg',
+      windows: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/GitSet%20Setup%201.0.0-CImAx0IPIHYfnhh7JRbE1ePbCZGwVM.exe'
+    };
+
+    let os = '';
+    let downloadLink = '';
+    let iconHTML = '';
+    let osSpecification = '';
+    let otherOptions = [];
+    
+    if (platform.includes('win') || userAgent.includes('windows')) {
+      os = 'Windows';
+      downloadLink = downloads.windows;
+      iconHTML = `<img src="/os-windows-256.png" alt="Windows" class="h-16 w-16 object-contain" />`;
+      osSpecification = `
+        <div class="relative p-1 bg-neutral-200 rounded-lg mx-auto w-full">
+          <div class="w-full flex items-center justify-center cursor-default py-2">
+            <span class="text-sm font-medium text-neutral-700">Windows 10 or higher</span>
+          </div>
+        </div>
+      `;
+      otherOptions = [
+        { 
+          name: 'macOS',
+          link: downloads.macOS, 
+          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-10 w-10 object-contain mx-auto" />`,
+          specification: "macOS 10.13 or higher"
+        },
+        { 
+          name: 'Linux',
+          isLinux: true,
+          icon: `<img src="/linux-256.png" alt="Linux" class="h-10 w-10 object-contain mx-auto" />`,
+          options: [
+            { name: 'Debian (.deb)', link: downloads.linuxDeb },
+            { name: 'AppImage (.AppImage)', link: downloads.linuxAppImage }
+          ]
+        }
+      ];
+    } else if (platform.includes('mac') || userAgent.includes('macintosh')) {
+      os = 'macOS';
+      downloadLink = downloads.macOS;
+      iconHTML = `<img src="/mac-os-256.png" alt="macOS" class="h-16 w-16 object-contain" />`;
+      osSpecification = `
+        <div class="relative p-1 bg-neutral-200 rounded-lg mx-auto w-full">
+          <div class="w-full flex items-center justify-center cursor-default py-2">
+            <span class="text-sm font-medium text-neutral-700">macOS 10.13 or higher</span>
+          </div>
+        </div>
+      `;
+      otherOptions = [
+        { 
+          name: 'Windows',
+          link: downloads.windows, 
+          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-10 w-10 object-contain mx-auto" />`,
+          specification: "Windows 10 or higher"
+        },
+        { 
+          name: 'Linux',
+          isLinux: true,
+          icon: `<img src="/linux-256.png" alt="Linux" class="h-10 w-10 object-contain mx-auto" />`,
+          options: [
+            { name: 'Debian (.deb)', link: downloads.linuxDeb },
+            { name: 'AppImage (.AppImage)', link: downloads.linuxAppImage }
+          ]
+        }
+      ];
+    } else if (platform.includes('linux') || userAgent.includes('linux')) {
+      os = 'Linux';
+      downloadLink = downloads.linuxAppImage; 
+      iconHTML = `<img src="/linux-256.png" alt="Linux" class="h-16 w-16 object-contain" />`;
+      osSpecification = `
+        <div class="relative p-1 bg-neutral-200 rounded-lg mx-auto w-full">
+          <div class="w-full flex items-center justify-between cursor-pointer">
+            <select id="linux-format-main" class="w-full px-3 py-2 bg-neutral-200 border-none focus:outline-none text-neutral-700 appearance-none cursor-pointer rounded-lg text-center">
+              <option value="${downloads.linuxAppImage}" selected>AppImage (.AppImage)</option>
+              <option value="${downloads.linuxDeb}">Debian (.deb)</option>
+            </select>
+            <div class="absolute right-3 pointer-events-none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+      `; 
+      otherOptions = [
+        { 
+          name: 'Windows',
+          link: downloads.windows, 
+          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-10 w-10 object-contain mx-auto" />`,
+          specification: "Windows 10 or higher"
+        },
+        { 
+          name: 'macOS',
+          link: downloads.macOS, 
+          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-10 w-10 object-contain mx-auto" />`,
+          specification: "macOS 10.13 or higher"
+        }
+      ];
+    } else {
+      os = 'Unknown OS';
+      downloadLink = '#';
+      iconHTML = `<svg class="h-16 w-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>`;
+      osSpecification = `
+        <div class="relative p-1 bg-neutral-200 rounded-lg mx-auto w-full">
+          <div class="w-full flex items-center justify-center cursor-default py-2">
+            <span class="text-sm font-medium text-neutral-700">Choose your platform below</span>
+          </div>
+        </div>
+      `;
+      otherOptions = [
+        { 
+          name: 'Windows',
+          link: downloads.windows, 
+          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-10 w-10 object-contain mx-auto" />`,
+          specification: "Windows 10 or higher"
+        },
+        { 
+          name: 'macOS',
+          link: downloads.macOS, 
+          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-10 w-10 object-contain mx-auto" />`,
+          specification: "macOS 10.13 or higher"
+        },
+        { 
+          name: 'Linux',
+          isLinux: true,
+          icon: `<img src="/linux-256.png" alt="Linux" class="h-10 w-10 object-contain mx-auto" />`,
+          options: [
+            { name: 'Debian (.deb)', link: downloads.linuxDeb },
+            { name: 'AppImage (.AppImage)', link: downloads.linuxAppImage }
+          ]
+        }
+      ];
+    }
+
+    const detectedOsElement = document.getElementById('detected-os');
+    const osIconElement = document.getElementById('os-icon');
+    const osSpecificationElement = document.getElementById('os-specification');
+    const downloadBtn = document.getElementById('download-btn');
+    const otherOptionsContainer = document.getElementById('other-options');
+
+    if (detectedOsElement) {
+      detectedOsElement.textContent = os;
+    }
+    
+    if (osIconElement) {
+      osIconElement.innerHTML = iconHTML;
+    }
+    
+    if (osSpecificationElement) {
+      osSpecificationElement.innerHTML = osSpecification;
+    }
+    
+    if (downloadBtn) {
+      downloadBtn.setAttribute('href', downloadLink);
+      downloadBtn.className = "w-full max-w-sm mx-auto inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300";
+    }
+
+    if (otherOptionsContainer) {
+      otherOptionsContainer.innerHTML = otherOptions.map(opt => {
+        if (opt.isLinux) {
+          return `
+            <div class="card-platform bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px overflow-hidden h-auto">
+              <div class="bg-neutral-100/80 text-neutral-500 rounded-lg p-4 flex flex-col h-full">
+                <div class="flex flex-col items-center justify-center mb-3 w-full">
+                  <div class="icon-container h-10 flex items-center justify-center">
+                    ${opt.icon}
+                  </div>
+                  <span class="text-sm font-medium text-gray-700 mt-2">${opt.name}</span>
+                </div>
+                <div class="linux-dropdown w-full relative mt-auto">
+                  <div class="relative mb-3">
+                    <select class="linux-format-select w-full px-3 py-2 bg-neutral-200 border-none focus:outline-none text-neutral-700 appearance-none cursor-pointer rounded-lg text-center">
+                      <option value="${opt.options[0].link}" selected>${opt.options[0].name}</option>
+                      <option value="${opt.options[1].link}">${opt.options[1].name}</option>
+                    </select>
+                    <div class="absolute right-3 top-3 pointer-events-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                  <a href="${opt.options[0].link}" class="linux-download-link inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300 w-full text-center">
+                    <span class="text-sm font-medium">Download</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          return `
+            <div class="card-platform bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px overflow-hidden h-auto">
+              <div class="bg-neutral-100/80 text-neutral-500 rounded-lg p-4 flex flex-col h-full">
+                <div class="flex flex-col items-center justify-center mb-3">
+                  <div class="icon-container h-10 flex items-center justify-center">
+                    ${opt.icon}
+                  </div>
+                  <span class="text-sm font-medium text-gray-700 mt-2">${opt.name}</span>
+                </div>
+                <div class="w-full mb-3 mt-auto">
+                  <div class="relative p-1 bg-neutral-200 rounded-lg">
+                    <div class="w-full flex items-center justify-center cursor-default py-2">
+                      <span class="text-sm font-medium text-neutral-700">${opt.specification}</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="${opt.link}" class="inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300 w-full">
+                  <span class="text-sm font-medium">Download</span>
+                </a>
+              </div>
+            </div>
+          `;
+        }
+      }).join('');
+    }
+
+    const linuxFormatSelect = document.getElementById('linux-format-main');
+    if (linuxFormatSelect) {
+      linuxFormatSelect.addEventListener('change', (e) => {
+        const target = e.target as HTMLSelectElement;
+        if (target && downloadBtn) {
+          const value = target.value;
+          downloadBtn.setAttribute('href', value);
+        }
+      });
+    }
+    
+    setTimeout(() => {
+      applyDownloadButtonStyles();
+      adjustCardHeights();
+    }, 10);
+  }
+
+  function setupLinuxDropdowns() {
+    const linuxSelects = document.querySelectorAll('.linux-format-select');
+    linuxSelects.forEach(select => {
+      if (select) {
+        select.addEventListener('change', (e) => {
+          if (!e || !e.target) return;
+          
+          const target = e.target as HTMLSelectElement;
+          // Find parent using DOM traversal instead of closest
+          let parent = target.parentElement;
+          while (parent && !parent.classList.contains('linux-dropdown')) {
+            parent = parent.parentElement;
+          }
+          
+          if (!parent) return;
+          
+          const downloadLink = parent.querySelector('.linux-download-link');
+          if (downloadLink) {
+            downloadLink.setAttribute('href', target.value);
+          }
+        });
+      }
+    });
+  }
+
+  function addButtonStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+      a[href]:has(span:only-child), 
+      a[href*="Setup"], 
+      a[href*=".dmg"], 
+      a[href*=".deb"], 
+      a[href*=".AppImage"] {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0.75rem 2rem !important;
+        color: #e5e5e5 !important;
+        background-color: #404040 !important;
+        border-radius: 10px !important;
+        transition: all 300ms !important;
+        width: 100% !important;
+        max-width: 20rem !important;
+        margin: 0 auto !important;
+      }
+      
+      a[href]:has(span:only-child):hover, 
+      a[href*="Setup"]:hover, 
+      a[href*=".dmg"]:hover, 
+      a[href*=".deb"]:hover, 
+      a[href*=".AppImage"]:hover {
+        color: rgb(91, 207, 218) !important;
+      }
+
+      #other-options {
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .card-platform {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-platform > div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .icon-container {
+        min-height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+
+      @media (max-width: 767px) {
+        #other-options {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        
+        .card-platform {
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        #other-options {
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+        
+        .card-platform {
+          height: 100%;
+        }
+      }
+      
+      .card-platform, .card-platform > div {
+        overflow: hidden;
+      }
+      
+      .p-4 {
+        padding: 1rem !important;
+      }
+      
+      .text-sm, .text-xs {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      #other-options > div {
+        min-height: 200px;
+      }
+      
+      .linux-dropdown, .p-4 > div, .p-4 > a {
+        max-width: 100%;
+      }
+      
+      select {
+        max-width: 100%;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  addButtonStyles();
+</script>
+
+<style>
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    text-align-last: center;
+  }
+  
+  select::-ms-expand {
+    display: none;
+  }
+  
+  select:focus {
+    outline: none;
+  }
+  
+  @media (max-width: 768px) {
+    .grid-cols-1 {
+      grid-template-columns: 1fr;
+    }
+    
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .hover\:shadow-md:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .hover\:text-\[rgb\(91\,207\,218\)\]:hover {
+    color: rgb(91,207,218);
+  }
+  
+  .bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  }
+  
+  .from-\[rgba\(41\,58\,142\,1\)\] {
+    --tw-gradient-from: rgba(41,58,142,1);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-from), var(--tw-gradient-to, rgba(41, 58, 142, 0));
+  }
+  
+  .to-\[rgba\(59\,159\,168\)\] {
+    --tw-gradient-to: rgba(59,159,168);
+  }
+  
+  .bg-neutral-100\/90 {
+    background-color: rgba(245, 245, 245, 0.9);
+  }
+  
+  .bg-neutral-700 {
+    background-color: #404040;
+  }
+  
+  .bg-neutral-200 {
+    background-color: #e5e5e5;
+  }
+  
+  /* Estilos de borde */
+  .p-px {
+    padding: 1px;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .rounded-\[10px\] {
+    border-radius: 10px;
+  }
+  
+  .rounded-\[8px\] {
+    border-radius: 8px;
+  }
+  
+  .object-contain {
+    object-fit: contain;
+  }
+
+  #other-options > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #other-options > div > div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .linux-dropdown, #other-options a {
+    margin-top: auto;
+  }
+
+  img, svg, select, button, a {
+    max-width: 100%;
+  }
+
+  .p-4, .p-6, .py-2, .py-3, .px-3, .px-8 {
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 640px) {
+    .px-8 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .py-3 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    h3, h4 {
+      font-size: 1rem;
+    }
+    
+    .text-sm {
+      font-size: 0.75rem;
+    }
+    
+    .text-xs {
+      font-size: 0.7rem;
+    }
+  }
+
+  .card-platform {
+    min-height: 220px;
+    overflow: hidden;
+  }
+  
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 auto;
+  }
+  
+  span.text-sm, span.text-xs {
+    display: block;
+    max-width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  </style>

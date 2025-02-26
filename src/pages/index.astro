@@ -42,19 +42,80 @@ const userEmail = userInfo?.user?.email;
           title="<strong>Advanced AI-Driven GitHub Tools Suite.</strong>"
           description="Enhance your GitHub development with solutions for streamlined repository management, precise versioning, and clear documentation."
         >
-        <a class="flex justify-center" href="/dashboard">
-          <button
-            class="dark:text-neutral-700 text-neutral-200 dark:bg-neutral-200 bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center"
-          >
-            Get Started
-          </button>
-        </a>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-md mx-auto">
+          <a href="/dashboard" class="w-full text-sm inline-flex items-center justify-center px-3 py-3 dark:text-neutral-700 text-neutral-200 dark:bg-neutral-200 bg-neutral-700 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer">
+            <span>Get Started</span>
+          </a>
+          <a href="/download" id="download-button" class="w-full text-sm inline-flex items-center justify-center px-3 py-3 dark:text-neutral-700 text-neutral-200 dark:bg-neutral-200 bg-neutral-700 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer">
+            <span id="os-icon" class="mr-2"></span>
+            <span>Get Gitset Desktop App</span>
+          </a>
+        </div>
+        
         </Hero>
         
       </main>
       <Footer />
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  detectOSWithHover();
+});
+
+function detectOSWithHover() {
+  const platform = navigator.platform ? navigator.platform.toLowerCase() : '';
+  const userAgent = navigator.userAgent ? navigator.userAgent.toLowerCase() : '';
+  
+  let osIcon = '';
+  
+  
+  if (platform.includes('win') || userAgent.includes('windows')) {
+    osIcon = `<img src="/os-windows-256.png" alt="Windows" class="h-4 w-4 object-contain os-icon" />`;
+  } else if (platform.includes('mac') || userAgent.includes('macintosh')) {
+    osIcon = `<img src="/mac-os-256.png" alt="macOS" class="h-4 w-4 object-contain os-icon" />`;
+  } else if (platform.includes('linux') || userAgent.includes('linux')) {
+    osIcon = `<img src="/linux-256.png" alt="Linux" class="h-4 w-4 object-contain os-icon" />`;
+  } else {
+    
+    osIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+      <line x1="8" y1="21" x2="16" y2="21"></line>
+      <line x1="12" y1="17" x2="12" y2="21"></line>
+    </svg>`;
+  }
+  
+  const osIconElement = document.getElementById('os-icon');
+  if (osIconElement) {
+    osIconElement.innerHTML = osIcon;
+  }
+  
+  
+  const style = document.createElement('style');
+  style.textContent = `
+    .os-icon {
+      filter: brightness(0) saturate(100%) invert(51%) sepia(3%) saturate(7%) hue-rotate(16deg) brightness(95%) contrast(91%);
+      transition: filter 0.3s ease;
+      margin-bottom: 0.13rem;
+    }
+    
+    #download-button:hover .os-icon {
+      filter: brightness(0) saturate(100%) invert(65%) sepia(58%) saturate(542%) hue-rotate(149deg) brightness(92%) contrast(94%);
+    }
+    
+    #download-button svg {
+      stroke: currentColor;
+      transition: stroke 0.3s ease;
+    }
+    
+    #download-button:hover svg {
+      stroke: rgb(91,207,218);
+    }
+  `;
+  document.head.appendChild(style);
+}
+</script>
 
 <style>
   .main-container {
@@ -76,18 +137,57 @@ const userEmail = userInfo?.user?.email;
   .cta-button {
     background-color: #59b4aa;
   }
-</style>
 
-<script>
-  function updateCTA() {
-    const ctaTitle = document.getElementById('cta-title');
-    const ctaDescription = document.getElementById('cta-description');
-    
-    if (ctaTitle && ctaDescription) {
-      ctaTitle.innerHTML = "Generated <strong>Readme</strong>";
-      ctaDescription.textContent = "The generated README.md is a general reference and may not be fully accurate. If it doesn't meet your expectations, feel free to try again.";
-    }
+  <style>
+  
+  
+  :root {
+    --hover-color: #59b4aa;
   }
 
-  window.addEventListener('readmeGenerated', updateCTA);
-</script>
+  
+  #os-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+
+  
+  .os-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    object-fit: contain;
+  }
+
+  
+  #download-button:hover #os-icon::after {
+    opacity: 1;
+  }
+
+  #os-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  
+  #download-button svg {
+    stroke: currentColor;
+    transition: stroke 0.3s ease;
+  }
+  
+  #download-button:hover svg {
+    stroke: var(--hover-color);
+  }
+</style>
+
