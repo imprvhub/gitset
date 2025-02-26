@@ -1,6 +1,6 @@
 <div align="center">
    <a href="https://github.com/gitset-dev" target="_blank">
-        <img src="https://gitset.dev/favicon-114-precomposed.png" alt="Gitset" />
+        <img src="https://github.com/imprvhub/gitset/blob/main/public/favicon-114-precomposed.png" alt="GitSet CLI" />
     </a>
     <br>
     <a href="https://github.com/gitset-dev" target="_blank">
