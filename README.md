@@ -26,10 +26,15 @@
 
 ### Core Features
 
+#### Desktop Application
+Gitset.dev is available as a desktop application for Windows, macOS, and Linux, providing the same powerful features as the web version in a convenient standalone format. The desktop application is built using Electron and follows the same versioning scheme as the web application. Updates to the desktop app are released concurrently with the web version to maintain feature parity across all platforms. Visit our [download page](https://gitset.dev/download) to get the desktop application for your operating system.
+
 #### Public Tools (No Authentication Required):
 - **.gitignore Builder:** Automatically generates customized .gitignore files tailored to specific languages and frameworks. Users can easily select the desired tech stack, and the tool combines relevant rules to create an optimized .gitignore file. This eliminates the need for manual template searches, ensuring clean and efficient repository management with minimal effort. Ideal for developers working across multiple technologies, this tool simplifies the process of maintaining tidy codebases.
 
 #### Authenticated Services:
+- **Issues Handler:** Streamlines the process of managing GitHub issues by leveraging AI to generate structured, context-aware issue descriptions and automate routine tasks. It enhances issue tracking through intelligent classification, prioritization, and progress monitoring. Designed for developers and project teams, it enables efficient collaboration, reduces manual overhead, and ensures consistency across project workflows, making it an essential tool for maintaining productivity in agile development environments.
+
 - **Public AI-Readme Generator:** Automatically generates professional README.md files for any public GitHub repository. By analyzing repository content, it creates comprehensive documentation, including features, installation guides, usage instructions, and contribution guidelines. Users can request modifications to the initial generated README, receiving different versions based on specific requirements. Additionally, the tool allows users to compare versions, ensuring that the final README perfectly aligns with the project’s needs and presentation standards.
 
 - **Personal AI-Readme Generator:** Similar to the Public AI-Readme Generator, but for both public and private repositories that authenticated users own. It generates detailed README.md files, covering all essential sections of project documentation. Users can refine the initial output by requesting adjustments, receiving multiple iterations based on their preferences. The tool also supports comparing different versions of the README, making it easy to select the most appropriate one for the project. This flexibility ensures that both private and public repositories have high-quality, customizable documentation.
@@ -41,11 +46,6 @@
 - **Code Decommenter:** Processes source code to remove unnecessary comments, improving readability and optimizing the code for production. It supports multiple programming languages and allows selective removal of inline, block, documentation, and pragma comments based on user-defined parameters. The tool efficiently parses code, ensuring that functionality remains intact while reducing clutter. Ideal for maintaining clean codebases and streamlining automated processing in development workflows.
 
 - **Dependencies Handler** Streamlines dependency management across multiple programming languages. It analyzes codebases to identify external dependencies, organizes imports following best practices, and generates configuration files for dependency management. Supported languages include Python, Java, C/C++, and Rust. The tool produces files such as `requirements.txt`, `pom.xml`, `Cargo.toml`, and `CMakeLists.txt`, ensuring efficient and standardized project setups. Ideal for multi-language repositories and maintaining clean, well-structured code.
-
-- **Repository Assessment Tool:** Provides a comprehensive solution for analyzing and evaluating GitHub repositories, offering detailed insights into project metrics, cost estimation, and development efforts. It leverages advanced algorithms to assess repository structure, commit history, and contributor activity, delivering actionable data for project planning and resource allocation. The tool is particularly useful for developers, project managers, and organizations seeking to optimize software development processes.
-
-#### Desktop Application
-Gitset.dev is available as a desktop application for Windows, macOS, and Linux, providing the same powerful features as the web version in a convenient standalone format. The desktop application is built using Electron and follows the same versioning scheme as the web application. Updates to the desktop app are released concurrently with the web version to maintain feature parity across all platforms. Visit our [download page](https://gitset.dev/download) to get the desktop application for your operating system.
 
 ### Technical Architecture
 
@@ -74,7 +74,7 @@ publicReadme[Public Readme Generator React Component]
 readmeGen[Personal Readme Generator React Component]
 commitGen[Commit Message Generator React Component]
 releaseMgr[Tags & Release Manager React Component]
-repoAnalytics[Repository Assessment React Component]
+repoAnalytics[Issues Handler React Component]
 decommenterService[Code Decommenter React Component]
 dependenciesHandler[Dependencies Handler React Component]
 end
@@ -159,7 +159,7 @@ improvementHandler -->|Refined Content Request| contentAggregator
 - **GitSet CLI:** Is an integral component of the GitSet.dev ecosystem, designed to enhance Git workflow automation through AI-driven commit message generation. By leveraging Google's Gemini Pro AI technology, it provides intelligent analysis of staged changes to generate contextually appropriate commit messages, supporting both semantic and personalized formatting styles.
 
 #### Protected Services Layer
-- **Core Services:** Includes README generation, commit message creation, version control, repository assessment, and code decommenting.
+- **Core Services:** Includes README generation, commit message creation, version control, issues, and code decommenting.
 
 #### AI Processing Backend Layer
 - **Parallelized AI Services:** Multiple Gemini AI instances handle specific tasks efficiently, ensuring scalability.
