@@ -23,6 +23,7 @@
     "@supabase/supabase-js": "^2.47.16",
     "@vercel/analytics": "^1.4.1",
     "astro": "^4.16.18",
+    "axios": "^1.8.2",
     "axios-rate-limit": "^1.4.0",
     "bowser": "^2.11.0",
     "cross-spawn": "^7.0.6",
