@@ -48,7 +48,7 @@ const userEmail = userInfo?.user?.email;
           </a>
           <a href="/download" id="download-button" class="w-full text-sm inline-flex items-center justify-center px-3 py-3 dark:text-neutral-700 text-neutral-200 dark:bg-neutral-200 bg-neutral-700 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer">
             <span id="os-icon" class="mr-2"></span>
-            <span>Get Gitset Desktop App</span>
+            <span>Get Desktop App</span>
           </a>
         </div>
         
@@ -61,7 +61,14 @@ const userEmail = userInfo?.user?.email;
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-  detectOSWithHover();
+  if (navigator.userAgent.indexOf('Electron') !== -1) {
+    const downloadButton = document.getElementById('download-button');
+    if (downloadButton) {
+      downloadButton.style.display = 'none';
+    }
+  } else {
+    detectOSWithHover();
+  }
 });
 
 function detectOSWithHover() {

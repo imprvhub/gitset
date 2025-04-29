@@ -2,8 +2,8 @@
 import Nav from '../components/layout/Nav.astro'
 import NavItem from '../components/layout/NavItem.astro';
 import NavLink from '../components/layout/NavLink.astro';
-import { PackageCheck, Delete } from 'lucide-react'
-import { FaHome, FaTerminal, FaBook, FaTags, FaTools, FaFileCode, FaSignOutAlt, FaSignInAlt, FaColumns, FaCog, FaTasks, FaFileAlt } from 'react-icons/fa';
+import { PackageCheck, Delete, Download, CircleDot } from 'lucide-react'
+import { FaHome, FaTerminal, FaBook, FaTags, FaTools, FaFileCode, FaArrowCircleDown, FaSignOutAlt, FaSignInAlt, FaColumns, FaCog, FaTasks, FaFileAlt, FaDesktop, FaDownload } from 'react-icons/fa';
 
 const { class: className } = Astro.props;
 const userIsLoggedIn = !!Astro.locals.userId;
@@ -17,33 +17,32 @@ const userIsLoggedIn = !!Astro.locals.userId;
   ]}
 >
   <div
-    class="w-full h-full lg:border-r border-neutral-300/50 px-5 py-4 overflow-y-auto"
+    class="w-full h-full mt-6 lg:border-r border-neutral-300/50 px-5 py-4 overflow-y-auto"
   >
     <Nav>
       <br>
       <NavLink href="/" label="Home" icon={FaHome} />
+      <NavLink href="/download" label="Get Gitset Desktop" icon={FaArrowCircleDown} />
       <NavLink href="/github-status" label="Github Status" icon={FaTools} />
       <NavItem title="Workspace" open>
         {userIsLoggedIn ? (
           <>
-            
+            <NavLink href="/issues-handler" label="Issues Handler" icon={CircleDot} />
             <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
             <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaFileCode} />
             <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/tags-releases" label="Tags & Releases Manager" icon={FaTags} />
             <NavLink href="/code-decommenter" label="Code Decommenter" icon={Delete} />
             <NavLink href="/dependencies-handler" label="Dependencies Handler" icon={PackageCheck} />
-            <NavLink href="/repository-assessment" label="Repository Assessment Tool" icon={FaTasks} />
-          
           </>
         ) : (
         <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
+            <NavLink href="/issues-handler" label="Issues Handler" icon={CircleDot} />
             <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaFileCode} />
             <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/tags-releases" label="Tags & Releases Manager" icon={FaTags} />
             <NavLink href="/code-decommenter" label="Code Decommenter" icon={Delete} />
             <NavLink href="/dependencies-handler" label="Dependencies Handler" icon={PackageCheck} />
-            <NavLink href="/repository-assessment" label="Repository Assessment Tool" icon={FaTasks} />
         )}
       </NavItem>
       <NavItem title="Account" open>
@@ -60,3 +59,13 @@ const userIsLoggedIn = !!Astro.locals.userId;
     </Nav>
   </div>
 </aside>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (navigator.userAgent.indexOf('Electron') !== -1) {
+      const downloadLink = document.querySelector("[href='/download']");
+      if (downloadLink) {
+        (downloadLink as HTMLElement).style.display = 'none';
+      }
+    }
+  });
+</script>

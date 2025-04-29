@@ -26,7 +26,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     pathname.includes("personal-ai-readme") ||
     pathname.includes("cli-assistant") ||
     pathname.includes("public-ai-readme") ||
-    pathname.includes("dependencies-handler") ||
+    pathname.includes("issues-handler") ||
     pathname.includes("repository-assessment") ||
     pathname.includes("code-decommenter") ||
     pathname.includes("commit-messages")

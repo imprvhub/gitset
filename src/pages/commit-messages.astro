@@ -404,9 +404,12 @@ const userEmail = userInfo?.user?.email;
     }
   }
 
+  // Inicializar todas las funciones
   setupTabs();
   setupModeTabs();
   setupPlanTabs();
+
+  // Agregar event listener para el CTA
   window.addEventListener('readmeGenerated', updateCTA);
 </script>
 

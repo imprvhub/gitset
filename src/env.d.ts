@@ -1,8 +1,11 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
+
 declare namespace App {
   interface Locals {
     userId: string | undefined;
+    userPlan: 'basic' | 'pro';
+    userEmail: string | undefined;
   }
 }
 
