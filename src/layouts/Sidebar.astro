@@ -45,6 +45,7 @@ const userIsLoggedIn = !!Astro.locals.userId;
             <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/code-decommenter" label="Code Decommenter" icon={Delete} />
             <NavLink href="/dependencies-handler" label="Dependencies Handler" icon={PackageCheck} />
+        )
       </NavItem>
       <NavItem title="Account" open>
         {userIsLoggedIn ? (
