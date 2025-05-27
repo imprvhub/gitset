@@ -108,7 +108,7 @@ const { searchParams } = Astro.url;
 const selectedRepo = searchParams.get('repo');
 ---
 
-<Layout title="GitSet - Issues Handler">
+<Layout title="GitSet - Issues Crafter">
   <Sidebar />
   <div class="flex flex-col min-h-screen">
     <div class="hidden lg:block fixed w-64 h-full">
@@ -121,7 +121,7 @@ const selectedRepo = searchParams.get('repo');
         <div class="flex justify-center mt-16"></div>
         <CTA
           align="center"
-          title={`<span id="cta-title"><strong>Issues</strong> Handler</span>`}
+          title={`<span id="cta-title"><strong>Issues</strong> Crafter</span>`}
           description={`
             <span id="cta-description">
               Create and manage GitHub issues with AI-assisted descriptions. <br>

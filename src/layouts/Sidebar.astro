@@ -2,7 +2,7 @@
 import Nav from '../components/layout/Nav.astro'
 import NavItem from '../components/layout/NavItem.astro';
 import NavLink from '../components/layout/NavLink.astro';
-import { PackageCheck, Delete, Download, CircleDot } from 'lucide-react'
+import { PackageCheck, Delete, Download, CircleDot, GitPullRequest, TrendingUp, MonitorDown, RouteOff } from 'lucide-react'
 import { FaHome, FaTerminal, FaBook, FaTags, FaTools, FaFileCode, FaArrowCircleDown, FaSignOutAlt, FaSignInAlt, FaColumns, FaCog, FaTasks, FaFileAlt, FaDesktop, FaDownload } from 'react-icons/fa';
 
 const { class: className } = Astro.props;
@@ -27,23 +27,24 @@ const userIsLoggedIn = !!Astro.locals.userId;
       <NavItem title="Workspace" open>
         {userIsLoggedIn ? (
           <>
-            <NavLink href="/issues-handler" label="Issues Handler" icon={CircleDot} />
-            <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
-            <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaFileCode} />
-            <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/tags-releases" label="Tags & Releases Manager" icon={FaTags} />
+            <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={RouteOff} />
+            <NavLink href="/issues-crafter" label="Issues Crafter" icon={CircleDot} />
+            <NavLink href="/pull-requests" label="Pull Requests Maker" icon={GitPullRequest} />
+            <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
+            <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/code-decommenter" label="Code Decommenter" icon={Delete} />
             <NavLink href="/dependencies-handler" label="Dependencies Handler" icon={PackageCheck} />
           </>
         ) : (
-        <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
-            <NavLink href="/issues-handler" label="Issues Handler" icon={CircleDot} />
-            <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={FaFileCode} />
-            <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/tags-releases" label="Tags & Releases Manager" icon={FaTags} />
+            <NavLink href="/gitignore-builder" label="Git Ignore Builder" icon={RouteOff} />
+            <NavLink href="/issues-crafter" label="Issues Crafter" icon={CircleDot} />
+            <NavLink href="/pull-requests" label="Pull Requests Maker" icon={GitPullRequest} />
+            <NavLink href="/readme-generator" label="Craft a README.md" icon={FaBook} />
+            <NavLink href="/commit-messages" label="Commit Messages Generator" icon={FaTerminal} />
             <NavLink href="/code-decommenter" label="Code Decommenter" icon={Delete} />
             <NavLink href="/dependencies-handler" label="Dependencies Handler" icon={PackageCheck} />
-        )}
       </NavItem>
       <NavItem title="Account" open>
         {userIsLoggedIn ? (
