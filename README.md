@@ -24,30 +24,50 @@
   <img src="https://ivanluna.dev/images/assets/gitset-preview-rounded.png" alt="GitSet.dev Preview" />
 </div>
 
-### Core Features
+### Core Features:
 
 #### Desktop Application
 Gitset.dev is available as a desktop application for Windows, macOS, and Linux, providing the same powerful features as the web version in a convenient standalone format. The desktop application is built using Electron and follows the same versioning scheme as the web application. Updates to the desktop app are released concurrently with the web version to maintain feature parity across all platforms. Visit our [download page](https://gitset.dev/download) to get the desktop application for your operating system.
 
-#### Public Tools (No Authentication Required):
-- **.gitignore Builder:** Automatically generates customized .gitignore files tailored to specific languages and frameworks. Users can easily select the desired tech stack, and the tool combines relevant rules to create an optimized .gitignore file. This eliminates the need for manual template searches, ensuring clean and efficient repository management with minimal effort. Ideal for developers working across multiple technologies, this tool simplifies the process of maintaining tidy codebases.
+  <div align="center">
+    <img src="https://ivanluna.dev/images/assets/115_1x_shots_so.png" />
+  </div>
 
-#### Authenticated Services:
-- **Issues Crafter:** Streamlines the process of managing GitHub issues by leveraging AI to generate structured, context-aware issue descriptions and automate routine tasks. It enhances issue tracking through intelligent classification, prioritization, and progress monitoring. Designed for developers and project teams, it enables efficient collaboration, reduces manual overhead, and ensures consistency across project workflows, making it an essential tool for maintaining productivity in agile development environments.
+  - **Tags & Releases Manager:** Simplifies release management by providing tools to create, edit, and manage GitHub tags and releases through a streamlined interface. It integrates AI-powered suggestions for release notes that accurately reflect code changes, allowing fine-tuning to meet specific requirements. The tool ensures a more efficient and consistent release process, reducing manual effort and providing developers with a reliable solution for managing versioning and releases within the development cycle.
 
-- **Pull Requests Maker:** Manages the complete pull request lifecycle from branch comparison to merge completion. This comprehensive tool enables branch comparison, generates AI-powered PR descriptions based on commit messages and file changes, and facilitates collaborative code review processes. It supports draft PR creation, assignee and reviewer management, bulk labeling operations, and detailed analytics showing commits, file changes, and review history. The tool streamlines merge operations with conflict resolution support, ensuring efficient code integration while maintaining high-quality standards and consistent documentation practices across development teams.
+  - **.gitignore Builder:** Automatically generates customized .gitignore files tailored to specific languages and frameworks. Users can easily select the desired tech stack, and the tool combines relevant rules to create an optimized .gitignore file. This eliminates the need for manual template searches, ensuring clean and efficient repository management with minimal effort. Ideal for developers working across multiple technologies, this tool simplifies the process of maintaining tidy codebases.
 
-- **Public AI-Readme Generator:** Automatically generates professional README.md files for any public GitHub repository. By analyzing repository content, it creates comprehensive documentation, including features, installation guides, usage instructions, and contribution guidelines. Users can request modifications to the initial generated README, receiving different versions based on specific requirements. Additionally, the tool allows users to compare versions, ensuring that the final README perfectly aligns with the project’s needs and presentation standards.
+  <hr></hr>
+  
+  <div align="center">
+    <img src="https://ivanluna.dev/images/assets/782_1x_shots_so.png" />
+  </div>
 
-- **Personal AI-Readme Generator:** Similar to the Public AI-Readme Generator, but for both public and private repositories that authenticated users own. It generates detailed README.md files, covering all essential sections of project documentation. Users can refine the initial output by requesting adjustments, receiving multiple iterations based on their preferences. The tool also supports comparing different versions of the README, making it easy to select the most appropriate one for the project. This flexibility ensures that both private and public repositories have high-quality, customizable documentation.
+ - **Issues Crafter:** Streamlines the process of managing GitHub issues by leveraging AI to generate structured, context-aware issue descriptions and automate routine tasks. It enhances issue tracking through intelligent classification, prioritization, and progress monitoring. Designed for developers and project teams, it enables efficient collaboration, reduces manual overhead, and ensures consistency across project workflows, making it an essential tool for maintaining productivity in agile development environments.
 
-- **Commit Messages Generator:** Enhances Git operations through a command-line interface (CLI) that utilizes AI to automatically generate contextually accurate commit messages. Powered by Google’s Gemini Pro AI technology, the tool analyzes staged changes and provides commit suggestions based on semantic versioning or custom user-defined styles. It adapts to existing commit patterns to ensure consistent formatting in team environments. Optimized for efficiency, the tool delivers rapid message generation while minimizing resource usage, and supports cross-platform integration for consistent performance across various systems.
+  - **Pull Requests Maker:** Manages the complete pull request lifecycle from branch comparison to merge completion. This comprehensive tool enables branch comparison, generates AI-powered PR descriptions based on commit messages and file changes, and facilitates collaborative code review processes. It supports draft PR creation, assignee and reviewer management, bulk labeling operations, and detailed analytics showing commits, file changes, and review history. The tool streamlines merge operations with conflict resolution support, ensuring efficient code integration while maintaining high-quality standards and consistent documentation practices across development teams.
 
-- **Tags & Releases Manager:** Simplifies release management by providing tools to create, edit, and manage GitHub tags and releases through a streamlined interface. It integrates AI-powered suggestions for release notes that accurately reflect code changes, allowing fine-tuning to meet specific requirements. The tool ensures a more efficient and consistent release process, reducing manual effort and providing developers with a reliable solution for managing versioning and releases within the development cycle.
+  <hr></hr>
 
-- **Code Decommenter:** Processes source code to remove unnecessary comments, improving readability and optimizing the code for production. It supports multiple programming languages and allows selective removal of inline, block, documentation, and pragma comments based on user-defined parameters. The tool efficiently parses code, ensuring that functionality remains intact while reducing clutter. Ideal for maintaining clean codebases and streamlining automated processing in development workflows.
+  <div align="center">
+    <img src="https://ivanluna.dev/images/assets/45_1x_shots_so.png" />
+  </div>
+  
+  - **Public AI-Readme Generator:** Automatically generates professional README.md files for any public GitHub repository. By analyzing repository content, it creates comprehensive documentation, including features, installation guides, usage instructions, and contribution guidelines. Users can request modifications to the initial generated README, receiving different versions based on specific requirements. Additionally, the tool allows users to compare versions, ensuring that the final README perfectly aligns with the project's needs and presentation standards.
 
-- **Dependencies Handler** Streamlines dependency management across multiple programming languages. It analyzes codebases to identify external dependencies, organizes imports following best practices, and generates configuration files for dependency management. Supported languages include Python, Java, C/C++, and Rust. The tool produces files such as `requirements.txt`, `pom.xml`, `Cargo.toml`, and `CMakeLists.txt`, ensuring efficient and standardized project setups. Ideal for multi-language repositories and maintaining clean, well-structured code.
+  - **Personal AI-Readme Generator:** Similar to the Public AI-Readme Generator, but for both public and private repositories that authenticated users own. It generates detailed README.md files, covering all essential sections of project documentation. Users can refine the initial output by requesting adjustments, receiving multiple iterations based on their preferences. The tool also supports comparing different versions of the README, making it easy to select the most appropriate one for the project. This flexibility ensures that both private and public repositories have high-quality, customizable documentation.
+
+  - **Commit Messages Generator:** Enhances Git operations through a command-line interface (CLI) that utilizes AI to automatically generate contextually accurate commit messages. Powered by Google's Gemini Pro AI technology, the tool analyzes staged changes and provides commit suggestions based on semantic versioning or custom user-defined styles. It adapts to existing commit patterns to ensure consistent formatting in team environments. Optimized for efficiency, the tool delivers rapid message generation while minimizing resource usage, and supports cross-platform integration for consistent performance across various systems.
+
+  <hr></hr>
+
+  <div align="center">
+    <img src="https://ivanluna.dev/images/assets/24_1x_shots_so.png" />
+  </div>
+
+  - **Code Decommenter:** Processes source code to remove unnecessary comments, improving readability and optimizing the code for production. It supports multiple programming languages and allows selective removal of inline, block, documentation, and pragma comments based on user-defined parameters. The tool efficiently parses code, ensuring that functionality remains intact while reducing clutter. Ideal for maintaining clean codebases and streamlining automated processing in development workflows.
+
+  - **Dependencies Handler** Streamlines dependency management across multiple programming languages. It analyzes codebases to identify external dependencies, organizes imports following best practices, and generates configuration files for dependency management. Supported languages include Python, Java, C/C++, and Rust. The tool produces files such as `requirements.txt`, `pom.xml`, `Cargo.toml`, and `CMakeLists.txt`, ensuring efficient and standardized project setups. Ideal for multi-language repositories and maintaining clean, well-structured code.
 
 ### Technical Architecture
 
