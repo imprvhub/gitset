@@ -1,7 +1,9 @@
 ---
+import { Button, Input } from 'free-astro-components'
 import Footer from '../components/layout/Footer.astro'
 import CTA from '../sections/CTA.astro';
 import Header from '../components/layout/Header.astro'
+import Hero from '../sections/Hero.astro'
 import Layout from '../layouts/Layout.astro'
 import Sidebar from '../layouts/Sidebar.astro'
 import { eq, desc } from "drizzle-orm";
@@ -10,6 +12,9 @@ import { loginLogs, sessions } from "../db/schema";
 
 const sessionToken = Astro.cookies.get("app_auth_token")?.value;
 let githubToken: string | undefined;
+let userId: string | undefined;
+let userEmail: string | undefined;
+let userPlan: string | undefined;
 
 if (sessionToken) {
   const userInfo = await db.query.sessions.findFirst({
@@ -32,12 +37,14 @@ if (sessionToken) {
   });
 
   githubToken = userInfo?.user?.oauthTokens?.find(token => token.strategy === 'github')?.accessToken;
+  userId = userInfo?.user?.id;
+  userEmail = userInfo?.user?.email;
+  userPlan = userInfo?.user?.plan || 'basic';
 }
 
 interface SectionProps {
   section: HTMLElement;
 }
-
 ---
 
 <Layout title="Gitset - Advanced AI-Driven GitHub Tools Suite.">
@@ -52,7 +59,6 @@ interface SectionProps {
       <div class="container relative bottom-8 mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:mt-0">
         <div class="flex justify-center"></div>
         <CTA
-          
           align="center"
           title={`<span id="cta-title">Craft a <strong>README.md</strong></span>`}
           description={`
@@ -65,7 +71,7 @@ interface SectionProps {
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:mt-0 relative left-3">
           <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <a href="/public-ai-readme">
-              <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4">
+              <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8 rounded-[18px] shadow-md hover:shadow-lg transition-shadow border-2 hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   fill="none" 
@@ -94,7 +100,7 @@ interface SectionProps {
             </a>
             
             <a href="/personal-ai-readme">
-              <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4">
+              <div class="option-card bg-neutral-100/90 dark:bg-neutral-800/90 p-8  shadow-md hover:shadow-lg transition-shadow border-2 hover:border-[#59b4aa] flex flex-col items-center justify-between gap-4 rounded-[18px]">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   fill="none" 
@@ -126,7 +132,6 @@ interface SectionProps {
           <div class="flex my-0 mx-auto gap-2.5 mt-4 relative top-4 justify-center">
             <a href="/">
               <button
-                  
                 class="dark:text-neutral-700 text-sm text-neutral-200 dark:bg-neutral-200 bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] dark:hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center order-2 sm:order-1"
               >
                 Back

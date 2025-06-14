@@ -31,9 +31,9 @@ import Footer from '../components/layout/Footer.astro'
                         <div class="rounded-[20px] shadow-xl overflow-hidden">
                             <div class="p-2 sm:p-4 bottom-4 relative">
                                 <div class="max-w-xl mx-auto">
-                                    <div class="flex flex-col bg-neutral-100/90 dark:bg-neutral-800/90 rounded-[20px] overflow-hidden">
-                                        <form class="contact-form border rounded-[20px] animate-fadeIn bg-transparent flex flex-col">
-                                            <div class="p-12">
+                                    <div class="flex flex-col bg-neutral-100/90 dark:bg-neutral-800/90 overflow-hidden rounded-[20px]">
+                                        <form class="contact-form animate-fadeIn bg-transparent flex flex-col overflow-hidden">
+                                            <div class="p-6 sm:p-8 md:p-12">
                                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                                     <div class="form-group">
                                                         <label for="name" class="text-sm font-medium text-neutral-700 mb-2">Full Name</label>
@@ -41,6 +41,7 @@ import Footer from '../components/layout/Footer.astro'
                                                             type="text"
                                                             id="name"
                                                             name="name"
+                                                            style={{ width: '100%', maxWidth: "none", border: "1px solid #919191", borderRadius: "10px", color: "#868686!important" }}
                                                             placeholder="Enter your full name"
                                                             class="w-full !max-w-none !bg-transparent !border-neutral-200 !mr-0 !px-4 !py-2 !rounded-lg border focus:outline-none focus:ring-2 focus:ring-[rgb(91,207,218)] focus:border-transparent"
                                                             required
@@ -53,6 +54,7 @@ import Footer from '../components/layout/Footer.astro'
                                                             type="email" 
                                                             id="email" 
                                                             name="email" 
+                                                            style={{ width: '100%', maxWidth: "none", border: "1px solid #919191", borderRadius: "10px", color: "#868686!important" }}
                                                             placeholder="Enter your email address"
                                                             class="w-full px-4 py-2 rounded-lg bg-transparent border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-[rgb(91,207,218)] focus:border-transparent"
                                                             required
@@ -83,6 +85,7 @@ import Footer from '../components/layout/Footer.astro'
                                                         id="message" 
                                                         name="message" 
                                                         rows="5" 
+                                                        style={{ width: '100%', maxWidth: "none", border: "1px solid #919191", borderRadius: "10px", color: "#868686!important" }}
                                                         placeholder="Write your message here..."
                                                         class="w-full px-4 py-2 rounded-lg bg-transparent border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-[rgb(91,207,218)] focus:border-transparent resize-none"
                                                         required
@@ -90,11 +93,11 @@ import Footer from '../components/layout/Footer.astro'
                                                 </div>
                                             </div>
 
-                                            <div class="bg-black border grid grid-cols-2 w-full">
+                                            <div class="bg-black grid grid-cols-2 w-full border-neutral-700 border-t rounded-b-[20px]">
                                                 <button
                                                     type="button"
                                                     onclick="window.location.href='/'"
-                                                    class="w-full text-white flex items-center justify-center px-6 py-4 hover:text-[rgb(91,207,218)] transition-all duration-300 border-r border-r-[rgb(91,207,218)] border-neutral-700 group"
+                                                    class="w-full text-white flex items-center justify-center px-6 py-4 hover:text-[rgb(91,207,218)] transition-all duration-300 border-r border-neutral-700 group rounded-bl-[20px]"
                                                 >
                                                     <span class="flex items-center text-sm font-medium">
                                                         <svg 
@@ -116,7 +119,7 @@ import Footer from '../components/layout/Footer.astro'
                                                 <button
                                                     type="submit"
                                                     id="submitButton"
-                                                    class="w-full text-white flex items-center justify-center px-6 py-4 hover:text-[rgb(91,207,218)] transition-all duration-300 group"
+                                                    class="w-full text-white flex items-center justify-center px-6 py-4 hover:text-[rgb(91,207,218)] transition-all duration-300 group rounded-br-[20px]"
                                                 >
                                                     <span class="flex items-center text-sm font-medium">
                                                         Send
@@ -153,10 +156,11 @@ import Footer from '../components/layout/Footer.astro'
     .contact-form {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
         width: 100%;
         max-width: 800px;
         margin: 0 auto;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
     }
 
     .form-row {
@@ -186,12 +190,6 @@ import Footer from '../components/layout/Footer.astro'
     @media (max-width: 300px) {
         .form-group-wide {
             width: 200px !important;
-        }
-    }
-
-    @media (min-width: 600px) {
-        .form-group-wide {
-            width: 400px !important;
         }
     }
 

@@ -12,16 +12,19 @@ const downloads = {
   windows: 'https://gc9b7beeqzhshpnd.public.blob.vercel-storage.com/Gitset%20Setup%201.6.0-QpeEjb5VQzpIHXjJkEgomsTUhUrpP4.exe'
 };
 ---
-<Layout title="Gitset - Download Desktop Application">
+<Layout title="Gitset - Gitset - Download Desktop Application.">
   <Sidebar />
-    <div class="flex flex-col min-h-screen mt-16">
+  <div class="flex flex-col min-h-screen">
     <div class="hidden lg:block fixed w-64 h-full">
       <Sidebar />
     </div>
-    <div class="flex-1 lg:ml-64 flex flex-col" style="min-height: 100vh; padding-bottom: 150px;">
+    
+    <div class="flex-1 lg:ml-64 flex flex-col">
       <Header />
       <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16  top">
+          <br />
+          <div class="flex justify-center"></div>
           <CTA
             align="center"
             title={`<span id="cta-title"><strong>Gitset</strong> Desktop</span>`}
@@ -31,105 +34,82 @@ const downloads = {
               </span>
             `}
           >
-            <div class="max-w-4xl w-full rounded-[10px] mx-auto my-8">
-              <div class="w-full bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px mb-8">
-                <div class="w-full h-full bg-neutral-100/80 text-neutral-500 rounded-lg p-6">
-                  <div class="flex flex-col items-center text-center">
-                    <div id="os-icon" class="mb-4 text-neutral-700"></div>
-                    <h3 id="detected-os" class="text-xl font-semibold text-neutral-700 mb-2"></h3>
-
-                    <div id="os-specification" class="w-full max-w-sm px-8 mx-auto mb-4"></div>
-                    <a
-                      id="download-btn"
-                      href="#"
-                      class="w-full max-w-sm inline-flex items-center justify-center px-8 py-3 text-white bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                      </svg>
-                      <span class="text-base font-medium">Download</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-8 w-full my-0 mx-auto">
-                <div id="other-options" class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
-                </div>
-              </div>
-
-
-              <div class="mt-12 w-full mx-auto border border-[rgba(59,159,168)] rounded-[10px] p-6">
-              <h4 class="text-lg font-semibold text-neutral-700 mb-4 text-center">Why use Gitset Desktop?</h4>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-                  
-                  <div class="w-full bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px h-full">
-                    <div class="w-full h-full bg-neutral-100/80 text-neutral-500 rounded-lg p-2">
-                      <div class="w-full rounded-lg p-3 shadow-sm">
-                        <div class="text-neutral-700 mb-1 flex justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="4 17 10 11 4 5"></polyline>
-                            <line x1="12" y1="19" x2="20" y2="19"></line>
-                          </svg>
-                        </div>
-                        <span class="block text-neutral-700 font-semibold mb-1 text-center text-sm">AI-Driven Tools</span>
-                        <p class="text-xs text-neutral-700 text-center mx-auto my-0">
-                          AI-powered tools for README, .gitignore, commits, versioning, decommenting, dependencies, issues, and more.  
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                
-                  
-                  <div class="w-full bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px h-full">
-                    <div class="w-full h-full bg-neutral-100/80 text-neutral-500 rounded-lg p-2">
-                      <div class="w-full rounded-lg p-3 shadow-sm">
-                        <div class="text-neutral-700 mb-1 flex justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                            <path d="M9 18c-4.51 2-5-2-7-2" />
-                          </svg>
-                        </div>
-                        <span class="block text-neutral-700 font-semibold mb-1 text-center text-sm">Seamless Integration</span>
-                        <p class="text-xs text-neutral-700 text-center mx-auto my-0">
-                          Integrates directly with GitHub and Git repositories for a smooth development workflow.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                
-                  
-                  <div class="w-full bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px h-full">
-                    <div class="w-full h-full bg-neutral-100/80 text-neutral-500 rounded-lg p-2">
-                      <div class="w-full rounded-lg p-3 shadow-sm">
-                        <div class="text-neutral-700 mb-1 flex justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                          </svg>
-                        </div>
-                        <span class="block text-neutral-700 font-semibold mb-1 text-center text-sm">Cross-Platform</span>
-                        <p class="text-xs text-neutral-700 text-center mx-auto my-0">
-                          Available for Windows, macOS, and Linux systems with the same powerful features across all platforms.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-
-              <div class="flex justify-center mt-12">
-                <a href="/" class="inline-block">
-                  <button class="text-sm text-white bg-neutral-700 px-6 py-4 rounded-[10px] transition-all duration-300 hover:text-[rgb(91,207,218)] cursor-pointer whitespace-nowrap flex items-center justify-center">
-                    Back
-                  </button>
+        <div class="w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+          
+          <!-- Main Download Card -->
+          <div class="flex justify-center mb-8 sm:mb-12 lg:mb-16">
+            <div class="main-download-card w-full max-w-lg rounded-2xl shadow-xl border border-[#5bc4b8] dark:border-gray-700 p-6 sm:p-8">
+              <div class="flex flex-col items-center text-center space-y-4 sm:space-y-6">
+                <div id="os-icon" class="flex items-center justify-center"></div>
+                <h2 id="detected-os" class="text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-700"></h2>
+                <div id="os-specification" class="flex items-center justify-center"></div>
+                <a id="download-btn" href="#" class="w-full max-w-xs bg-neutral-700 border-1 border-[#5bc4b8] text-[#a2a2a2] hover:text-[#5bc4b8] font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 transform hover:scale-105">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-down-icon lucide-monitor-down"><path d="M12 13V7"/><path d="m15 10-3 3-3-3"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>
+                  <span class="text-sm sm:text-base">Download for <span id="os-name-btn"></span></span>
                 </a>
               </div>
             </div>
+          </div>
+
+          <!-- Other Platforms -->
+          <div class="flex flex-col items-center mb-8 sm:mb-12 lg:mb-16">
+            <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-700 text-center mb-6 sm:mb-8">Other Platforms</h3>
+            <div id="other-options" class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6"></div>
+          </div>
+
+          <!-- Features Grid -->
+          <div class="flex justify-center mb-8 sm:mb-12 lg:mb-16">
+            <div class="features-card w-full max-w-5xl rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8">
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-700 my-0 mx-auto text-center mb-6 sm:mb-8">Why Choose Gitset Desktop?</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                
+                <div class="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                  <div class="w-12 h-12 sm:w-16 sm:h-16 border-2 hover:border-[#5bc4b8] hover:text-[#5bc4b8] rounded-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-200">
+                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-[#a2a2a2] " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                  </div>
+                  <h4 class="text-base sm:text-lg font-semibold text-neutral-700">AI-Powered Tools</h4>
+                  <p class="text-neutral-700 text-sm leading-relaxed">
+                    Intelligent assistance for README generation, .gitignore creation, commit messages, versioning, and dependency management.
+                  </p>
+                </div>
+
+                <div class="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                  <div class="w-12 h-12 sm:w-16 sm:h-16 border-2 hover:border-[#5bc4b8] hover:text-[#5bc4b8] rounded-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-200">
+                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-[#a2a2a2] " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                  </div>
+                  <h4 class="text-base sm:text-lg font-semibold text-neutral-700">Seamless Integration</h4>
+                  <p class="text-neutral-700 text-sm leading-relaxed">
+                    Direct integration with GitHub and Git repositories for a smooth and efficient development workflow.
+                  </p>
+                </div>
+
+                <div class="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+                  <div class="w-12 h-12 sm:w-16 sm:h-16 border-2 hover:border-[#5bc4b8] hover:text-[#5bc4b8] rounded-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-200">
+                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-[#a2a2a2] " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <h4 class="text-base sm:text-lg font-semibold text-neutral-700">Cross-Platform</h4>
+                  <p class="text-neutral-700 text-sm leading-relaxed">
+                    Consistent experience across Windows, macOS, and Linux with identical powerful features on every platform.
+                  </p>
+                </div>
+              
+              </div>
+                  <!-- Back Button -->
+                <div class="flex mx-auto pt-4 my-0 justify-center text-center">
+                    <a href="/" class="bg-neutral-700 items-center px-4 sm:px-6 py-2 sm:py-3 text-[#a2a2a2] hover:border-[#5bc4b8] hover:text-[#5bc4b8] font-medium rounded-lg transition-all duration-200">
+                      <span class="text-sm sm:text-base">Back to Home</span>
+                    </a>
+                </div>
+            </div>
+          </div>
           </CTA>
+        </div>
       </main>
       <Footer />
     </div>
@@ -140,50 +120,34 @@ const downloads = {
   document.addEventListener('DOMContentLoaded', () => {
     detectOS();
     setupLinuxDropdowns();
-    
     setTimeout(applyDownloadButtonStyles, 100);
-    
-    window.addEventListener('resize', function() {
-      adjustCardHeights();
-    });
+    window.addEventListener('resize', equalizeCardHeights);
+    equalizeCardHeights();
   });
 
-  function adjustCardHeights() {
-    const cards = document.querySelectorAll('#other-options > div');
-    cards.forEach(card => {
-      card.setAttribute('style', 'height: auto');
-    });
-    
-    if (window.innerWidth >= 768) {
+  function equalizeCardHeights() {
+    const cards = document.querySelectorAll('#other-options > div') as NodeListOf<HTMLElement>;
+    if (window.innerWidth >= 640) {
       let maxHeight = 0;
       cards.forEach(card => {
-        const height = card.getBoundingClientRect().height;
-        if (height > maxHeight) {
-          maxHeight = height;
-        }
+        card.style.height = 'auto';
+        maxHeight = Math.max(maxHeight, card.offsetHeight);
       });
-      
       cards.forEach(card => {
-        card.setAttribute('style', `height: ${maxHeight}px`);
+        card.style.height = `${maxHeight}px`;
+      });
+    } else {
+      cards.forEach(card => {
+        card.style.height = 'auto';
       });
     }
   }
 
   function applyDownloadButtonStyles() {
     document.querySelectorAll('a, button').forEach(element => {
-      if (element && element.textContent && element.textContent.trim() === 'Download') {
-        element.className = "w-full max-w-sm inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300";
-      }
-      
-      if (element.tagName === 'A' && element.getAttribute('href')) {
-        const href = element.getAttribute('href');
-        if (href && (
-          href.includes('Setup') || 
-          href.includes('.dmg') ||
-          href.includes('.deb') ||
-          href.includes('.AppImage')
-        )) {
-          element.className = "w-full max-w-sm inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300";
+      if (element && element.textContent && element.textContent.trim().includes('Download')) {
+        if (!element.id || element.id !== 'download-btn') {
+          element.className = "w-full bg-neutral-700 border-1 border-[#5bc4b8] text-[#a2a2a2] hover:text-[#5bc4b8] font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base";
         }
       }
     });
@@ -208,25 +172,23 @@ const downloads = {
     if (platform.includes('win') || userAgent.includes('windows')) {
       os = 'Windows';
       downloadLink = downloads.windows;
-      iconHTML = `<img src="/os-windows-256.png" alt="Windows" class="h-16 w-16 object-contain" />`;
+      iconHTML = `<img src="/os-windows-256.png" alt="Windows" class="h-16 w-16 sm:h-20 sm:w-20 object-contain mx-auto" />`;
       osSpecification = `
-        <div class="relative p-1 bg-neutral-200 rounded-lg mx-auto w-full">
-          <div class="w-full flex items-center justify-center cursor-default py-2">
-            <span class="text-sm font-medium text-neutral-700">Windows 10 or higher</span>
-          </div>
+        <div class="px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
+          <span class="text-xs sm:text-sm font-medium text-neutral-700">Windows 10 or higher</span>
         </div>
       `;
       otherOptions = [
         { 
           name: 'macOS',
           link: downloads.macOS, 
-          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           specification: "macOS 10.13 or higher"
         },
         { 
           name: 'Linux',
           isLinux: true,
-          icon: `<img src="/linux-256.png" alt="Linux" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/linux-256.png" alt="Linux" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           options: [
             { name: 'Debian (.deb)', link: downloads.linuxDeb },
             { name: 'AppImage (.AppImage)', link: downloads.linuxAppImage }
@@ -236,25 +198,23 @@ const downloads = {
     } else if (platform.includes('mac') || userAgent.includes('macintosh')) {
       os = 'macOS';
       downloadLink = downloads.macOS;
-      iconHTML = `<img src="/mac-os-256.png" alt="macOS" class="h-16 w-16 object-contain" />`;
+      iconHTML = `<img src="/mac-os-256.png" alt="macOS" class="h-16 w-16 sm:h-20 sm:w-20 object-contain mx-auto" />`;
       osSpecification = `
-        <div class="relative p-1 bg-neutral-200 rounded-lg mx-auto w-full">
-          <div class="w-full flex items-center justify-center cursor-default py-2">
-            <span class="text-sm font-medium text-neutral-700">macOS 10.13 or higher</span>
-          </div>
+        <div class="px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
+          <span class="text-xs sm:text-sm font-medium text-neutral-700">macOS 10.13 or higher</span>
         </div>
       `;
       otherOptions = [
         { 
           name: 'Windows',
           link: downloads.windows, 
-          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           specification: "Windows 10 or higher"
         },
         { 
           name: 'Linux',
           isLinux: true,
-          icon: `<img src="/linux-256.png" alt="Linux" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/linux-256.png" alt="Linux" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           options: [
             { name: 'Debian (.deb)', link: downloads.linuxDeb },
             { name: 'AppImage (.AppImage)', link: downloads.linuxAppImage }
@@ -264,17 +224,17 @@ const downloads = {
     } else if (platform.includes('linux') || userAgent.includes('linux')) {
       os = 'Linux';
       downloadLink = downloads.linuxAppImage; 
-      iconHTML = `<img src="/linux-256.png" alt="Linux" class="h-16 w-16 object-contain" />`;
+      iconHTML = `<img src="/linux-256.png" alt="Linux" class="h-16 w-16 sm:h-20 sm:w-20 object-contain mx-auto" />`;
       osSpecification = `
-        <div class="relative p-1 bg-neutral-200 rounded-lg mx-auto w-full">
-          <div class="w-full flex items-center justify-between cursor-pointer">
-            <select id="linux-format-main" class="w-full px-3 py-2 bg-neutral-200 border-none focus:outline-none text-neutral-700 appearance-none cursor-pointer rounded-lg text-center">
+        <div class="w-full max-w-xs">
+          <div class="relative">
+            <select id="linux-format-main" class="w-full bg-gray-100 dark:bg-gray-700 px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-xs sm:text-sm font-medium text-neutral-700 border-none focus:outline-none cursor-pointer appearance-none pr-8">
               <option value="${downloads.linuxAppImage}" selected>AppImage (.AppImage)</option>
               <option value="${downloads.linuxDeb}">Debian (.deb)</option>
             </select>
-            <div class="absolute right-3 pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
+            <div class="absolute right-2 top-2 sm:top-3 pointer-events-none">
+              <svg class="w-3 h-3 sm:w-4 sm:h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
               </svg>
             </div>
           </div>
@@ -284,46 +244,46 @@ const downloads = {
         { 
           name: 'Windows',
           link: downloads.windows, 
-          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           specification: "Windows 10 or higher"
         },
         { 
           name: 'macOS',
           link: downloads.macOS, 
-          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           specification: "macOS 10.13 or higher"
         }
       ];
     } else {
       os = 'Unknown OS';
       downloadLink = '#';
-      iconHTML = `<svg class="h-16 w-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-      </svg>`;
+      iconHTML = `<div class="w-16 h-16 sm:w-20 sm:h-20 bg-gray-200 dark:bg-gray-700 rounded-2xl flex items-center justify-center mx-auto">
+        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+      </div>`;
       osSpecification = `
-        <div class="relative p-1 bg-neutral-200 rounded-lg mx-auto w-full">
-          <div class="w-full flex items-center justify-center cursor-default py-2">
-            <span class="text-sm font-medium text-neutral-700">Choose your platform below</span>
-          </div>
+        <div class="bg-gray-100 dark:bg-gray-700 px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
+          <span class="text-xs sm:text-sm font-medium text-neutral-700">Choose your platform below</span>
         </div>
       `;
       otherOptions = [
         { 
           name: 'Windows',
           link: downloads.windows, 
-          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/os-windows-256.png" alt="Windows" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           specification: "Windows 10 or higher"
         },
         { 
           name: 'macOS',
           link: downloads.macOS, 
-          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/mac-os-256.png" alt="macOS" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           specification: "macOS 10.13 or higher"
         },
         { 
           name: 'Linux',
           isLinux: true,
-          icon: `<img src="/linux-256.png" alt="Linux" class="h-10 w-10 object-contain mx-auto" />`,
+          icon: `<img src="/linux-256.png" alt="Linux" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto" />`,
           options: [
             { name: 'Debian (.deb)', link: downloads.linuxDeb },
             { name: 'AppImage (.AppImage)', link: downloads.linuxAppImage }
@@ -332,14 +292,19 @@ const downloads = {
       ];
     }
 
-    const detectedOsElement = document.getElementById('detected-os');
-    const osIconElement = document.getElementById('os-icon');
-    const osSpecificationElement = document.getElementById('os-specification');
-    const downloadBtn = document.getElementById('download-btn');
-    const otherOptionsContainer = document.getElementById('other-options');
+    const detectedOsElement = document.getElementById('detected-os') as HTMLElement;
+    const osIconElement = document.getElementById('os-icon') as HTMLElement;
+    const osSpecificationElement = document.getElementById('os-specification') as HTMLElement;
+    const downloadBtn = document.getElementById('download-btn') as HTMLAnchorElement;
+    const osNameBtn = document.getElementById('os-name-btn') as HTMLElement;
+    const otherOptionsContainer = document.getElementById('other-options') as HTMLElement;
 
     if (detectedOsElement) {
       detectedOsElement.textContent = os;
+    }
+    
+    if (osNameBtn) {
+      osNameBtn.textContent = os;
     }
     
     if (osIconElement) {
@@ -352,214 +317,94 @@ const downloads = {
     
     if (downloadBtn) {
       downloadBtn.setAttribute('href', downloadLink);
-      downloadBtn.className = "w-full max-w-sm mx-auto inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300";
     }
 
     if (otherOptionsContainer) {
       otherOptionsContainer.innerHTML = otherOptions.map(opt => {
-        if (opt.isLinux) {
-          return `
-            <div class="card-platform bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px overflow-hidden h-auto">
-              <div class="bg-neutral-100/80 text-neutral-500 rounded-lg p-4 flex flex-col h-full">
-                <div class="flex flex-col items-center justify-center mb-3 w-full">
-                  <div class="icon-container h-10 flex items-center justify-center">
-                    ${opt.icon}
-                  </div>
-                  <span class="text-sm font-medium text-gray-700 mt-2">${opt.name}</span>
-                </div>
-                <div class="linux-dropdown w-full relative mt-auto">
-                  <div class="relative mb-3">
-                    <select class="linux-format-select w-full px-3 py-2 bg-neutral-200 border-none focus:outline-none text-neutral-700 appearance-none cursor-pointer rounded-lg text-center">
+      if (opt.isLinux) {
+        return `
+          <div class="other-platform-card rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6 hover:shadow-xl transition-all duration-200">
+            <div class="flex flex-col items-center text-center space-y-3 sm:space-y-4 h-full">
+              <div class="flex items-center justify-center">
+                ${opt.icon}
+              </div>
+              <h4 class="text-base sm:text-lg font-semibold text-neutral-700">${opt.name}</h4>
+              <div class="flex-grow flex items-center justify-center w-full">
+                <div class="w-full max-w-xs">
+                  <div class="relative">
+                    <select class="linux-format-select text-center w-full px-3 py-2 rounded-lg text-sm text-neutral-700 border-none focus:outline-none cursor-pointer appearance-none pr-8">
                       <option value="${opt.options[0].link}" selected>${opt.options[0].name}</option>
                       <option value="${opt.options[1].link}">${opt.options[1].name}</option>
                     </select>
-                    <div class="absolute right-3 top-3 pointer-events-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
+                    <div class="absolute right-2 top-3 pointer-events-none">
+                      <svg class="w-4 h-4 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                       </svg>
                     </div>
                   </div>
-                  <a href="${opt.options[0].link}" class="linux-download-link inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300 w-full text-center">
-                    <span class="text-sm font-medium">Download</span>
-                  </a>
                 </div>
               </div>
+              <a href="${opt.options[0].link}" class="linux-download-link w-full bg-neutral-700 border-1 border-[#5bc4b8] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-down-icon lucide-monitor-down"><path d="M12 13V7"/><path d="m15 10-3 3-3-3"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>
+                <span>Download</span>
+              </a>
             </div>
-          `;
-        } else {
-          return `
-            <div class="card-platform bg-gradient-to-r from-[rgba(41,58,142,1)] to-[rgba(59,159,168)] rounded-lg p-px overflow-hidden h-auto">
-              <div class="bg-neutral-100/80 text-neutral-500 rounded-lg p-4 flex flex-col h-full">
-                <div class="flex flex-col items-center justify-center mb-3">
-                  <div class="icon-container h-10 flex items-center justify-center">
-                    ${opt.icon}
-                  </div>
-                  <span class="text-sm font-medium text-gray-700 mt-2">${opt.name}</span>
-                </div>
-                <div class="w-full mb-3 mt-auto">
-                  <div class="relative p-1 bg-neutral-200 rounded-lg">
-                    <div class="w-full flex items-center justify-center cursor-default py-2">
-                      <span class="text-sm font-medium text-neutral-700">${opt.specification}</span>
-                    </div>
-                  </div>
-                </div>
-                <a href="${opt.link}" class="inline-flex items-center justify-center px-8 py-3 text-neutral-200 bg-neutral-700 rounded-[10px] hover:text-[rgb(91,207,218)] transition-all duration-300 w-full">
-                  <span class="text-sm font-medium">Download</span>
-                </a>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="other-platform-card rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6 hover:shadow-xl transition-all duration-200">
+            <div class="flex flex-col items-center text-center space-y-3 sm:space-y-4 h-full">
+              <div class="flex items-center justify-center">
+                ${opt.icon}
               </div>
+              <h4 class="text-base sm:text-lg font-semibold text-neutral-700">${opt.name}</h4>
+              <div class="flex-grow flex items-center justify-center">
+                <div class="px-3 py-1 rounded-lg">
+                  <span class="text-xs sm:text-sm text-neutral-700">${opt.specification}</span>
+                </div>
+              </div>
+              <a href="${opt.link}" class="w-full bg-neutral-700 border-1 border-[#5bc4b8] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center space-x-2">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-down-icon lucide-monitor-down"><path d="M12 13V7"/><path d="m15 10-3 3-3-3"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>
+                <span>Download</span>
+              </a>
             </div>
-          `;
-        }
-      }).join('');
+          </div>
+        `;
+      }
+          }).join('');
     }
 
-    const linuxFormatSelect = document.getElementById('linux-format-main');
+    const linuxFormatSelect = document.getElementById('linux-format-main') as HTMLSelectElement;
     if (linuxFormatSelect) {
       linuxFormatSelect.addEventListener('change', (e) => {
         const target = e.target as HTMLSelectElement;
+        const downloadBtn = document.getElementById('download-btn');
         if (target && downloadBtn) {
-          const value = target.value;
-          downloadBtn.setAttribute('href', value);
+          downloadBtn.setAttribute('href', target.value);
         }
       });
     }
     
     setTimeout(() => {
       applyDownloadButtonStyles();
-      adjustCardHeights();
+      equalizeCardHeights();
     }, 10);
   }
 
   function setupLinuxDropdowns() {
-    const linuxSelects = document.querySelectorAll('.linux-format-select');
+    const linuxSelects = document.querySelectorAll('.linux-format-select') as NodeListOf<HTMLSelectElement>;
     linuxSelects.forEach(select => {
-      if (select) {
-        select.addEventListener('change', (e) => {
-          if (!e || !e.target) return;
-          
-          const target = e.target as HTMLSelectElement;
-          // Find parent using DOM traversal instead of closest
-          let parent = target.parentElement;
-          while (parent && !parent.classList.contains('linux-dropdown')) {
-            parent = parent.parentElement;
-          }
-          
-          if (!parent) return;
-          
-          const downloadLink = parent.querySelector('.linux-download-link');
-          if (downloadLink) {
-            downloadLink.setAttribute('href', target.value);
-          }
-        });
-      }
+      select.addEventListener('change', (e) => {
+        const target = e.target as HTMLSelectElement;
+        const card = target.closest('div');
+        const downloadLink = card?.querySelector('.linux-download-link') as HTMLAnchorElement;
+        if (downloadLink) {
+          downloadLink.setAttribute('href', target.value);
+        }
+      });
     });
   }
-
-  function addButtonStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-      a[href]:has(span:only-child), 
-      a[href*="Setup"], 
-      a[href*=".dmg"], 
-      a[href*=".deb"], 
-      a[href*=".AppImage"] {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0.75rem 2rem !important;
-        color: #e5e5e5 !important;
-        background-color: #404040 !important;
-        border-radius: 10px !important;
-        transition: all 300ms !important;
-        width: 100% !important;
-        max-width: 20rem !important;
-        margin: 0 auto !important;
-      }
-      
-      a[href]:has(span:only-child):hover, 
-      a[href*="Setup"]:hover, 
-      a[href*=".dmg"]:hover, 
-      a[href*=".deb"]:hover, 
-      a[href*=".AppImage"]:hover {
-        color: rgb(91, 207, 218) !important;
-      }
-
-      #other-options {
-        display: grid;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .card-platform {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .card-platform > div {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .icon-container {
-        min-height: 2.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 0.5rem;
-      }
-
-      @media (max-width: 767px) {
-        #other-options {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-        
-        .card-platform {
-          margin-bottom: 1rem;
-        }
-      }
-
-      @media (min-width: 768px) {
-        #other-options {
-          grid-template-columns: 1fr 1fr;
-          gap: 1.5rem;
-        }
-        
-        .card-platform {
-          height: 100%;
-        }
-      }
-      
-      .card-platform, .card-platform > div {
-        overflow: hidden;
-      }
-      
-      .p-4 {
-        padding: 1rem !important;
-      }
-      
-      .text-sm, .text-xs {
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      
-      #other-options > div {
-        min-height: 200px;
-      }
-      
-      .linux-dropdown, .p-4 > div, .p-4 > a {
-        max-width: 100%;
-      }
-      
-      select {
-        max-width: 100%;
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  addButtonStyles();
 </script>
 
 <style>
@@ -567,155 +412,35 @@ const downloads = {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    box-shadow: none;
-    border: none;
-    text-align-last: center;
   }
   
   select::-ms-expand {
     display: none;
   }
-  
-  select:focus {
-    outline: none;
-  }
-  
-  @media (max-width: 768px) {
-    .grid-cols-1 {
-      grid-template-columns: 1fr;
-    }
-    
-    .container {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
-  
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-  }
-  
-  .hover\:shadow-md:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-  
-  .hover\:text-\[rgb\(91\,207\,218\)\]:hover {
-    color: rgb(91,207,218);
-  }
-  
-  .bg-gradient-to-r {
-    background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  }
-  
-  .from-\[rgba\(41\,58\,142\,1\)\] {
-    --tw-gradient-from: rgba(41,58,142,1);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-from), var(--tw-gradient-to, rgba(41, 58, 142, 0));
-  }
-  
-  .to-\[rgba\(59\,159\,168\)\] {
-    --tw-gradient-to: rgba(59,159,168);
-  }
-  
-  .bg-neutral-100\/90 {
-    background-color: rgba(245, 245, 245, 0.9);
-  }
-  
-  .bg-neutral-700 {
-    background-color: #404040;
-  }
-  
-  .bg-neutral-200 {
-    background-color: #e5e5e5;
-  }
-  
-  /* Estilos de borde */
-  .p-px {
-    padding: 1px;
-  }
-  
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-  
-  .rounded-\[10px\] {
-    border-radius: 10px;
-  }
-  
-  .rounded-\[8px\] {
-    border-radius: 8px;
-  }
-  
-  .object-contain {
-    object-fit: contain;
+
+
+  .dark .main-download-card,
+  html.dark .main-download-card,
+  body.dark .main-download-card,
+  [data-theme="dark"] .main-download-card {
+    background-color: #2d2d2d !important;
   }
 
-  #other-options > div {
-    display: flex;
-    flex-direction: column;
+  .dark .features-card,
+  html.dark .features-card,
+  body.dark .features-card,
+  [data-theme="dark"] .features-card {
+    background-color: #2d2d2d !important;
   }
 
-  #other-options > div > div {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  .other-platform-card {
+    background-color: white !important;
   }
 
-  .linux-dropdown, #other-options a {
-    margin-top: auto;
+  .dark .other-platform-card,
+  html.dark .other-platform-card,
+  body.dark .other-platform-card,
+  [data-theme="dark"] .other-platform-card {
+    background-color: #2d2d2d !important;
   }
-
-  img, svg, select, button, a {
-    max-width: 100%;
-  }
-
-  .p-4, .p-6, .py-2, .py-3, .px-3, .px-8 {
-    box-sizing: border-box;
-  }
-
-  @media (max-width: 640px) {
-    .px-8 {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    
-    .py-3 {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-    
-    h3, h4 {
-      font-size: 1rem;
-    }
-    
-    .text-sm {
-      font-size: 0.75rem;
-    }
-    
-    .text-xs {
-      font-size: 0.7rem;
-    }
-  }
-
-  .card-platform {
-    min-height: 220px;
-    overflow: hidden;
-  }
-  
-  .icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
-    margin: 0 auto;
-  }
-  
-  span.text-sm, span.text-xs {
-    display: block;
-    max-width: 100%;
-    white-space: normal;
-    word-wrap: break-word;
-  }
-  </style>
+</style>

@@ -20,7 +20,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   if (
     pathname.includes("dashboard") ||
-    pathname.includes("pricing") ||  
     pathname.includes("settings") || 
     pathname.includes("tags-releases") || 
     pathname.includes("personal-ai-readme") ||

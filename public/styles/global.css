@@ -1,6 +1,5 @@
 /* src/styles/global.css */
 
-
 html {
     font-family: 'Roboto', sans-serif;
     color: var(--foreground);
@@ -9,14 +8,17 @@ html {
 body {
     margin: 0;
     padding: 0;
-    line-height: 1.6; 
+    line-height: 1.6;
+    transform: scale(0.97);
+    transform-origin: top left;
+    width: calc(100% / 0.97);
+    height: calc(100% / 0.97);
 }
 
 h1, h2 {
     color: var(--foreground);
     margin: 10px 0;
 }
-
 
 .button-dir {
     background-color: transparent;
@@ -31,12 +33,12 @@ form {
 
 input[type="text"] {
     padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     width: 100%;
     max-width: 400px;
     margin-right: 10px;
-    background-color: rgba(255, 255, 255, 0.1); 
+    background-color: rgba(255, 255, 255, 0.1);
     color: var(--foreground);
 }
 
@@ -48,22 +50,21 @@ ul {
 li {
     margin: 10px 0;
     padding: 5px;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
     cursor: pointer;
     border-radius: 10px;
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
 }
 
-
 li .icon {
-    margin-right: 10px; 
-    font-size: 20px; 
+    margin-right: 10px;
+    font-size: 20px;
 }
 
 .error {
-    color: var(--error-color); 
-    font-weight: bold; 
+    color: var(--error-color);
+    font-weight: bold;
 }
 
 .span {

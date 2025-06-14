@@ -21,7 +21,7 @@ export const users = sqliteTable("users", {
   isBlocked: integer("is_blocked", { mode: "boolean" }).default(false),
   isDeleted: integer("is_deleted", { mode: "boolean" }).default(false),
   createdAt: text("created_at").default(sql`CURRENT_TIMESTAMP`),
-  plan: text("plan", { enum: ["basic", "pro"] }).default("basic").notNull(),
+  plan: text("plan", { enum: ["basic", "pro", "enterprise", "legacy"] }).default("basic").notNull(),
   planExpiresAt: integer("plan_expires_at"),
   lemonSqueezyCustomerId: text("lemon_squeezy_customer_id"),
 });

@@ -4,7 +4,7 @@
 declare namespace App {
   interface Locals {
     userId: string | undefined;
-    userPlan: 'basic' | 'pro';
+    userPlan: 'basic' | 'pro' | 'enterprise' | 'legacy';
     userEmail: string | undefined;
   }
 }
