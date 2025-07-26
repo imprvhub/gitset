@@ -18,7 +18,7 @@
 
 <hr>
 
-<strong>Gitset.dev</strong> is a comprehensive suite of <strong>AI-driven</strong> tools that enhances your GitHub development experience. It provides solutions for streamlined repository management, precise versioning, and clear documentation. Built with <strong>Astro.js/React.js</strong>, and integrating <strong>9 Python-based backends (FastAPI and Flask)</strong>, it combines AI-powered suggestions with user-requested improvements, continuously refining results to deliver optimized outcomes. It offers both public utilities and authenticated services with a <strong>flexible token-based usage system</strong> to streamline repository management, documentation, version control tasks and more.
+<strong>Gitset.dev</strong> is a suite of AI-driven tools that enhances your GitHub development experience. From streamlined repository management and precise versioning to smart documentation and collaborative review processes, Through continuous refinement based on AI suggestions and user feedback, every contribution is elevated to its best possible version.
 
 <div align="center">
   <img src="https://ivanluna.dev/images/assets/gitset-preview-rounded.png" alt="Gitset.dev Preview" />
@@ -315,38 +315,6 @@ The token system implements a comprehensive usage management mechanism that oper
   - SSR frontend with real-time token usage display and analytics.
 
 ---
-
-### Frontend Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/imprvhub/gitset.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd gitset
-   ```
-
-3. Install the required dependencies:
-   ```bash
-   npm install
-   ```
-
-### Usage
-
-1. Run `npm run dev` to start the development server.
-2. Access the application in your browser at `http://localhost:4321`.
-
-### Frontend Dependencies
-
-- **Astro:** A static site generator with server-side rendering capabilities.
-- **React:** A JavaScript library for building user interfaces.
-- **TypeScript:** A superset of JavaScript that adds optional static typing.
-- **lucide-react:** A set of customizable SVG icons for React.
-- **react-icons/fa:** A set of Font Awesome icons for React.
-- **diff:** A library for generating unified diffs.
-- **Drizzle ORM:** Modern TypeScript ORM for database operations.
 
 ### Contributing
 
